@@ -1,0 +1,24 @@
+<section style="background: #f1f5f9; padding: 40px; border-radius: 12px; border-left: 8px solid #e11d48;">
+    <h3 style="margin-bottom: 20px;">L'envers du décor : Contraintes de l'application</h3>
+    <div class="two-cols">
+        <div>
+            <p><strong>Gestion d'état (State Management) :</strong></p>
+            <p style="font-size: 0.95rem;">Le défi n'était pas visuel, mais logique. Comment mettre à jour l'affichage
+                des crédits en temps réel sans interrompre le flux vidéo du Père Noël ?</p>
+            <ul style="font-size: 0.9rem; color: #475569;">
+                <li>Synchronisation des données API en arrière-plan.</li>
+                <li>Feedback visuel immédiat pour éviter les doubles clics.</li>
+                <li>Gestion de la latence réseau sur mobile (3G/4G).</li>
+            </ul>
+        </div>
+        <div
+            style="background: #1e293b; color: #94a3b8; padding: 20px; border-radius: 8px; font-family: monospace; font-size: 0.85rem;">
+            // Logique d'affichage conditionnel (Concept)<br>
+            if (userCredits < threshold) {<br>
+                &nbsp;&nbsp;showLowCreditWarning();<br>
+                &nbsp;&nbsp;prioritizeStreamPerformance();<br>
+                }<br>
+                // L'expérience utilisateur passe par la performance.
+        </div>
+    </div>
+</section>

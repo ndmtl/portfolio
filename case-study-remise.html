@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study : La Remise - Audit & Refonte Express</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0A2540;
+            /* Bleu foncé pour la crédibilité */
+            --accent-orange: #E85133;
+            /* Orange de chantier, adouci par l'UI */
+            --accent-yellow: #FEDB31;
+            /* Jaune des sections */
+            --text-main: #2D3436;
+            --text-light: #636E72;
+            --bg-color: #FFFFFF;
+            --section-bg: #F8FAFC;
+            --placeholder-bg: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background: var(--bg-color);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Nav */
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid #EEE;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-tags {
+            margin-bottom: 30px;
+            color: var(--accent-orange);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Grille d'infos du projet */
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            padding: 40px;
+            background: var(--section-bg);
+            border-radius: 12px;
+            margin: 40px 0;
+            border: 1px solid #E2E8F0;
+        }
+
+        .meta-item h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .meta-item p {
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+
+        /* Content Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 5px;
+            background: var(--accent-yellow);
+            margin-top: 10px;
+            border-radius: 2px;
+        }
+
+        .two-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .two-cols {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--text-main);
+            font-size: 1.1rem;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        .highlight-box {
+            background: var(--primary-blue);
+            color: #FFFFFF;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(10, 37, 64, 0.1);
+        }
+
+        .highlight-box h4 {
+            color: var(--accent-yellow);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box p {
+            color: #CBD5E1;
+        }
+
+        /* Placeholders d'images */
+        .image-placeholder {
+            width: 100%;
+            background: var(--placeholder-bg);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94A3B8;
+            margin: 30px 0;
+            border: 2px dashed #CBD5E1;
+            font-style: italic;
+            transition: all 0.3s ease;
+        }
+
+        .image-placeholder:hover {
+            border-color: var(--accent-orange);
+            color: var(--accent-orange);
+        }
+
+        footer {
+            text-align: center;
+            padding: 100px 0 40px;
+            border-top: 1px solid #EEE;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">[Ton Nom] • Designer Conseil</div>
+                <div><a href="#" style="text-decoration:none; color:inherit; font-size:0.9rem;">← Mon Portfolio</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <div class="hero-tags">Audit • Architecture de l'information • UI Strategy • Intégration Express</div>
+            <h1>Professionnaliser l’expérience numérique d’une coopérative solidaire</h1>
+            <p>Refonte critique de Laremise.com pour transformer un site Wordpress amateur en un hub d'activités
+                crédible et performant, sous forte contrainte de délai.</p>
+
+            <div class="image-placeholder" style="min-height: 450px;">
+                [CAPTUURE : Mockup du site final ou section Hero du site web, montrant les illustrations]
+            </div>
+        </section>
+
+        <div class="project-meta">
+            <div class="meta-item">
+                <h4>Le Défi Stratégique</h4>
+                <p>1 mois pour tout refaire : Audit, design et mise en ligne.</p>
+            </div>
+            <div class="meta-item">
+                <h4>Ma Contribution</h4>
+                <p>Audit UX, Re-classification de l'information, Direction Artistique, Intégration DIVI.</p>
+            </div>
+            <div class="meta-item">
+                <h4>Contexte</h4>
+                <p>Coopérative d'outils (Budget serré).</p>
+            </div>
+            <div class="meta-item">
+                <h4>Technologies</h4>
+                <p>Wordpress + DIVI Builder (WYSIWYG).</p>
+            </div>
+        </div>
+
+        <section>
+            <div class="two-cols">
+                <div>
+                    <h2 class="section-title">01. Audit critique & Structure</h2>
+                    <p>Le site initial était un "chantier" : architecture inexistante, parcours utilisateurs incohérents
+                        et design amateur décrédibilisant la coopérative.</p>
+                    <p>Mon premier rôle a été un conseil d'experte :</p>
+                    <ul>
+                        <li><strong>Re-classification :</strong> Inventaire complet des contenus et réorganisation
+                            logique des catégories de services.</li>
+                        <li><strong>Simplification :</strong> Réduction drastique du nombre de clics pour accéder aux
+                            informations critiques (formations, emprunts).</li>
+                        <li><strong>Audit Technique :</strong> Analyse des limites de DIVI pour proposer des solutions
+                            designs intégrables rapidement.</li>
+                    </ul>
+                </div>
+                <div class="image-placeholder" style="min-height: 350px;">
+                    [CAPTURE : Avant/Après de ton plan d'architecture ou de l'ancien site vs le nouveau plan]
+                </div>
+            </div>
+        </section>
+
+        <section style="background: var(--section-bg); margin: 0 -20px; padding: 80px 20px; border-radius: 12px;">
+            <div class="container">
+                <h2 class="section-title">02. Stratégie Visuelle & Direction Artistique</h2>
+                <p>La charte graphique existante était agressive : un bleu et un orange "chantier de construction" avec
+                    des pictos mastoques. Le défi était d'adoucir cette identité pour la rendre conviviale tout en
+                    gardant son aspect "solidaire et pratique".</p>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
+                    <div class="image-placeholder" style="min-height: 250px;">
+                        [CAPTURE : Les anciennes couleurs/pictos mastoques]
+                    </div>
+                    <div class="image-placeholder" style="min-height: 250px;">
+                        [CAPTURE : Ton nouveau Design System : Palette adoucie + tes nouvelles illustrations]
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top:40px;">
+                    <h4>La Solution design : Les illustrations "ouvrières"</h4>
+                    <p>J'ai introduit des illustrations jouant avec l'identité existante. Mes "bonhommes ouvriers"
+                        cousent, réparent, utilisent des outils. Ce choix a permis de créer une narration visuelle
+                        rassurante et de supprimer les pictos massifs qui lourdaient l'UI.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="two-cols">
+                <div class="image-placeholder" style="min-height: 400px;">
+                    [CAPTURE : Un mockup de la grille "Outils" ou "Formations" du site final]
+                </div>
+                <div>
+                    <h2 class="section-title">03. Intégration Express avec DIVI</h2>
+                    <p>L’utilisation de DIVI, un constructeur WYSIWYG, était imposée mais souvent limitante. Le défi
+                        technique était d'obtenir un rendu professionnel et responsive sans dépendre de dizaines de
+                        plugins tiers, sous 30 jours.</p>
+                    <ul>
+                        <li><strong>Optimisation des Grilles :</strong> Création de structures de grilles propres pour
+                            les outils et formations (sections orange du site final).</li>
+                        <li><strong>Responsive critique :</strong> Adaptation de l'architecture pour qu'elle reste
+                            fluide sur mobile, une contrainte mal gérée sur l'ancien site.</li>
+                        <li><strong>Conseil d'experte :</strong> J'ai dû orienter mes choix designs vers des solutions
+                            que je savais intégrables rapidement dans DIVI pour respecter le délai.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section style="border-top: 1px solid #EEE;">
+            <h2 class="section-title">Synthèse et Valeur ajoutée</h2>
+            <div class="two-cols">
+                <div class="highlight-box">
+                    <h4>Intervention de 30 Jours :</h4>
+                    <ul style="color:#FFF; padding:0; list-style:none;">
+                        <li>Audit & Stratégie de contenu.</li>
+                        <li>Direction Artistique (illustrations).</li>
+                        <li>Intégration complète (Wordpress/DIVI).</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Impact du projet</h4>
+                    <p>Mon accompagnement généraliste a permis à la coopérative de passer d'un site amateur à un hub
+                        professionnel en un temps record. La nouvelle clarté du parcours utilisateur et l'esthétique
+                        conviviale ont crédibilisé leur offre auprès de leurs membres.</p>
+                </div>
+            </div>
+        </section>
+        <section
+            style="background: var(--primary-blue); color: white; margin: 0 -20px; padding: 80px 20px; border-radius: 12px 12px 0 0;">
+            <div class="container">
+                <h2 class="section-title" style="color: white; border-bottom: none;">L'Expérience au service de
+                    l'Urgence</h2>
+                <div class="two-cols">
+                    <div>
+                        <p style="color: #cbd5e1; font-size: 1.2rem;">Réaliser une refonte complète en 30 jours demande
+                            plus que des compétences graphiques : cela demande une <strong>maîtrise de la chaîne de
+                                production.</strong></p>
+                        <p style="color: #cbd5e1;">Mon intervention sur La Remise a prouvé que l'on peut transformer une
+                            plateforme complexe et désorganisée en un outil performant, même avec des outils restrictifs
+                            comme DIVI, à condition d'avoir une vision claire de l'architecture et du parcours
+                            utilisateur dès le premier jour.</p>
+                    </div>
+                    <div
+                        style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                        <h4 style="color: var(--accent-yellow); margin-bottom: 15px; text-transform: uppercase;">Ce que
+                            j'ai apporté au projet :</h4>
+                        <ul style="list-style: none; padding: 0; color: #f8fafc;">
+                            <li style="margin-bottom: 15px;">🚀 <strong>Réactivité :</strong> Livraison d'un produit
+                                fini et fonctionnel en 4 semaines.</li>
+                            <li style="margin-bottom: 15px;">🎨 <strong>Identité :</strong> Création d'une narration
+                                visuelle unique pour humaniser la marque.</li>
+                            <li style="margin-bottom: 15px;">🛠️ <strong>Technique :</strong> Optimisation d'un CMS
+                                existant pour un rendu professionnel et durable.</li>
+                            <li>🧠 <strong>Conseil :</strong> Accompagnement stratégique sur le reclassement de l'offre
+                                de service.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 - [Ton Nom] • Designer Conseil & Intégratrice</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study : NUX Streaming - Nathalie Depierre</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --nux-purple: #6c5ce7;
+            --nux-dark: #0f172a;
+            --nux-gold: #fbbf24;
+            --bg-dark: #020617;
+            --text-gray: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 120px 0 60px;
+            text-align: center;
+            background: radial-gradient(circle at center, #1e1b4b 0%, var(--bg-dark) 100%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .tag {
+            color: var(--nux-gold);
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        /* Process Grid */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 60px 0;
+        }
+
+        .process-step {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .process-step h4 {
+            color: var(--nux-purple);
+            margin-bottom: 10px;
+        }
+
+        /* Content Sections */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+
+        .two-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .two-cols {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-box {
+            border-left: 4px solid var(--nux-purple);
+            padding-left: 24px;
+            margin-bottom: 30px;
+        }
+
+        .feature-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        /* Visuals */
+        .mockup-container {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border-radius: 30px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .mobile-frame {
+            width: 280px;
+            height: 580px;
+            background: #000;
+            border: 10px solid #1e293b;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-gray);
+            font-style: italic;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer {
+            padding: 80px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-gray);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <span class="tag">Case Study • Mobile-Only Streaming</span>
+            <h1>NUX : L'expérience Nexus</h1>
+            <p>Concevoir une interface intelligente et luxueuse pour les voyageurs et citadins ultra-connectés.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div class="process-grid">
+            <div class="process-step">
+                <h4>1. Audit</h4>
+                <p style="font-size: 0.9rem;">Heuristiques Capian sur 5 concurrents.</p>
+            </div>
+            <div class="process-step">
+                <h4>2. Architecture</h4>
+                <p style="font-size: 0.9rem;">Card sorting (15 testeurs) pour la findability.</p>
+            </div>
+            <div class="process-step">
+                <h4>3. Wireframing</h4>
+                <p style="font-size: 0.9rem;">Structure UX basse fidélité sur Figma.</p>
+            </div>
+            <div class="process-step">
+                <h4>4. UI Design</h4>
+                <p style="font-size: 0.9rem;">Layout haute-résolution (In Progress).</p>
+            </div>
+        </div>
+
+        <section>
+            <div class="two-cols">
+                <div>
+                    <h2 class="section-title">La recherche au cœur du projet</h2>
+                    <div class="feature-box">
+                        <h3>Audit Heuristique</h3>
+                        <p style="color: var(--text-gray);">Grâce à l'outil Capian, j'ai disséqué les forces et
+                            faiblesses de 5 services de streaming leaders. Cette analyse m'a permis d'identifier les
+                            "patterns" incontournables et les opportunités d'innovation pour NUX.</p>
+                    </div>
+                    <div class="feature-box">
+                        <h3>Intelligence de l'Information</h3>
+                        <p style="color: var(--text-gray);">L'architecture n'est pas le fruit du hasard : un test de
+                            card sorting auprès de 15 utilisateurs a validé la structure des menus et la classification
+                            des contenus thématiques.</p>
+                    </div>
+                </div>
+                <div class="mockup-container">
+                    <div style="text-align: center;">
+                        <p style="margin-bottom: 20px; font-weight: bold; color: var(--nux-gold);">[LOGIQUE DE
+                            NAVIGATION]</p>
+                        <div
+                            style="background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; font-family: monospace; font-size: 0.8rem;">
+                            Home > Nexus > Selection<br>
+                            Search > Findability Optimized<br>
+                            User > Premium Features
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="two-cols">
+                <div class="mockup-container">
+                    <div class="mobile-frame">
+                        [MOCKUP FIGMA : Interface NUX Haute Résolution - Home Screen]
+                    </div>
+                </div>
+                <div>
+                    <h2 class="section-title">Design "Mobile-Only"</h2>
+                    <p style="margin-bottom: 30px; color: var(--text-gray);">NUX cible les déplacements urbains. Le
+                        design a été pensé pour une consultation rapide, une findability maximale et une esthétique
+                        "Smart-Luxury".</p>
+
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 20px;">✨ <strong>Interface Nexus :</strong> Un accès en "couches" pour
+                            ne jamais perdre le contexte de navigation.</li>
+                        <li style="margin-bottom: 20px;">📱 <strong>Ergonomie Mobile :</strong> Zones d'interaction
+                            optimisées pour l'usage à une main dans les transports.</li>
+                        <li>🎨 <strong>Esthétique High-Tech :</strong> Un visuel sombre (Dark Mode) contrasté par des
+                            accents vibrants pour évoquer la modernité.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Nathalie Depierre &copy; 2026 - Designer Multidisciplinaire & Conceptrice Numérique</p>
+    </footer>
+
+</body>
+
+</html>

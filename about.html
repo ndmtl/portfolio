@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nathalie Depierre, multimedia designer - web integrator based in Montreal </title>
+  <meta name="description"
+    content="Designer multidisciplinaire intégratrice, Ux/ui design et graphiste, J’accompagne les entreprises dans leurs projets de communication visuelle et numérique">
+  <!--Favicon-->
+  <link rel=" icon" type="image/x-icon" href="assets/img/d-final_round.png">
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!--Styles-->
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!--JS-->
+  <script src="assets/js/script.js" defer></script>
+
+</head>
+
+<body>
+
+  <div id="cursor"></div>
+
+
+  <header id="navbar"></header>
+
+  <script>
+    fetch('_navbar.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('navbar').innerHTML = html;
+
+        const toggle = document.querySelector('.toggle');
+        const overlay = document.querySelector('.overlay');
+
+        toggle.addEventListener('click', () => {
+          toggle.classList.toggle('open');
+          overlay.classList.toggle('open');
+        });
+      });
+  </script>
+
+
+
+  <section id="about">
+    <div class="container">
+      <div class="about-bignum"> I transform your challenges into effective visual solutions.</div>
+
+    </div>
+  </section>
+  <section id="bio">
+    <div class="container">
+      <div><span class="title">[About]</span>
+
+        <ul class="about-dates">
+          <li>15 industries</li>
+          <li>100+ projets</li>
+          <li>15+ années</li>
+        </ul>
+
+
+      </div>
+      <div class="about-intro">
+        As a multidisciplinary designer, web integrator, and digital designer, I
+        combine creativity, strategy, and
+        functionality to bring to life clear, consistent, and engaging experiences. My collaborations in the sports,
+        healthcare, and corporate sectors have allowed me to develop a solid, user-centric approach focused on business
+        objectives. Versatile and attentive, I transform complex challenges into coherent and engaging visual
+        experiences,
+        while respecting the organization's identity, budgets, and deadlines. Flexible, attentive, and respectful, I
+        integrate easily into teams and work environments.
+      </div>
+
+    </div>
+  </section>
+  <section id="services">
+    <div class="container">
+      <!-- <div class="service-intro">
+        <h2 class="section-label">[Skills & Expertise]</h2>
+        <p class="tagline">Crafting digital experiences through strategy and code.</p>
+      </div> -->
+
+      <div class="service-card">
+        <div class="icon-box">✦</div>
+        <h3>[ux design]</h3>
+        <p>Building intuitive user journeys through data-driven prototyping and wireframing.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-box">❖</div>
+        <h3>[ui design]</h3>
+        <p>Responsive design systems that scale—perfecting layouts, type, and color theory.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-box">✺</div>
+        <h3>[graphic design]</h3>
+        <p>Visual storytelling across print and digital, from brand guides to social media assets.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="icon-box">{}</div>
+        <h3>[integration]</h3>
+        <p>HTML/CSS & JS libraries. Expert-level No-code delivery via SiteCore and WordPress.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="clients">
+    <div class="container">
+      <div class="title">
+        [clients]
+      </div>
+      <div> Ils me font confiance</div>
+
+
+
+    </div>
+  </section>
+
+  <section id="logos-clients">
+    <div class="container">
+      <div class="logos">
+        <div>
+          <img src="assets/img/LogosClientsOpt/LogosClientsDark_Aurory.png">
+        </div>
+        <div>
+          <img src="assets/img/LogosClientsOpt/LogosClientsDark_Tink.png" style="width: 180px;">
+        </div>
+        <div>
+          <img src="assets/img/LogosClientsOpt/LogosClientsDark_NoBrainer.png">
+        </div>
+        <div>
+          <img src="assets/img/LogosClientsOpt/LogosClientsDark_ Ugroumedia.png">
+        </div>
+        <div>
+          <img src="assets/img/LogosClientsOpt/LogosClientsDark_Fondation-rivieres.png">
+        </div>
+        <div>
+          <img src="assets/img/LogosClientsOpt/LogosClientsDark_UQO.png">
+        </div>
+        <div>
+          <img src="assets/img/LogosClientsOpt/LogosClientsDark_Ceci.png">
+        </div>
+
+        <div>
+          <img src="assets/img/LogosClientsOpt/LogosClientsDark_ESG-UQAM.png">
+        </div>
+        <div>
+          <img src="assets/img/LogosClientsOpt/LogosClientsDark_CPA.png">
+        </div>
+        <div>
+          <img src="assets/img/LogosClientsOpt/LogosClientsDark_EEQ.png">
+        </div>
+        <div>
+          <img src="assets/img/LogosClientsOpt/LogosClientsDark_PertinenceMedia.png">
+        </div>
+        <div>
+          <img src="assets/img/LogosClientsOpt/LogosClientsDark_Ruisss.png">
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <footer id="footer">
+    <div class="footer-cta">
+      <span class="fl" id="fl1">Let's</span>
+      <span class="fl fl-red" id="fl2">Work</span>
+      <span class="fl" id="fl3">Together</span>
+    </div>
+    <div class="footer-bot">
+      <span>© 2026 Nathalie Depierre</span><span>Basée à Montréal</span><span>contact@dblocs.com</span>
+    </div>
+  </footer>
+
+</body>
+
+</html>

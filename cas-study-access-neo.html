@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study : Formation Néonatale Afrique - Nathalie Depierre</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --medical-blue: #0077b6;
+            --deep-navy: #023e8a;
+            --soft-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --accent-teal: #48cae4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: #fff;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--deep-navy);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 60px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 12px;
+            background: var(--medical-blue);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .hero-desc {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+        }
+
+        /* Context Grid */
+        .context-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .context-item h4 {
+            font-size: 0.9rem;
+            color: var(--medical-blue);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .context-item p {
+            font-weight: 500;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 4px;
+            background: var(--accent-teal);
+            margin-top: 12px;
+        }
+
+        .two-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: flex-start;
+        }
+
+        @media (max-width: 768px) {
+            .two-cols {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        /* Problem Boxes */
+        .problem-box {
+            background: var(--soft-bg);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 6px solid var(--medical-blue);
+        }
+
+        .problem-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Visual Placeholders */
+        .mockup-container {
+            background: #e2e8f0;
+            border-radius: 20px;
+            padding: 20px;
+            border: 8px solid #cbd5e1;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .mockup-content {
+            text-align: center;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        /* Integration Focus */
+        .tech-focus {
+            background: var(--deep-navy);
+            color: white;
+            padding: 60px;
+            border-radius: 16px;
+            margin-top: 40px;
+        }
+
+        .tech-focus h3 {
+            color: var(--accent-teal);
+            margin-bottom: 20px;
+        }
+
+        .tech-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .tech-list li::before {
+            content: '✔';
+            color: var(--accent-teal);
+            margin-right: 10px;
+        }
+
+        footer {
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid #eee;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="container">
+            <span class="tag">UX/UI • Santé Mondiale • Mobile-First</span>
+            <h1>Démocratiser la formation néonatale par le numérique</h1>
+            <p class="hero-desc">Conception d'une plateforme d'apprentissage légère pour le personnel de santé en RDC et
+                en Afrique de l'Ouest.</p>
+        </div>
+    </section>
+
+    <main class="container">
+
+        <div class="context-grid">
+            <div class="context-item">
+                <h4>Cible</h4>
+                <p>Infirmières et sages-femmes (RDC, Afrique de l'Ouest)</p>
+            </div>
+            <div class="context-item">
+                <h4>Mandat</h4>
+                <p>Architecture, UX/UI & Stratégie d'intégration</p>
+            </div>
+            <div class="context-item">
+                <h4>Support</h4>
+                <p>100% Mobile (Contraintes de réseau)</p>
+            </div>
+        </div>
+
+        <section>
+            <div class="two-cols">
+                <div>
+                    <h2 class="section-title">Le défi du terrain</h2>
+                    <p>En Afrique de l'Ouest, les formatrices canadiennes font face à des obstacles logistiques majeurs
+                        pour transmettre les protocoles de soins critiques.</p>
+                    <div class="problem-box">
+                        <h3>Le constat de l'ONG :</h3>
+                        <p>Le personnel médical enregistre les formations sur leurs téléphones faute de supports
+                            accessibles en tout temps. L'accès aux webinaires est souvent impossible dû à l'instabilité
+                            du réseau.</p>
+                    </div>
+                </div>
+                <div class="mockup-container">
+                    <div class="mockup-content">[IMAGE : Interface mobile simplifiée - Liste des modules de formation]
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Une approche centrée sur l'usage réel</h2>
+            <p style="margin-bottom: 40px;">Ma mission a été de transformer ces enjeux complexes en une interface "Zéro
+                Friction", optimisée pour des environnements où chaque kilo-octet compte.</p>
+
+            <div class="two-cols">
+                <div class="problem-box" style="border-color: var(--accent-teal);">
+                    <h3>Architecture Mobile-First</h3>
+                    <p>Pas d'ordinateurs en salle de soin. La navigation a été pensée pour un usage à une main, avec une
+                        hiérarchie claire permettant d'accéder à un module de soin en moins de 3 tapes.</p>
+                </div>
+                <div class="problem-box" style="border-color: var(--accent-teal);">
+                    <h3>Légèreté & Performance</h3>
+                    <p>Design minimaliste utilisant des polices système et des visuels vectoriels (SVG) pour garantir un
+                        chargement rapide, même sur les réseaux 3G/Edge.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="tech-focus">
+                <h3>Expertise en Intégration</h3>
+                <p style="margin-bottom: 30px;">En tant qu'intégratrice, j'ai orienté la conception pour assurer une
+                    pérennité technique au projet :</p>
+                <ul class="tech-list">
+                    <li>Code HTML5/CSS3 sémantique et ultra-léger.</li>
+                    <li>Optimisation des médias (compression vidéo/PDF).</li>
+                    <li>Design sans librairies lourdes pour limiter les requêtes HTTP.</li>
+                    <li>Interface intuitive limitant les barrières de terminologie.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section style="text-align: center;">
+            <h2 class="section-title">Impact social & Humain</h2>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+                Ce projet permet de briser l'isolement du personnel de santé en offrant un accès universel, asynchrone
+                et gratuit aux connaissances vitales en néonatalogie, contribuant ainsi directement à la réduction de la
+                mortalité infantile.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Nathalie Depierre &copy; 2026 - Designer multidisciplinaire & Intégratrice Web</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
