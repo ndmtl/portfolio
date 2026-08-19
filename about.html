@@ -26,25 +26,7 @@
 
   <div id="cursor"></div>
 
-
   <header id="navbar"></header>
-
-  <script>
-    fetch('_navbar.html')
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById('navbar').innerHTML = html;
-
-        const toggle = document.querySelector('.toggle');
-        const overlay = document.querySelector('.overlay');
-
-        toggle.addEventListener('click', () => {
-          toggle.classList.toggle('open');
-          overlay.classList.toggle('open');
-        });
-      });
-  </script>
-
 
 
   <section id="about">
@@ -171,13 +153,41 @@
 
 
   <footer id="footer">
-    <div class="footer-cta">
-      <span class="fl" id="fl1">Let's</span>
-      <span class="fl fl-red" id="fl2">Work</span>
-      <span class="fl" id="fl3">Together</span>
+    <div class="first-row">
+      <div class="footer-cta">
+        <span class="fl" id="fl1">Let's</span>
+        <span class="fl fl-red" id="fl2">Work</span>
+        <span class="fl" id="fl3">Together</span>
+      </div>
+      <div>
+        <a href="contact.html" class="contact-circle">
+
+          <!-- 1. SVG texte circulaire — en absolu, pleine taille -->
+          <svg id="rotatingText" viewBox="0 0 140 140">
+            <defs>
+              <path id="circle-path" d="M70,70 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
+            </defs>
+            <text>
+              <textPath href="#circle-path">
+                GET IN TOUCH • GET IN TOUCH •
+              </textPath>
+            </text>
+          </svg>
+
+          <!-- 2. Point central avec flèche — centré par-dessus -->
+          <div class="dot">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="black" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </div>
+
+        </a>
+      </div>
     </div>
     <div class="footer-bot">
-      <span>© 2026 Nathalie Depierre</span><span>Basée à Montréal</span><span>contact@dblocs.com</span>
+      <span>© Copyright 2026 </span><span>Based in Montreal</span><span>Coded with ♡ by Nathalie Depierre</span>
     </div>
   </footer>
 
