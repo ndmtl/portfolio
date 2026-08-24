@@ -1,10 +1,11 @@
  @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
  @import "tailwindcss";
 
- ::root {
+ :root {
      --color-ink: #0a0a0a;
      --color-paper: #deded7;
      --color-accent: blue;
+     --color-lighter: #fff;
  }
 
  /* Typographies */
@@ -52,37 +53,47 @@
 
 
 
- /* NAVIGATION 
+ /* Textes et liens
  -----------------*/
-
-
- nav {
-     display: flex;
-     justify-content: space-between;
-     padding: 20px;
-     border-bottom: 1px solid var(--ink);
-     position: sticky;
-     top: 0;
-     background: var(--paper);
-     z-index: 1000;
+ .main__titles {
+     font-family: 'Neue Haas Display', Helvetica, sans-serif;
+     letter-spacing: -6px;
+     font-weight: 700;
+     line-height: 0.95;
+     font-size: clamp(4.5rem, 2.894rem + 6.85vw, 9.0625rem);
  }
 
- nav ul {
-     display: flex;
-     list-style: none;
-     gap: 40px;
+ .main__titles--accent {
+     font-family: 'Oooh Baby', cursive;
+     color: var(--color-accent);
  }
 
- nav a {
-     text-decoration: none;
-     color: var(--ink);
-     font-weight: 600;
-     text-transform: uppercase;
-     font-size: 0.8rem;
+ .main__titles--color {
+     color: var(--color-accent);
  }
 
- nav a:hover {
-     color: var(--accent);
+ .navbar__links {
+     font-size: 1.5rem;
+     padding-top: 1rem;
+ }
+
+ .title__work {
+     font-size: 1rem;
+     padding-top: 1rem;
+ }
+
+ .title__work--tags {
+     background-color: var(--color-ink);
+     color: white;
+     font-size: 1.25;
+     width: fit-content;
+     padding: 0.25rem 0.5rem;
+ }
+
+ .illustration__bg {
+     background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+     background-size: 20px 20px;
+
  }
 
  /* TOGGLE BUTTON */
@@ -175,207 +186,8 @@
      }
  }
 
- /* HERO */
 
- /* MARQUEE */
-
-
- /* WORK */
-
- /* CARDS */
-
-
- /* STATEMENT */
-
- /* ABOUT */
- /* Section About - Style Édition */
-
-
- .about-bignum {
-     grid-column: 1 / -1;
-     font-size: clamp(3rem, 8vw, 6rem);
-     font-weight: 800;
-     line-height: 0.9;
-     letter-spacing: -0.04em;
-     margin-bottom: 60px;
-     text-transform: uppercase;
-     max-width: 60vw;
- }
-
-
- .about-intro {
-     font-size: 1.8rem;
- }
-
- .about-dates {
-     padding-left: 40px;
- }
-
- .skill-row {
-     display: flex;
-     justify-content: space-between;
-     padding: 15px 0;
-     border-bottom: 1px solid var(--border);
-     font-size: 0.9rem;
-     text-transform: uppercase;
- }
-
- .skill-row span:last-child {
-     color: var(--electric-blue);
-     font-weight: 600;
- }
-
-
- .service-intro,
- .service-card {
-
-
-     border-bottom: 1px solid var(--ink);
-     transition: background 0.3s ease;
- }
-
- /* Make the title card stand out */
- .service-intro {
-     background-color: var(--ink);
-     color: var(--white);
- }
-
- .service-card:hover {
-     background-color: #f9f9f9;
-     /* Subtle lift on hover */
- }
-
- .icon-box {
-     font-size: 2rem;
-     margin-bottom: 20px;
-     display: block;
- }
-
- #services h3 {
-     font-size: 1.5rem;
-     text-transform: uppercase;
-     margin-bottom: 15px;
-     font-weight: 700;
- }
-
- #services p {
-     line-height: 1.6;
-     opacity: 0.8;
- }
-
- .title {
-     font-weight: 800;
-     text-transform: uppercase;
-     font-size: 0.7rem;
-     margin-bottom: 20px;
-     display: block;
-     color: var(--electric-blue);
- }
-
- /* Clients - Logos en mode discret */
- #clients .container {
-     display: grid;
-     grid-template-columns: 1fr 2fr;
-     padding: 20px;
- }
-
- #logos-clients .container {
-     padding: 0;
- }
-
-
- /* Clients - Logos en mode discret */
- .logos {
-
-     display: grid;
-     grid-template-columns: repeat(4, 1fr);
-     gap: 1px;
-     background-color: var(--ink);
-     /* Crée des bordures par le gap */
-     border: 1px solid var(--ink);
- }
-
- .logos div {
-     background: var(--paper);
-     height: 120px;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     padding: 20px;
- }
-
- .logos img {
-     max-width: 100%;
-     max-height: 60px;
-     filter: grayscale(1);
-     opacity: 0.7;
-     transition: 0.3s;
- }
-
- .logos div:hover img {
-     filter: grayscale(0);
-     opacity: 1;
- }
-
- /*Contact*/
- #contact {
-     display: none;
-     position: fixed;
-     inset: 0;
-     z-index: 1000;
-
-     overflow: hidden;
-
- }
-
- #contact.open {
-     display: block;
- }
-
-
-
- /*CONTACT FORM*/
-
-
- /* ::placeholder {
-     display: none;
- }
-
- input,
- textarea {
-     width: 100%;
-     background-color: transparent;
-     border-top: transparent;
-     border-left: transparent;
-     border-right: transparent;
-     border-bottom: 2px solid var(--ink);
-     padding: 1rem;
-     margin: 0.5rem 0;
- }
-
- input:focus,
- textarea:focus {
-     background-color: transparent;
-     transform: scale(1.05);
-     border: 2px solid var(--accent);
-     outline: none;
-     transition: all 0.3s ease;
- }
-
- button[type="submit"] {
-     width: 100%;
-     display: inline-block;
-     padding: 1rem 2rem;
-     margin-top: 1rem;
-     background-color: transparent;
-     border: 2px solid var(--ink);
-     color: var(--white);
-     text-transform: uppercase;
-     font-weight: bold;
-     text-align: center;
-     cursor: pointer;
-     transition: background-color 0.5s ease-in-out;
- } */
+ /* Gestion des erreurs du formulaire */
 
 
  .inputControl.error input,

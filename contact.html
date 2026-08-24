@@ -51,79 +51,20 @@
   <header id="navbar"></header>
 
   <main>
-    <!--hero-->
-    <section id="hero" class="w-full h-[60vh] py-8">
-      <div class="container px-4">
-        <div class="grid grid-cols-12 gap-4">
-          <div class="col-span-12 lg:col-span-4 lg:col-start-9">
-            <p>Designer multidisciplinaire spécialisé en conception UX/UI et intégration.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--projets-->
-    <section id="projects" class="py-8">
-      <div class="container px-0">
-        <div class="w-full grid grid-cols-12 gap-4 items-center">
-          <div class="col-span-12 lg:col-span-8">
-            <h1 class="font-display font-bold text-[72px] lg:text-[145px] leading-[0.85] space-x-4">
-              Designer multimedia <span class="font-script font-bold text-accent">&</span> intégration
-            </h1>
-          </div>
-
-          <div class="col-span-12 lg:col-span-2">
-            <p><a href="#portfolio">Scroll down</a></p>
-          </div>
-    </section>
-    <section id="portfolio" class="w-full">
-      <div class="w-full grid grid-cols-12">
-
-        <div class="col-start-2 col-span-4 aspect-[4/5]">
-          <img src="assets/img/original-4d3490bf0651f7e962e2bcac988938b2.webp" alt="Landwiz">
-        </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-4 bg-cover bg-center min-h-[200px]">
-          <img src="assets/img/laremise_montreal_desktop1.png" alt="Coopérative La Remise">
-        </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-4 bg-cover bg-center min-h-[200px]">
-          <img src="assets/img/original-4d3490bf0651f7e962e2bcac988938b2.webp" alt="Landwiz">
-        </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-4 bg-cover bg-center min-h-[200px]">
-          <img src="assets/img/laremise_montreal_desktop1.png" alt="Coopérative La Remise">
-        </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-4 bg-cover bg-center min-h-[200px]">
-          <img src="assets/img/original-4d3490bf0651f7e962e2bcac988938b2.webp" alt="Landwiz">
-        </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-4 bg-cover bg-center min-h-[200px]">
-          <img src="assets/img/laremise_montreal_desktop1.png" alt="Coopérative La Remise">
-        </div>
-      </div>
-      </div>
-    </section>
-    </div>
-
-    </section>
-
-    <!--intro-->
-    <section id="intro" class="py-8">
-      <div class="container px-4">
-        moi moua mouahhhh
-      </div>
-    </section>
 
     <!-- Contact-->
-    <section id="contact" class="w-full h-screen bg-slate-300 grid place-items-center overflow-hidden">
-      <div class="container mx-auto flex items-center justify-center">
-        <div class="grid grid-cols-12 lg:gap-10">
-          <!-- <div class="col-span-12 flex justify-end"><button id="btnClose"
-              class="bg-black text-white hover:bg-blue-700 transition-colors duration-200 ease-in-out px-6 py-3 cursor-pointer">X</button>
-          </div> -->
+    <section id="contact" class="w-full h-auto">
+      <div class="container w-full mx-auto">
+        <div class=" w-full grid grid-cols-12 lg:gap-10">
+
           <!-- Colonne texte -->
           <div class="col-span-12 lg:col-span-4 lg:pt-18">
             <div>
-              <h2 class="font-display font-bold text-[60px] lg:text-[98px] leading-[0.85] tracking-tighter space-x-4">
-                parlez-moi <span class="text-accent block">de votre</span> projet
-              </h2>
+
+              <h1 class="main__titles">
+                Partagez <span class="main__titles--color">votre</span> projet
+              </h1>
+
             </div>
             <div class="pl-24 pt-12 flex flex-col gap-3">
               <p class="group inline-flex items-center w-[200px]">
@@ -153,13 +94,13 @@
           <div class="col-span-12 lg:col-span-8 sm:col-span-12">
 
             <!-- Bizarrement si je mets des doubles quotes le prettier me met un espace devant la classe o_O-->
-            <form id='contactForm' action='#' method=" get" novalidate class="p-4 lg:p-24 s">
+            <form id='contactForm' action='#' method=" get" novalidate class="p-4 lg:p-24">
               <p id="messageConfirmation" class="p-6"></p>
               <!-- Champ Nom -->
               <div class="inputControl mb-6 flex flex-col">
                 <label for="fullName" class="block mb-1 text-base font-medium">nom et prénom*</label>
                 <input type="text" name="fullName" id="fullName"
-                  class="w-full h-[36px] bg-transparent border-b-2 border-black focus:outline-none focus:border-sky-500">
+                  class="w-full h-[36px] bg-transparent border-b-2 border-black focus:outline-none focus:border-accent">
                 <div class="errorMessage"></div>
               </div>
 
@@ -167,7 +108,7 @@
               <div class="inputControl mb-12 flex flex-col">
                 <label for="email" class="block mb-1 text-base font-medium">courriel (nom@domaine.com)*</label>
                 <input type="email" name="email" id="email" required
-                  class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-sky-500">
+                  class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-accent">
                 <div class="errorMessage"></div>
               </div>
 
@@ -175,7 +116,7 @@
               <div class="inputControl mb-12 flex flex-col">
                 <label for="phone" class="block mb-1 text-base font-medium">téléphone(12345678)</label>
                 <input type="tel" name="phone" id="phone" required
-                  class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-sky-500">
+                  class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-accent">
                 <div class="errorMessage"></div>
               </div>
 
@@ -183,14 +124,14 @@
               <div class="inpuControl mb-12 flex flex-col">
                 <label for="company" class="block mb-1 text-base font-medium">organisation/compagnie</label>
                 <input type="text" name="company" id="company"
-                  class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-sky-500">
+                  class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-accent">
                 <div class="errorMessage"></div>
               </div>
               <!-- Sujet -->
               <div class="inputControl mb-12 flex flex-col">
                 <label for="subject" class="block mb-1 text-base font-medium">type de projet*</label>
                 <select name="subject" id="subject" required
-                  class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-sky-500">
+                  class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-accent">
                   <option value="">Choisissez</option>
                   <option value="Integration">Site web</option>
                   <option value="Prototypage UX">UX-UI</option>
@@ -203,7 +144,7 @@
               <div class="inputControl mb-12 flex flex-col">
                 <label for="subject" class="block mb-1 text-base font-medium">quel est votre budget ?*</label>
                 <select name="subject" id="subject" required
-                  class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-sky-500">
+                  class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-accent">
                   <option value="">Choisissez</option>
                   <option value="3000-5000">3000-5000</option>
                   <option value="5000-10000">5000-10000</option>

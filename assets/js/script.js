@@ -18,18 +18,18 @@ fetch('_navbar.html')
     });
 
 
-// Formulaire
-const form = document.getElementById('contact');
-const openForm = document.querySelector('.contact-circle');
-const btnClose = document.getElementById('btnClose');
+//  Code pour la version 3 
+// const form = document.getElementById('contact');
+// const openForm = document.querySelector('.contact-circle');
+// const btnClose = document.getElementById('btnClose');
 
-openForm.addEventListener('click', () => {
-    form.classList.toggle('open');
+// openForm.addEventListener('click', () => {
+//     form.classList.toggle('open');
 
-});
-btnClose.addEventListener('click', (e) => {
-    form.classList.toggle('open');
-});
+// });
+// btnClose.addEventListener('click', (e) => {
+//     form.classList.toggle('open');
+// });
 
 
 //  Formulaire de contact
@@ -47,7 +47,7 @@ contactForm.addEventListener('submit', (event) => {
 
     } else {
         event.preventDefault();
-        messageConfirmation.textContent = "Le mail a bien été envoyé !";
+        messageConfirmation.textContent = "Merci, votre formulaire a bien été envoyé ! Je vous répondrais sous peu.";
         console.log("Le mail a bien été envoyé !")
     }
 
