@@ -3,19 +3,19 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 //Navigation
 
-fetch('_navbar.html')
-    .then(r => r.text())
-    .then(html => {
-        document.getElementById('navbar').innerHTML = html;
+// fetch('_navbar.html')
+//     .then(r => r.text())
+//     .then(html => {
+//         document.getElementById('navbar').innerHTML = html;
 
-        const toggle = document.querySelector('.toggle');
-        const overlay = document.querySelector('.overlay');
+//         const toggle = document.querySelector('.toggle');
+//         const overlay = document.querySelector('.overlay');
 
-        toggle.addEventListener('click', () => {
-            toggle.classList.toggle('open');
-            overlay.classList.toggle('open');
-        });
-    });
+//         toggle.addEventListener('click', () => {
+//             toggle.classList.toggle('open');
+//             overlay.classList.toggle('open');
+//         });
+//     });
 
 
 //  Code pour la version 3 
@@ -37,6 +37,11 @@ const contactForm = document.getElementById('contactForm');
 const fullName = document.getElementById('fullName');
 const email = document.getElementById('email');
 const phone = document.getElementById('phone');
+const subject = document.getElementById('subject');
+const budget = document.getElementById('budget');
+const deadline = document.getElementsByName('deadline');
+
+// Message de réussite
 const message = document.getElementById('message');
 const messageConfirmation = document.getElementById('messageConfirmation');
 
@@ -60,6 +65,7 @@ function validateForm() {
     const nameValue = fullName.value.trim();
     const emailValue = email.value.trim();
     const phoneValue = phone.value.trim();
+    const subjectValue = subject.value;
     const messageValue = message.value;
 
     // Validation Nom et Prénom
@@ -90,6 +96,13 @@ function validateForm() {
         noError = false;
     } else {
         setSuccess(phone);
+    }
+    // Validation du sujet
+    if (subjectValue === '') {
+        setError(subject, "Le champ est requis");
+        noError = false;
+    } else {
+        setSuccess(subject);
     }
 
     //Validation message

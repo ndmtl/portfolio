@@ -191,12 +191,14 @@
 
 
  .inputControl.error input,
- .inputControl.error textarea {
+ .inputControl.error textarea,
+ .inputControl.error select {
      border-bottom: 2px solid red;
  }
 
  .inputControl.success input,
- .inputControl.success textarea {
+ .inputControl.success textarea,
+ .inputControl.error select {
      border-bottom: 2px solid rgb(14, 186, 34);
  }
 

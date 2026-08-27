@@ -36,7 +36,32 @@
 
 <body class="illustration__bg text-ink">
   <!--header-->
-  <header id="navbar"></header>
+  <header id="navbar">
+
+    <nav class="w-full px-6">
+      <div class="w-full grid grid-cols-12">
+        <div class="col-span-2 navbar__links"><a href="index.html">Nathalie Depierre</a></div>
+        <div class="col-start-5 col-span-2 text-right navbar__links"><a href="index.html">Index</a></div>
+        <div class="col-span-2 text-right navbar__links"><a href="projets.html">Projets</a></div>
+        <div class="col-span-2 text-right navbar__links"><a href="a-propos.html">À propos</a></div>
+        <div class="col-span-2 text-right navbar__links"><a href="contact.html">Contact</a></div>
+      </div>
+      <button class="toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+    </nav>
+
+    <!-- OVERLAY -->
+    <div class="overlay">
+      <ul>
+        <li><a href="index.html">Index</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
 
   <main>
     <!--hero-->
@@ -145,7 +170,7 @@
   </main>
 
   <footer id="footer" class="py-8">
-    <div class="container px-4">
+    <div class="w-full px-4">
       <div class="w-full grid grid-cols-12 gap-4 items-stretch">
         <div class="col-span-12 lg:col-span-10">
           <span class="font-fugaz" id="fl1">construisons</span>
@@ -153,7 +178,7 @@
           <span class="fl" id="fl3">ensemble</span>
         </div>
         <div class="col-span-12 lg:col-span-2">
-          <a href="contact.html" class="contact-circle">
+          <a class="contact-circle">
             <svg id="rotatingText" viewBox="0 0 140 140">
               <defs>
                 <path id="circle-path" d="M70,70 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
@@ -174,10 +199,10 @@
           </a>
         </div>
       </div>
-      <div class="w-full flex flex-row justify-between pt-8">
-        <span>© Copyright <span id="year"></span></span>
-        <span>Basée à Montréal</span>
-        <span>Codé avec ♡ par Nathalie Depierre</span>
+      <div class="w-full flex flex-row justify-between items-center pt-8">
+        <span>© Copyright <span id="year"></span> / Codé avec ♡ par Nathalie Depierre </span>
+        <span class="text-[66px] font-bold tracking-tight">DB.com</span>
+        <span><a href="#top">retour en haut</a></span>
       </div>
     </div>
   </footer>
