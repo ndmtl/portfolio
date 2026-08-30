@@ -51,49 +51,9 @@
      outline: 1px solid blue !important;
  } */
 
-
-
- /* Textes et liens
- -----------------*/
- .main__titles {
-     font-family: 'Neue Haas Display', Helvetica, sans-serif;
-     letter-spacing: -6px;
-     font-weight: 700;
-     line-height: 0.95;
-     font-size: clamp(4.5rem, 2.894rem + 6.85vw, 9.0625rem);
- }
-
- .main__titles--accent {
-     font-family: 'Oooh Baby', cursive;
-     color: var(--color-accent);
- }
-
- .main__titles--color {
-     color: var(--color-accent);
- }
-
- .navbar__links {
-     font-size: 1.5rem;
-     padding-top: 1rem;
- }
-
- .title__work {
-     font-size: 1rem;
-     padding-top: 1rem;
- }
-
- .title__work--tags {
-     background-color: var(--color-ink);
-     color: white;
-     font-size: 1.25;
-     width: fit-content;
-     padding: 0.25rem 0.5rem;
- }
-
- .illustration__bg {
-     background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
-     background-size: 20px 20px;
-
+ /*SMOOTH SCROLL*/
+ html {
+     scroll-behavior: smooth;
  }
 
  /* TOGGLE BUTTON */
@@ -147,37 +107,9 @@
      pointer-events: all;
  }
 
- .overlay ul {
-     list-style: none;
-     display: flex;
-     flex-direction: column;
-     gap: 0;
-     justify-items: center;
- }
-
- .overlay li,
- .overlay a {
-     padding: 0;
-     line-height: 0.85;
- }
-
- .overlay a {
-     text-decoration: none;
-     color: var(--ink);
-     font-size: 9rem;
-     font-weight: 700;
-     text-transform: lowercase;
-     letter-spacing: -0.02em;
-     transition: color 0.2s;
- }
-
- .overlay a:hover {
-     color: blue;
- }
-
  /* RESPONSIVE */
  @media (max-width: 960px) {
-     nav ul {
+     nav div {
          display: none;
      }
 
@@ -187,18 +119,21 @@
  }
 
 
- /* Gestion des erreurs du formulaire */
 
+ /* VALIDATION FORMULAIRE*/
 
  .inputControl.error input,
+ .inputControl.error input[type="radio"],
  .inputControl.error textarea,
  .inputControl.error select {
      border-bottom: 2px solid red;
  }
 
  .inputControl.success input,
+ .inputControl.success input[type="radio"],
+
  .inputControl.success textarea,
- .inputControl.error select {
+ .inputControl.success select {
      border-bottom: 2px solid rgb(14, 186, 34);
  }
 
@@ -207,8 +142,14 @@
      font-size: 0.85rem;
  }
 
+ .confirmation--attributs {
+     text-align: center;
+     margin: 2rem 0;
+     padding: 2rem;
+     border: 2px #000 solid;
+ }
 
- /*FOOTER*/
+
 
  /*ANIMATION SUR BTN CONTACT*/
  .contact-circle {
@@ -259,7 +200,13 @@
      }
  }
 
- /* Accélération au hover */
- .contact-circle:hover #rotatingText {
-     animation-duration: 2s;
+ /* IMAGE ANIMATION*/
+ .card__image {
+     border-radius: 0;
+     transition: transform 0.8s ease, border-radius 0.3s ease;
+ }
+
+ .card__image:hover {
+     transform: scale(1.05);
+     border-radius: 16px;
  }

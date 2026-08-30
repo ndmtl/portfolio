@@ -8,14 +8,18 @@
   <meta name="description"
     content="Designer multidisciplinaire, ux/ui design et intégratrice. Architecture, expérience utilisateur, prototypage, design visuel, Montréal ou à distance.">
   <!--Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/img/d-final_round.png">
+  <link rel="icon" type="image/x-icon" href="assets/icons/d-final_favicon.png">
   <!--Tailwind-->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <!--Styles-->
   <!-- <link rel="stylesheet" href="assets/css/normalize.css"> -->
   <link rel="stylesheet" href="assets/css/styles.css">
-
+  <!--GSAP-->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/gsap.js" defer></script>
   <style type="text/tailwindcss">
+
     @theme {
    --color-ink: #0a0a0a;
      --color-paper: #deded7;
@@ -26,76 +30,99 @@
       --font-sans: 'Neue Haas Display', sans-serif;
       --font-script: 'Oooh Baby', cursive;
     }
-    section {
-      margin-left: auto;
-      margin-right: auto;
-      min-height: 60vh;
-      width:100%;
-      background-color:var(--color-paper);
+     @layer components {
+      .title__work{
+        @apply my-4 uppercase  flex justify-between;
+      }
+    .title__work--tags {
+      @apply bg-ink text-white text-xl w-fit px-2 py-1 inline-block;
     }
-    .container {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 95%;
-           min-height: 100vh;
-       
-    }
+  }
   </style>
 
   <!--JS-->
   <script src="assets/js/script.js" defer></script>
 </head>
 
-<body class="bg-paper text-ink">
-  <!--header-->
-  <header id="navbar"></header>
 
+<body class="text-ink">
+  <div id="top"></div>
+  <!--header-->
+  <header id="navbar">
+
+    <nav class="w-full px-6">
+      <div class="w-full grid grid-cols-12">
+        <div class="col-span-2 text-2xl pt-4"><a href="index.html">Nathalie Depierre</a></div>
+        <div class="col-start-5 col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="index.html">Index</a>
+        </div>
+        <div class="col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="projets.html">Projets</a></div>
+        <div class="col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="a-propos.html">À propos</a></div>
+        <div class="col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="contact.html">Contact</a></div>
+      </div>
+      <button class="toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+    </nav>
+
+    <!-- OVERLAY -->
+    <div class="overlay">
+      <ul class="flex flex-col text-right">
+        <li><a href="index.html">Index</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+  <!--header-->
   <main>
 
+
     <!-- Contact-->
-    <section id="contact" class="w-full px-6 py-8">
+    <section id="contact" class="w-full px-6 py-8" data-fade-group>
       <div class="w-full mx-auto">
         <div class="w-full grid grid-cols-12 lg:gap-12">
 
           <!-- Colonne texte -->
-          <div class="col-span-12 lg:col-span-4 lg:pt-18">
+          <div class="col-span-12 lg:col-span-5 lg:pt-18 fade">
             <div>
 
-              <h1 class="main__titles">
-                Partagez <span class="main__titles--color">votre</span> projet
+              <h1 class="font-display font-bold text-[72px] lg:text-[145px] leading-[0.85] space-x-4">
+                Partagez <span class="text-accent">votre</span> projet
               </h1>
 
             </div>
-            <div class="pl-24 pt-12 flex flex-col gap-3">
-              <p class="group inline-flex items-center w-[200px]">
-                <a href="https://www.linkedin.com/in/nathalie-depierre/">linkedin</a>
+            <div class="pl-24 pt-12 flex flex-col gap-3 text-base font-mono uppercase">
+
+              <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
+                class="group inline-flex items-center gap-1 hover:text-accent">
+                LinkedIn
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                   stroke="currentColor"
-                  class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                  class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-              </p>
-              <p class="group inline-flex items-center w-[200px]">
-                <a href="https://www.instagram.com/nathaliedepierremtl/">instagram</a> <svg
-                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                </svg>
+              </a>
+
+              <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
+                class="group inline-flex items-center gap-1 hover:underline">
+                GitHub
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                   stroke="currentColor"
-                  class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                  class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-              </p>
-              <p class="group inline-flex items-center w-[200px]">
-                <a href="https://github.com/ndmtl">github</a> <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                  viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-                  class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-              </p>
+                </svg>
+              </a>
+
             </div>
           </div>
-
           <!-- Colonne formulaire -->
-          <div class="col-span-12 lg:col-span-8 sm:col-span-12">
+          <div class="col-span-12 lg:col-span-7 sm:col-span-12 fade">
 
-            <!-- Bizarrement si je mets des doubles quotes le prettier me met un espace devant la classe o_O-->
+            <!-- Bizarrement si je mets des guillemets le prettier met espace devant la classe o_O-->
             <form id='contactForm' action='#' method=" get" novalidate class="p-4 lg:p-24">
-              <p id="messageConfirmation" class="p-6"></p>
+
               <!-- Champ Nom -->
               <div class="inputControl mb-6 flex flex-col">
                 <label for="fullName" class="block mb-1 text-base font-medium">nom et prénom*</label>
@@ -182,12 +209,12 @@
                 <label for="message" required class="block mb-1 text-base font-medium">décrivez votre projet*</label>
 
                 <textarea name="message" id="message" rows="4"
-                  class="w-full bg-transparent  border-b-2 border-black  focus:outline-none focus:border-blue-500 resize-none"></textarea>
+                  class="w-full bg-transparent  border-b-2 border-black  focus:outline-none focus:border-accent resize-none"></textarea>
                 <div class="errorMessage"></div>
               </div>
 
               <button type="submit"
-                class="group inline-flex items-center gap-2 bg-black text-white hover:bg-blue-700 transition-colors duration-200 ease-in-out px-6 py-3 cursor-pointer">
+                class="group inline-flex items-center gap-2 bg-black text-white hover:bg-accent transition-colors duration-200 ease-in-out px-6 py-3 cursor-pointer">
                 <span>envoyer le message</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                   stroke="currentColor"
@@ -195,6 +222,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                 </svg>
               </button>
+              <p id="messageConfirmation"></p>
             </form>
           </div>
 

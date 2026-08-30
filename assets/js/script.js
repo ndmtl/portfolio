@@ -1,35 +1,7 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
 
-//Navigation
 
-// fetch('_navbar.html')
-//     .then(r => r.text())
-//     .then(html => {
-//         document.getElementById('navbar').innerHTML = html;
-
-//         const toggle = document.querySelector('.toggle');
-//         const overlay = document.querySelector('.overlay');
-
-//         toggle.addEventListener('click', () => {
-//             toggle.classList.toggle('open');
-//             overlay.classList.toggle('open');
-//         });
-//     });
-
-
-//  Code pour la version 3 
-// const form = document.getElementById('contact');
-// const openForm = document.querySelector('.contact-circle');
-// const btnClose = document.getElementById('btnClose');
-
-// openForm.addEventListener('click', () => {
-//     form.classList.toggle('open');
-
-// });
-// btnClose.addEventListener('click', (e) => {
-//     form.classList.toggle('open');
-// });
 
 
 //  Formulaire de contact
@@ -52,7 +24,8 @@ contactForm.addEventListener('submit', (event) => {
 
     } else {
         event.preventDefault();
-        messageConfirmation.textContent = "Merci, votre formulaire a bien été envoyé ! Je vous répondrais sous peu.";
+        messageConfirmation.textContent = "Merci, votre formulaire a bien été envoyé ! Je vous répondrai sous peu.";
+        messageConfirmation.classList.add('confirmation--attributs');
         console.log("Le mail a bien été envoyé !")
     }
 
@@ -66,6 +39,7 @@ function validateForm() {
     const emailValue = email.value.trim();
     const phoneValue = phone.value.trim();
     const subjectValue = subject.value;
+    const budgetValue = budget.value;
     const messageValue = message.value;
 
     // Validation Nom et Prénom
@@ -99,13 +73,40 @@ function validateForm() {
     }
     // Validation du sujet
     if (subjectValue === '') {
-        setError(subject, "Le champ est requis");
+        setError(subject, "Ce champ ne peut pas être vide");
         noError = false;
     } else {
         setSuccess(subject);
     }
 
-    //Validation message
+    //Validation du budget
+    if (budgetValue === '') {
+        setError(budget, "Ce champ ne peut pas être vide");
+        noError = false;
+    } else {
+        setSuccess(budget);
+    }
+    //Validation de l'échéance
+    let radioSelected = false;
+
+    deadline.forEach(element => {
+        if (element.checked) {
+            radioSelected = true;
+        }
+    });
+    if (!radioSelected) {
+
+        setError(deadline[0], "Veuillez choisir une échéance");
+        noError = false;
+    }
+    else {
+        setSuccess(deadline[0]);
+
+    }
+
+
+
+    //Validation du message
     if (messageValue === '') {
         setError(message, "Ce champ ne peut pas être vide");
         noError = false;
@@ -117,7 +118,7 @@ function validateForm() {
 
 //
 function setError(element, message) {
-    const inputControl = element.parentElement;
+    const inputControl = element.closest('.inputControl');
     const errorDisplay = inputControl.querySelector('.errorMessage');
     errorDisplay.innerText = message;
     inputControl.classList.add('error');
@@ -125,7 +126,7 @@ function setError(element, message) {
 }
 
 function setSuccess(element) {
-    const inputControl = element.parentElement;
+    const inputControl = element.closest('.inputControl');
     const errorDisplay = inputControl.querySelector('.errorMessage');
     errorDisplay.innerText = '';
     inputControl.classList.add('success');

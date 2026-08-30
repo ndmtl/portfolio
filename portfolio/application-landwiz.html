@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study : Landwiz SaaS Dashboard - Nathalie Depierre</title>
+  <meta name="description"
+    content="Landwiz : conception d'un tableau de bord bidirectionnel reliant développeurs immobiliers et professionnels du secteur.">
+  <!--Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/img/d-final_round.png">
+  <!--Tailwind-->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!--GSAP-->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/gsap.js" defer></script>
+  <!--Styles-->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-ink: #0a0a0a;
+      --color-paper: #deded7;
+      --color-accent: blue;
+
+      --font-mono: "Inter Tight", sans-serif;
+      --font-display: "Inter", sans-serif;
+      --font-sans: 'Neue Haas Display', sans-serif;
+      --font-script: 'Oooh Baby', cursive;
+    }
+  </style>
+
+  <!--JS-->
+  <script src="assets/js/script.js" defer></script>
+</head>
+
+<body class="illustration__bg text-ink">
+  <div id="top"></div>
+  <!--header-->
+  <header id="navbar">
+    <nav class="w-full px-6">
+      <div class="w-full grid grid-cols-12">
+        <div class="col-span-2 navbar__links"><a href="index.html">Nathalie Depierre</a></div>
+        <div class="col-start-5 col-span-2 text-right navbar__links"><a href="index.html">Index</a></div>
+        <div class="col-span-2 text-right navbar__links"><a href="projets.html">Projets</a></div>
+        <div class="col-span-2 text-right navbar__links"><a href="a-propos.html">À propos</a></div>
+        <div class="col-span-2 text-right navbar__links"><a href="contact.html">Contact</a></div>
+      </div>
+      <button class="toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- OVERLAY -->
+    <div class="overlay">
+      <ul class="flex flex-col text-right">
+        <li><a href="index.html">Index</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="a-propos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+  <!--header-->
+
+  <main>
+
+    <!-- Hero -->
+    <section id="case-hero" class="px-4 py-24 lg:px-6 lg:py-32">
+      <div class="grid grid-cols-12 gap-0">
+        <div class="col-span-12 lg:col-span-8">
+          <p class="mb-6 font-mono text-xs uppercase tracking-[0.2em]">[SaaS · Immobilier · Dashboard Design]</p>
+          <h1 class="mb-8 text-4xl font-medium leading-tight tracking-tight lg:text-6xl">
+            Landwiz — Automatiser l'écosystème immobilier
+          </h1>
+          <p class="max-w-2xl text-lg">
+            Conception d'un tableau de bord bidirectionnel reliant développeurs immobiliers et professionnels
+            du secteur (notaires, architectes, arpenteurs).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats / cadrage projet -->
+    <section id="case-stats" class="px-4 pb-24 lg:px-6">
+      <div class="grid grid-cols-12 gap-6">
+        <div class="col-span-12 border-2 border-gray-400 p-8 md:col-span-4 case-fade">
+          <p class="mb-3 font-mono text-xs uppercase tracking-[0.2em]">[Objectif]</p>
+          <p>Automatiser la recherche de terrains et la mise en relation avec des experts.</p>
+        </div>
+        <div class="col-span-12 border-2 border-gray-400 p-8 md:col-span-4 case-fade">
+          <p class="mb-3 font-mono text-xs uppercase tracking-[0.2em]">[Cible duale]</p>
+          <p>Développeurs immobiliers (acheteurs) &amp; professionnels (prestataires).</p>
+        </div>
+        <div class="col-span-12 border-2 border-gray-400 p-8 md:col-span-4 case-fade">
+          <p class="mb-3 font-mono text-xs uppercase tracking-[0.2em]">[Core feature]</p>
+          <p>Comparaison d'offres et système de paiement intégré.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problématique -->
+    <section id="case-problem" class="px-4 py-24 lg:px-6">
+      <div class="grid grid-cols-12 items-center gap-12">
+        <div class="col-span-12 lg:col-span-6">
+          <h2 class="mb-6 text-2xl font-medium tracking-tight lg:text-3xl">La problématique</h2>
+          <p class="mb-4">
+            Le développement immobilier est freiné par des processus manuels lents : recherche de terrains,
+            passif environnemental et sollicitation de devis par courriels éparpillés.
+          </p>
+          <p><strong>Landwiz centralise tout</strong> : de la localisation du terrain à la sélection du
+            professionnel, jusqu'au paiement final.</p>
+        </div>
+        <div class="col-span-12 border border-dashed border-gray-400 bg-paper p-10 lg:col-span-6">
+          <p class="mb-4 font-mono text-xs uppercase tracking-[0.2em]">[Le workflow conçu]</p>
+          <ul class="space-y-3">
+            <li class="relative pl-6"><span class="absolute left-0 font-bold">→</span>Recherche par géolocalisation de terrain.</li>
+            <li class="relative pl-6"><span class="absolute left-0 font-bold">→</span>Appel d'offres automatisé aux experts locaux.</li>
+            <li class="relative pl-6"><span class="absolute left-0 font-bold">→</span>Tableau comparatif des devis reçus.</li>
+            <li class="relative pl-6"><span class="absolute left-0 font-bold">→</span>Gestion des succursales et disponibilités côté pro.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Design d'interfaces (section sombre, écho de #motto) -->
+    <section id="case-interfaces" class="bg-ink px-4 py-24 text-white lg:px-6">
+      <div class="mb-12 grid grid-cols-12 gap-6">
+        <div class="col-span-12 lg:col-span-8">
+          <h2 class="mb-6 text-2xl font-medium tracking-tight lg:text-3xl">Design d'interfaces de gestion</h2>
+          <p class="max-w-2xl">
+            L'enjeu UX était de créer une interface dense en informations mais exempte de surcharge cognitive,
+            permettant de gérer des dossiers complexes en un coup d'œil.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-12 gap-6">
+        <div class="col-span-12 md:col-span-6 case-fade">
+          <p class="mb-3 font-mono text-xs uppercase tracking-[0.2em]">[Vue développeur]</p>
+          <p class="mb-4 text-sm text-neutral-300">Focus sur le suivi des appels d'offres et la comparaison des
+            coûts.</p>
+          <div class="flex min-h-[300px] items-center justify-center border border-neutral-700 bg-neutral-900 italic text-neutral-400">
+            [Mockup : Comparateur d'offres de services]
+          </div>
+        </div>
+        <div class="col-span-12 md:col-span-6 case-fade">
+          <p class="mb-3 font-mono text-xs uppercase tracking-[0.2em]">[Vue professionnel]</p>
+          <p class="mb-4 text-sm text-neutral-300">Focus sur la gestion des mandats, succursales et paiements
+            entrants.</p>
+          <div class="flex min-h-[300px] items-center justify-center border border-neutral-700 bg-neutral-900 italic text-neutral-400">
+            [Mockup : Gestion du profil et des devis]
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture & intégration -->
+    <section id="case-architecture" class="px-4 py-24 lg:px-6">
+      <div class="grid grid-cols-12 items-center gap-12">
+        <div class="order-2 col-span-12 flex min-h-[300px] items-center justify-center bg-neutral-900 italic text-neutral-400 lg:order-1 lg:col-span-6">
+          [Image : Structure de données / Flux de paiement]
+        </div>
+        <div class="order-1 col-span-12 lg:order-2 lg:col-span-6">
+          <h2 class="mb-6 text-2xl font-medium tracking-tight lg:text-3xl">Architecture &amp; intégration</h2>
+          <p class="mb-4">
+            Pour Landwiz, j'ai agi en tant que <strong>conceptrice numérique</strong> pour assurer la logique
+            transactionnelle :
+          </p>
+          <ul class="space-y-3">
+            <li class="relative pl-6"><span class="absolute left-0 font-bold">→</span>Conception de formulaires dynamiques pour les appels d'offres.</li>
+            <li class="relative pl-6"><span class="absolute left-0 font-bold">→</span>Interface de gestion des disponibilités temps réel.</li>
+            <li class="relative pl-6"><span class="absolute left-0 font-bold">→</span>Réflexion sur l'intégration du module de paiement sécurisé.</li>
+            <li class="relative pl-6"><span class="absolute left-0 font-bold">→</span>Structure de données permettant le filtrage par proximité géographique.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Résultat -->
+    <section id="case-result" class="border-t border-gray-300 px-4 py-24 text-center lg:px-6">
+      <h2 class="mb-6 text-2xl font-medium tracking-tight lg:text-3xl">Résultat : une plateforme pivot</h2>
+      <p class="mx-auto max-w-2xl text-lg">
+        En transformant une recherche manuelle fastidieuse en un écosystème automatisé, Landwiz devient un
+        outil indispensable pour l'efficacité opérationnelle des développeurs immobiliers.
+      </p>
+    </section>
+
+  </main>
+
+  <!--Footer-->
+  <footer id="footer" class="py-8">
+    <div class="px-6 mx-auto grid grid-cols-12 gap-12">
+      <div class="col-span-12 lg:col-span-3"></div>
+
+      <div class="col-span-12 lg:col-span-3">
+        <ul class="flex flex-col">
+          <li><a href="index.html">Index</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-12 lg:col-span-3">
+        <div class="flex flex-col">
+          <p class="group inline-flex items-center w-[200px]">
+            <a href="https://www.linkedin.com/in/nathalie-depierre/">linkedin</a>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor"
+              class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+            </svg>
+          </p>
+          <p class="group inline-flex items-center w-[200px]">
+            <a href="https://www.instagram.com/nathaliedepierremtl/">instagram</a>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor"
+              class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+            </svg>
+          </p>
+          <p class="group inline-flex items-center w-[200px]">
+            <a href="https://github.com/ndmtl">github</a>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor"
+              class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+            </svg>
+          </p>
+        </div>
+      </div>
+
+      <div class="col-span-12 lg:col-span-3 self-end">
+        <a class="contact-circle">
+          <svg id="rotatingText" viewBox="0 0 140 140">
+            <defs>
+              <path id="circle-path" d="M70,70 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
+            </defs>
+            <text>
+              <textPath href="#circle-path">CONTACTEZ-MOI • CONTACTEZ-MOI •</textPath>
+            </text>
+          </svg>
+          <div class="dot">
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+              <path
+                d="M400,600c-50.5,0-89.1-25.2-113.35-47.25-10.29-9.38-19.72-19.65-28.2-30.7-3.82-4.88-7.35-9.97-10.6-15.25-10.38-17.92-4.27-40.86,13.65-51.25,17.47-10.12,39.81-4.6,50.55,12.5,7.14,10.7,15.53,20.5,25,29.2,17.05,15.5,38.45,27.75,62.95,27.75s45.9-12.3,62.9-27.75c9.47-8.7,17.86-18.5,25-29.2,10.7-17.74,33.76-23.45,51.5-12.75s23.45,33.76,12.75,51.5h0l-10.6,15.25c-6.4,8.35-15.85,19.5-28.2,30.7-24.25,22-62.85,47.25-113.35,47.25ZM250,300c0-27.61,22.39-50,50-50h.35c27.61,0,50,22.39,50,50s-22.39,50-50,50h-.35c-27.61,0-50-22.39-50-50ZM500,250c-27.61,0-50,22.39-50,50s22.39,50,50,50h.35c27.61,0,50-22.39,50-50s-22.39-50-50-50h-.35Z" />
+              <path
+                d="M400,0C179.09,0,0,179.09,0,400s179.09,400,400,400,400-179.09,400-400S620.91,0,400,0ZM75,400c0-179.49,145.51-325,325-325s325,145.51,325,325-145.51,325-325,325S75,579.49,75,400Z"
+                style="fill-rule: evenodd;" />
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="px-6 mx-auto grid grid-cols-12 gap-12 items-end">
+      <div class="col-span-12 lg:col-span-3 p-0 m-0">
+        <span class="text-[66px] font-bold tracking-tight">©<span id="year"></span></span>
+      </div>
+      <div class="col-span-12 lg:col-span-3"></div>
+      <div class="col-span-12 lg:col-span-3">
+        <span>Codé avec ♡ par Nathalie Depierre</span>
+      </div>
+      <div class="col-span-12 lg:col-span-3 flex justify-end">
+        <span><a href="#top">retour en haut</a></span>
+      </div>
+    </div>
+  </footer>
+  <!--Footer-->
+</body>
+
+</html>
