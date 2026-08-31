@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        @font-face {
+            font-family: 'Neue Montreal';
+            src: url('path-to-your-font/NeueMontreal-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Neue Montreal', sans-serif;
+            background: #f8f8f8;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+        }
+
+        .title {
+            font-size: clamp(3rem, 10vw, 8rem);
+            margin-bottom: 2rem;
+            line-height: 1;
+        }
+
+        .motto {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            opacity: 0.8;
+        }
+
+        .about-section {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .bio {
+            grid-column: 2 / span 5;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
+        .image-container {
+            grid-column: 8 / span 4;
+            aspect-ratio: 3/4;
+            background: #333;
+            opacity: 0;
+            transform: translateY(100%);
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .bio, .image-container {
+                grid-column: 1 / -1;
+            }
+
+            .image-container {
+                aspect-ratio: 1/1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="title">About Me</h1>
+            <p class="motto">Creating digital experiences with purpose and passion</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="bio">
+            <p>As a designer and creative technologist, I blend artistic vision with technical expertise to craft meaningful digital experiences. With over a decade of experience in the field, I've developed a deep understanding of how design can shape the way we interact with technology.</p>
+            <br>
+            <p>My approach combines minimalist aesthetics with functional innovation, always striving to create work that not only looks beautiful but serves a clear purpose. I believe in the power of thoughtful design to solve complex problems and create meaningful connections.</p>
+            <br>
+            <p>Whether I'm designing user interfaces, crafting brand identities, or developing interactive experiences, my goal remains the same: to create work that resonates, inspires, and makes a lasting impact.</p>
+        </div>
+        <div class="image-container">
+            <!-- Replace with actual image -->
+            <img src="/api/placeholder/600/800" alt="Designer portrait" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </section>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Parallax effect for hero content
+        gsap.to('.hero-content', {
+            scrollTrigger: {
+                trigger: '.hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 1.5,
+            },
+            y: 100,
+            opacity: 0.3,
+            ease: 'power1.inOut'
+        });
+
+        // Bio animation
+        gsap.to('.bio', {
+            scrollTrigger: {
+                trigger: '.about-section',
+                start: 'top center+=100',
+                end: 'top center-=100',
+                scrub: 1.2,
+            },
+            y: 0,
+            opacity: 1,
+            ease: 'power2.out'
+        });
+
+        // Image animation
+        gsap.to('.image-container', {
+            scrollTrigger: {
+                trigger: '.about-section',
+                start: 'top center+=100',
+                end: 'top center-=100',
+                scrub: 1.2,
+            },
+            y: 0,
+            opacity: 1,
+            ease: 'power2.out'
+        });
+
+        // Initial load animations
+        gsap.from('.title', {
+            y: 50,
+            opacity: 0,
+            duration: 1,
+            ease: 'power2.out'
+        });
+
+        gsap.from('.motto', {
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            delay: 0.3,
+            ease: 'power2.out'
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        /* Previous styles remain the same until projects section */
+        
+        .projects {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .project-card {
+            grid-column: span 5;
+            margin-bottom: 2rem;
+            position: relative;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(50px);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .project-card:nth-child(even) {
+            grid-column: 7 / span 5;
+            margin-top: 4rem;
+        }
+
+        .project-card:nth-child(3n) {
+            grid-column: 2 / span 5;
+            margin-top: -2rem;
+        }
+
+        .project-content {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .project-card,
+            .project-card:nth-child(even),
+            .project-card:nth-child(3n) {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+
+        /* Rest of your original styles remain the same */
+    </style>
+</head>
+<!-- Rest of your HTML remains the same -->
+</html>

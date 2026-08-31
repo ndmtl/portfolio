@@ -202,11 +202,10 @@
 
  /* IMAGE ANIMATION*/
  .card__image {
-     border-radius: 0;
-     transition: transform 0.8s ease, border-radius 0.3s ease;
+     transform: rotate(0deg);
+     transition: transform 0.8s ease;
  }
 
  .card__image:hover {
-     transform: scale(1.05);
-     border-radius: 16px;
+     transform: scale(1.25) rotate(-3deg);
  }

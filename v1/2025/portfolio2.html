@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Portfolio</title>
+    <!-- GSAP for smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        @font-face {
+            font-family: 'Neue Montreal';
+            src: url('path-to-your-font/NeueMontreal-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            --grid-cols-12: repeat(12, 1fr);
+            --grid-cols-6: repeat(6, 1fr);
+            --grid-cols-4: repeat(4, 1fr);
+            --grid-cols-2: repeat(2, 1fr);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Neue Montreal', sans-serif;
+            background: #f8f8f8;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            width: 100%;
+            padding: 2rem;
+            z-index: 1000;
+            mix-blend-mode: difference;
+            color: white;
+        }
+
+        .hamburger {
+            width: 30px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            position: absolute;
+            transition: 0.3s;
+        }
+
+        .hamburger span:nth-child(1) { top: 0; }
+        .hamburger span:nth-child(2) { top: 50%; }
+        .hamburger span:nth-child(3) { top: 100%; }
+
+        .nav.active .hamburger span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav.active .hamburger span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav.active .hamburger span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            display: grid;
+            place-items: center;
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+
+        .nav.active .menu {
+            transform: translateX(0);
+        }
+
+        /* Hero Section with perspective */
+        .hero {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: var(--grid-cols-12);
+            place-items: center;
+            padding: 2rem;
+            position: relative;
+            perspective: 1000px;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            grid-column: 2 / span 10;
+            font-size: clamp(2rem, 8vw, 6rem);
+            text-align: center;
+            transform-style: preserve-3d;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Projects section with depth */
+        .projects-container {
+            position: relative;
+            perspective: 1000px;
+            padding: 4rem 0;
+            overflow: hidden;
+        }
+
+        .projects {
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+        }
+
+        .project-card {
+            min-height: 300px;
+            position: relative;
+            background-color: #000;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            transform-style: preserve-3d;
+            transform: translateZ(0) rotate(0deg);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform, opacity;
+            backface-visibility: hidden; /* Prevent flickering during rotation */
+        }
+
+        .project-card:hover {
+            transform: translateZ(40px) scale(1.02) rotate(2deg);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .project-card-content {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            color: white;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-category {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 1200px) {
+            .projects {
+                grid-template-columns: var(--grid-cols-6);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects {
+                grid-template-columns: var(--grid-cols-4);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects {
+                grid-template-columns: var(--grid-cols-2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>Home</li>
+                <li>Projects</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            Crafting digital experiences through thoughtful design
+        </div>
+    </section>
+
+    <section class="projects" id="projects"></section>
+
+    <script>
+        // Initialize GSAP ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Navigation Toggle
+        const nav = document.querySelector('.nav');
+        const hamburger = document.querySelector('.hamburger');
+        
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Project Data
+        const projects = [
+            { title: 'Digital Platform', category: 'UX Design', color: '#FF6B6B' },
+            { title: 'Brand Identity', category: 'Branding', color: '#4ECDC4' },
+            { title: 'Mobile App', category: 'UI/UX', color: '#45B7D1' },
+            { title: 'E-commerce', category: 'Web Design', color: '#96CEB4' },
+            { title: 'Marketing Campaign', category: 'Digital', color: '#FFEEAD' },
+            { title: 'Product Design', category: 'Industrial', color: '#D4A5A5' },
+            { title: 'Website Redesign', category: 'Web', color: '#9FA4A9' },
+            { title: 'Motion Graphics', category: 'Animation', color: '#CC527A' }
+        ];
+
+        // Shuffle array function
+        const shuffleArray = (array) => {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        };
+
+        // Create and append project cards
+        const projectsContainer = document.getElementById('projects');
+        
+        shuffleArray([...projects]).forEach(project => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.style.backgroundColor = project.color;
+            // Randomize card heights
+            const heights = ['300px', '400px', '500px'];
+            card.style.height = heights[Math.floor(Math.random() * heights.length)];
+            
+            card.innerHTML = `
+                <div class="project-card-content">
+                    <h3 class="project-title">${project.title}</h3>
+                    <p class="project-category">${project.category}</p>
+                </div>
+            `;
+            
+            projectsContainer.appendChild(card);
+        });
+
+        // Enhanced scroll animations combining depth and rotation
+        // Smooth parallax effect for hero title remains the same
+        gsap.to('.hero-content', {
+            scrollTrigger: {
+                trigger: '.hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 1.5,
+                ease: 'power1.inOut'
+            },
+            scale: 0.5,
+            opacity: 0,
+            y: -100,
+            ease: 'power1.inOut'
+        });
+
+        // Define corner starting positions
+        const corners = [
+            { x: -100, y: -100, rotation: -20 },  // top-left
+            { x: 100, y: -100, rotation: 20 },    // top-right
+            { x: -100, y: 100, rotation: 20 },    // bottom-left
+            { x: 100, y: 100, rotation: -20 }     // bottom-right
+        ];
+
+        // Cards appear with combined depth and rotation effect
+        gsap.utils.toArray('.project-card').forEach((card, index) => {
+            // Cycle through corner positions
+            const corner = corners[index % corners.length];
+            
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top bottom+=100',
+                    end: 'top center+=100',
+                    scrub: 1.2,
+                    ease: 'power1.inOut'
+                }
+            });
+
+            tl.from(card, {
+                opacity: 0,
+                scale: 0.9,
+                translateZ: -200,
+                x: corner.x,
+                y: corner.y,
+                rotation: corner.rotation,
+                duration: 1.5,
+                ease: 'power2.inOut'
+            });
+        });
+
+        // Initial load animation with random directions
+        window.addEventListener('load', () => {
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                const randomDirection = directions[Math.floor(Math.random() * directions.length)];
+                const randomRotation = (Math.random() - 0.5) * 90; // More rotation: -45 to 45 degrees
+                
+                gsap.from(card, {
+                    x: randomDirection.x * 2.5, // Even more distance
+                    y: randomDirection.y * 2.5,
+                    opacity: 0,
+                    duration: 0.8, // Faster animation
+                    ease: 'power2.out',
+                    delay: Math.random() * 0.3, // Shorter delay between cards
+                    rotate: randomRotation
+                });
+            });
+        });
+    </script>
+</body>
+</html>

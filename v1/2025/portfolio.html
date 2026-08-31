@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        @font-face {
+            font-family: 'Neue Montreal';
+            src: url('path-to-your-font/NeueMontreal-Regular.woff2') format('woff2');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Neue Montreal', sans-serif;
+            background: #f8f8f8;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            width: 100%;
+            padding: 2rem;
+            z-index: 1000;
+            mix-blend-mode: difference;
+            color: white;
+        }
+
+        .hamburger {
+            width: 30px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            position: absolute;
+            transition: 0.3s;
+        }
+
+        .hamburger span:nth-child(1) { top: 0; }
+        .hamburger span:nth-child(2) { top: 50%; }
+        .hamburger span:nth-child(3) { top: 100%; }
+
+        .nav.active .hamburger span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav.active .hamburger span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav.active .hamburger span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            display: grid;
+            place-items: center;
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+
+        .nav.active .menu {
+            transform: translateX(0);
+        }
+
+        .menu ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .menu li {
+            margin: 2rem 0;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Background Color */
+        .color-section {
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: background-color 0.5s ease;
+            background-color: #1a1a1a;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            perspective: 1000px;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 8vw, 6rem);
+            text-align: center;
+            color: white;
+            max-width: 1200px;
+            padding: 0 2rem;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+
+        /* Projects Section */
+        .projects-container {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .project-card {
+            height: 400px;
+            position: relative;
+            background-color: #000;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            will-change: transform;
+            overflow: hidden;
+        }
+
+        .project-card-content {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            color: white;
+            z-index: 2;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-category {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-card {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Color -->
+    <div class="color-section"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu">
+            <ul>
+                <li>Home</li>
+                <li>Projects</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">Crafting digital experiences through thoughtful design</h1>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-container">
+        <div class="projects-grid" id="projects-grid"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-title">
+            Let's talk
+        </div>
+        <div class="footer-grid">
+            <div class="footer-contact">
+                +33 6 12 34 56 78
+            </div>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+            </div>
+            <div class="footer-button">
+                <button class="contact-btn">Contact</button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Register GSAP Plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Color animation setup
+        const colors = ['#1a1a1a', '#2c3e50', '#8e44ad', '#c0392b'];
+
+        gsap.to('.color-section', {
+            scrollTrigger: {
+                trigger: 'body',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 1,
+                onUpdate: (self) => {
+                    const progress = self.progress;
+                    const totalColors = colors.length - 1;
+                    const colorIndex = Math.floor(progress * totalColors);
+                    const nextColorIndex = Math.min(colorIndex + 1, totalColors);
+                    const colorProgress = (progress * totalColors) % 1;
+
+                    const currentColor = gsap.utils.splitColor(colors[colorIndex]);
+                    const nextColor = gsap.utils.splitColor(colors[nextColorIndex]);
+                    
+                    const r = Math.round(gsap.utils.interpolate(currentColor[0], nextColor[0], colorProgress));
+                    const g = Math.round(gsap.utils.interpolate(currentColor[1], nextColor[1], colorProgress));
+                    const b = Math.round(gsap.utils.interpolate(currentColor[2], nextColor[2], colorProgress));
+
+                    gsap.set('.color-section', {
+                        backgroundColor: `rgb(${r},${g},${b})`
+                    });
+                }
+            }
+        });
+
+        // Hero title animation
+        gsap.to('.hero-title', {
+            scrollTrigger: {
+                trigger: '.hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 1.5,
+            },
+            scale: 0.5,
+            y: -100,
+            opacity: 0.3,
+            ease: 'power1.inOut'
+        });
+
+        // Navigation Toggle
+        const nav = document.querySelector('.nav');
+        const hamburger = document.querySelector('.hamburger');
+        
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Project Data
+        const projects = [
+            { title: 'Digital Platform', category: 'UX Design', color: '#FF6B6B' },
+            { title: 'Brand Identity', category: 'Branding', color: '#4ECDC4' },
+            { title: 'Mobile App', category: 'UI/UX', color: '#45B7D1' },
+            { title: 'E-commerce', category: 'Web Design', color: '#96CEB4' },
+            { title: 'Marketing Campaign', category: 'Digital', color: '#FFEEAD' },
+            { title: 'Product Design', category: 'Industrial', color: '#D4A5A5' },
+            { title: 'Website Redesign', category: 'Web', color: '#9FA4A9' },
+            { title: 'Motion Graphics', category: 'Animation', color: '#CC527A' }
+        ];
+
+        // Function to shuffle array
+        const shuffleArray = (array) => {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        };
+
+        // Function to get random position from edges of viewport
+        const getRandomPosition = () => {
+            const positions = [
+                // Left edge
+                { x: -100 - Math.random() * 300, y: -50 + Math.random() * window.innerHeight },
+                // Right edge
+                { x: window.innerWidth + Math.random() * 300, y: -50 + Math.random() * window.innerHeight },
+                // Top edge
+                { x: -50 + Math.random() * window.innerWidth, y: -100 - Math.random() * 300 },
+                // Bottom edge
+                { x: -50 + Math.random() * window.innerWidth, y: window.innerHeight + Math.random() * 300 },
+                // Corners
+                { x: -300, y: -300 },
+                { x: window.innerWidth + 300, y: -300 },
+                { x: -300, y: window.innerHeight + 300 },
+                { x: window.innerWidth + 300, y: window.innerHeight + 300 }
+            ];
+            
+            return positions[Math.floor(Math.random() * positions.length)];
+        };
+
+        // Create and append project cards
+        const projectsContainer = document.getElementById('projects-grid');
+        
+        shuffleArray([...projects]).forEach(project => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.style.backgroundColor = project.color;
+            
+            card.innerHTML = `
+                <div class="project-card-content">
+                    <h3 class="project-title">${project.title}</h3>
+                    <p class="project-category">${project.category}</p>
+                </div>
+            `;
+            
+            projectsContainer.appendChild(card);
+        });
+
+        // Set initial states for all cards
+        gsap.utils.toArray('.project-card').forEach(card => {
+            const pos = getRandomPosition();
+            const rotation = -30 + Math.random() * 60;
+            
+            gsap.set(card, {
+                x: pos.x,
+                y: pos.y,
+                rotation: rotation,
+                opacity: 0,
+                scale: 0.8
+            });
+        });
+
+        // Create scroll-triggered animations for cards
+        gsap.utils.toArray('.project-card').forEach((card, index) => {
+            const delay = index * 0.1;
+            
+            gsap.to(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top bottom-=100',
+                    end: 'top center+=100',
+                    scrub: 1.2,
+                    onEnter: () => {
+                        gsap.to(card, {
+                            duration: 1.5,
+                            x: 0,
+                            y: 0,
+                            rotation: 0,
+                            opacity: 1,
+                            scale: 1,
+                            ease: 'power3.out',
+                            delay: delay
+                        });
+                    },
+                    onLeave: () => {
+                        const exitPos = getRandomPosition();
+                        gsap.to(card, {
+                            duration: 1.5,
+                            x: exitPos.x,
+                            y: exitPos.y,
+                            rotation: -30 + Math.random() * 60,
+                            opacity: 0,
+                            scale: 0.8,
+                            ease: 'power3.in'
+                        });
+                    },
+                    onEnterBack: () => {
+                        gsap.to(card, {
+                            duration: 1.5,
+                            x: 0,
+                            y: 0,
+                            rotation: 0,
+                            opacity: 1,
+                            scale: 1,
+                            ease: 'power3.out'
+                        });
+                    },
+                    onLeaveBack: () => {
+                        const exitPos = getRandomPosition();
+                        gsap.to(card, {
+                            duration: 1.5,
+                            x: exitPos.x,
+                            y: exitPos.y,
+                            rotation: -30 + Math.random() * 60,
+                            opacity: 0,
+                            scale: 0.8,
+                            ease: 'power3.in'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

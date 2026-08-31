@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nathalie Depierre Designer UX-UI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+ 
+  <script>
+    function includeHTML() {
+      var z, i, elmnt, file, xhttp;
+      /*loop through a collection of all HTML elements:*/
+      z = document.getElementsByTagName("*");
+      for (i = 0; i < z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+          /*make an HTTP request using the attribute value as the file name:*/
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function () {
+            if (this.readyState == 4) {
+              if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+              if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+              /*remove the attribute, and call this function once more:*/
+              elmnt.removeAttribute("w3-include-html");
+              includeHTML();
+            }
+          }
+          xhttp.open("GET", file, true);
+          xhttp.send();
+          /*exit the function:*/
+          return;
+        }
+      }
+    };
+  </script>
+</head>
+
+<body id="about">
+  <section id="header">
+    <div w3-include-html="navigation.html"></div>
+
+  </section>
+  <div class="about">
+    
+ <div><img src="img/Nathalie-Depierre-Design-800x908.jpg" alt="Nom client"></div>
+    <div><h1>DESIGNER WEB + <span class="subtitle">GRAPHIQUE</span></h1></div>
+  </div>
+  <section  id="skills">
+
+<div class="skills">
+<div class="skills-item">
+  <div><img src="img/icons/explore.svg">
+  </div>
+    <h2>Rechercher et analyser</h2>
+    
+    Comprendre les utilisateurs et comment ils perçoivent le monde. Appliquer différentes méthodes puis organiser des tests
+    pour s’assurer de répondre adéquatement à leurs besoins.
+
+</div>
+<div class="skills-item">
+    <div><img src="img/icons/post.svg">    </div>
+<h2>Organiser l’information</h2>
+
+Hiérarchiser l’information, définir les éléments qui doivent être présents d’une vue à l’autre, comprendre tous les
+composants d’interfaces nécessaires à toutes les interactions possibles.
+
+
+</div>
+
+
+
+<div class="skills-item">
+      <div><img src="img/icons/polyline.svg"> </div>
+<h2>Prototyper (UX)</h2>
+
+Concevoir les maquettes des fonctionnalités, placer les éléments et définir les interactions afin de s’assurer de
+l’adéquation entre le système et ses futurs utilisateurs et ceci avant la conception du design
+
+</div>
+<div class="skills-item">
+<div><img src="img/icons/grid_view.svg"> </div>
+    <h2>Créer des visuels</h2>
+
+    Concevoir le visuel des interfaces en s’assurant de suivre les standards et en respectant les normes graphiques.
+
+</div>
+<div class="skills-item">
+  <div><img src="img/icons/radio_button_checked.svg"> </div>
+<h2>Assurer une veille</h2>
+
+S’assurer de suivre les standards et les bonnes pratiques, s’informer des dernières technologies pour répondre aux
+problématiques.
+
+</div>
+
+<div class="skills-item">
+  <div><img src="img/icons/forum.svg"> </div>
+<h2>Échanger, partager</h2>
+
+Communiquer des idées, recueillir les retours pour avancer et optimiser le déroulement du projet.
+
+</div>
+</div>
+  </section>
+  <section id="clients">
+    <div class="clients">
+      <!-- Replace the image URLs with your own -->
+<div class="clients-logo">
+  <img src="img/LogosClients_Fondation-rivieres-200x82.png" alt="Nom client">
+</div>
+<div class="clients-logo">
+  <img src="img/LogosClients_CPA-200x105.png" alt="Nom client">
+</div>
+<div class="clients-logo">
+  <img src="img/LogosClients_Tink-200x87.png" alt="Nom client">
+</div>
+<div class="clients-logo">
+  <img src="img/LogosClients_ESG-UQAM-200x42.png" alt="Nom client">
+</div>
+<div class="clients-logo">
+  <img src="img/LogosClients_NoBrainer-200x36.png" alt="Nom client">
+</div><div class="clients-logo">
+  <img src="img/LogosClients_EEQ.png" alt="Nom client">
+</div>
+<div class="clients-logo">
+  <img src="img/LogosClients_PertinenceMedia-200x68.png" alt="Nom client">
+</div>
+<div class="clients-logo">
+  <img src="img/LogosClients_UQO-200x109.png" alt="Nom client">
+</div>
+<div class="clients-logo">
+  <img src="img/LogosClients_ESG-UQAM-200x42.png" alt="Nom client">
+</div>
+<div class="clients-logo">
+  <img src="img/LogosClients_EEQ.png" alt="Nom client">
+</div>
+            </div>
+      <!-- Add more items as needed -->
+    </div>
+  </section>
+  <footer>
+    <div class="column">
+ <span class="subtitle">Moi</span>
+    </div>
+    <div class="column">
+     <p>Basée à Montréal, Québec, Canada<br>
+    contact@dblocs.com
+</p>
+    </div>
+    <div class="column">
+  <p>Lk. In.
+  </p>
+    </div>  <p align="center">Nathalie Depierre &copy; 2024 | Montréal</p>
+  </footer>
+
+
+  <script>
+    includeHTML();
+  </script>
+</body>
+
+</html>

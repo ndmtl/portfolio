@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Color Background */
+        .color-section {
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: background-color 0.5s ease;
+        }
+
+        body {
+            font-family: sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Load Transition */
+        .transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #2c3e50;
+            z-index: 1000;
+            transform: translateX(100%);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 15vw, 12rem);
+            text-align: center;
+        }
+
+        /* Project Info Section */
+        .project-info {
+            padding: 8rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+
+        .project-categories {
+            font-size: 1.2rem;
+        }
+
+        .category {
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .project-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Image Grid */
+        .project-images {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .image-container {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Horizontal Gallery */
+        .horizontal-gallery {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .gallery-container {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+
+        .gallery-image {
+            flex: 0 0 auto;
+            width: 400px;
+            height: 600px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            background: #333;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-image:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .project-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Load Transition -->
+    <div class="transition-overlay"></div>
+    
+    <!-- Background Color -->
+    <div class="color-section"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">Digital Platform</h1>
+    </section>
+
+    <!-- Project Info Section -->
+    <section class="project-info">
+        <div class="project-categories">
+            <div class="category">UX Design</div>
+            <div class="category">UI Design</div>
+            <div class="category">Web Development</div>
+            <div class="category">Responsive Design</div>
+        </div>
+        
+        <div class="project-description">
+            <p>A comprehensive digital platform designed to transform user experience. The project focused on creating an intuitive interface that seamlessly connects users with the content they need.</p>
+            <br>
+            <p>Through extensive research and iterative design, we developed a solution that not only meets current needs but is also scalable for future growth.</p>
+        </div>
+    </section>
+
+    <!-- Images Section -->
+    <section class="project-images">
+        <div class="image-container">
+            <img src="/api/placeholder/800/450" alt="Project Image 1">
+        </div>
+        <div class="image-container">
+            <img src="/api/placeholder/800/450" alt="Project Image 2">
+        </div>
+    </section>
+
+    <!-- Horizontal Gallery -->
+    <section class="horizontal-gallery">
+        <div class="gallery-container">
+            <div class="gallery-image">
+                <img src="/api/placeholder/400/600" alt="Gallery Image 1">
+            </div>
+            <div class="gallery-image">
+                <img src="/api/placeholder/400/600" alt="Gallery Image 2">
+            </div>
+            <div class="gallery-image">
+                <img src="/api/placeholder/400/600" alt="Gallery Image 3">
+            </div>
+            <div class="gallery-image">
+                <img src="/api/placeholder/400/600" alt="Gallery Image 4">
+            </div>
+            <div class="gallery-image">
+                <img src="/api/placeholder/400/600" alt="Gallery Image 5">
+            </div>
+            <div class="gallery-image">
+                <img src="/api/placeholder/400/600" alt="Gallery Image 6">
+            </div>
+            <div class="gallery-image">
+                <img src="/api/placeholder/400/600" alt="Gallery Image 7">
+            </div>
+            <div class="gallery-image">
+                <img src="/api/placeholder/400/600" alt="Gallery Image 8">
+            </div>
+            <div class="gallery-image">
+                <img src="/api/placeholder/400/600" alt="Gallery Image 9">
+            </div>
+            <div class="gallery-image">
+                <img src="/api/placeholder/400/600" alt="Gallery Image 10">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Register GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Color animation
+        const colors = ['#1a1a1a', '#2c3e50', '#8e44ad', '#c0392b'];
+
+        gsap.to('.color-section', {
+            scrollTrigger: {
+                trigger: 'body',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 1,
+                onUpdate: (self) => {
+                    const progress = self.progress;
+                    const totalColors = colors.length - 1;
+                    const colorIndex = Math.floor(progress * totalColors);
+                    const nextColorIndex = Math.min(colorIndex + 1, totalColors);
+                    const colorProgress = (progress * totalColors) % 1;
+
+                    const currentColor = gsap.utils.splitColor(colors[colorIndex]);
+                    const nextColor = gsap.utils.splitColor(colors[nextColorIndex]);
+                    
+                    const r = Math.round(gsap.utils.interpolate(currentColor[0], nextColor[0], colorProgress));
+                    const g = Math.round(gsap.utils.interpolate(currentColor[1], nextColor[1], colorProgress));
+                    const b = Math.round(gsap.utils.interpolate(currentColor[2], nextColor[2], colorProgress));
+
+                    gsap.set('.color-section', {
+                        backgroundColor: `rgb(${r},${g},${b})`
+                    });
+                }
+            }
+        });
+
+        // Entry animation
+        gsap.from('.transition-overlay', {
+            duration: 1,
+            x: '0%',
+            ease: 'power2.inOut'
+        });
+
+        // Hero title animation
+        gsap.to('.hero-title', {
+            scrollTrigger: {
+                trigger: '.hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 1.5,
+            },
+            scale: 0.5,
+            y: -100,
+            opacity: 0.3,
+            ease: 'power1.inOut'
+        });
+
+        // Project info animations
+        gsap.from('.project-categories', {
+            scrollTrigger: {
+                trigger: '.project-info',
+                start: 'top center',
+            },
+            x: -50,
+            opacity: 0,
+            duration: 1
+        });
+
+        gsap.from('.project-description', {
+            scrollTrigger: {
+                trigger: '.project-info',
+                start: 'top center',
+            },
+            x: 50,
+            opacity: 0,
+            duration: 1
+        });
+
+      
+
+        // Image animations
+        gsap.utils.toArray('.image-container').forEach(image => {
+            gsap.from(image, {
+                scrollTrigger: {
+                    trigger: image,
+                    start: 'top bottom',
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1
+            });
+        });
+    </script>
+</body>
+</html>

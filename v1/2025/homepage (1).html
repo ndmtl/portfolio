@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #f5f5f5;
+            --accent: #ff4d5a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--primary);
+            color: var(--secondary);
+            overflow-x: hidden;
+        }
+
+        .grid-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .grid-background div {
+            border: 1px solid var(--secondary);
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .header-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .header-content p {
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .projects {
+            padding: 4rem 2rem;
+        }
+
+        .masonry-grid {
+            columns: 3;
+            column-gap: 2rem;
+        }
+
+        @media (max-width: 1200px) {
+            .masonry-grid {
+                columns: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .masonry-grid {
+                columns: 1;
+            }
+        }
+
+        .project-card {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            background: var(--secondary);
+            color: var(--primary);
+            border-radius: 8px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .project-card .content {
+            padding: 1.5rem;
+        }
+
+        .project-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--accent);
+        }
+
+        footer h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 1.5rem;
+            border: 2px solid var(--secondary);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            background: var(--secondary);
+            color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-background">
+        <div></div><div></div><div></div><div></div><div></div><div></div>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <h1>Designer Motto</h1>
+            <p>Créativité sans limites</p>
+        </div>
+    </header>
+
+    <section class="projects">
+        <div class="masonry-grid">
+            <div class="project-card">
+                <img src="/api/placeholder/500/300" alt="Project 1">
+                <div class="content">
+                    <h3>Projet 1</h3>
+                    <p>Description du projet</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="/api/placeholder/500/300" alt="Project 2">
+                <div class="content">
+                    <h3>Projet 2</h3>
+                    <p>Description du projet</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="/api/placeholder/500/300" alt="Project 3">
+                <div class="content">
+                    <h3>Projet 3</h3>
+                    <p>Description du projet</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2>Call Me</h2>
+        <a href="mailto:contact@example.com">Contact</a>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animation d'en-tête
+        gsap.to('.header-content h1', {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            delay: 0.5
+        });
+
+        gsap.to('.header-content p', {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            delay: 0.8
+        });
+
+        // Animation des cartes au scroll
+        gsap.utils.toArray('.project-card').forEach((card, i) => {
+            gsap.to(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top bottom-=100',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                delay: i * 0.2
+            });
+        });
+
+        // Changement de couleur au scroll
+        gsap.to('body', {
+            scrollTrigger: {
+                trigger: 'body',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 1
+            },
+            backgroundColor: '#2a2a2a',
+        });
+
+        // Animation des cartes au survol
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseover', () => {
+                gsap.to(card, {
+                    scale: 1.02,
+                    duration: 0.3
+                });
+            });
+
+            card.addEventListener('mouseout', () => {
+                gsap.to(card, {
+                    scale: 1,
+                    duration: 0.3
+                });
+            });
+        });
+    </script>
+</body>
+</html>

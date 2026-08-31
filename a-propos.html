@@ -72,79 +72,82 @@
   <!--Main-->
   <main>
 
-    <section id="about" class="w-full grid grid-cols-12 gap-4 px-6 py-8">
-
-      <!-- Métadonnées à gauche -->
-      <div
-        class="col-span-12 lg:col-span-2 flex flex-col justify-end space-y-12 lg:space-y-24 text-sm text-gray-500 font-mono">
-        <div>À propos</div>
-        <div>EXP 20+</div>
-      </div>
-
-      <!-- Titre + bio : même colonne -->
-      <div class="col-span-12 lg:col-span-10 pt-32 ">
-
-        <h1 class="text-6xl sm:text-7xl lg:text-9xl font-light leading-[0.85] tracking-tight">
-          Design<br>
-
-          multimedia<br>
-          <span class="font-normal">intégration</span>
-        </h1>
-
-        <div class="grid grid-cols-12 gap-6 lg:gap-8 items-end">
-
-          <!-- Bio -->
-          <div class="col-span-12 lg:col-span-4 space-y-8">
-
-            <div class="">
-              <p>
-                Designer multidisciplinaire, intégratrice web et conceptrice numérique, j'allie créativité, stratégie et
-                fonctionnalité pour donner vie à des expériences claires, cohérentes et engageantes. Mes collaborations
-                dans les secteurs du sport, de la santé et du corporatif m'ont permis de développer une approche solide,
-                centrée sur l'utilisateur et les objectifs d'affaires.
-              </p>
-              <p>
-                Polyvalente et à l'écoute, je transforme des enjeux complexes en expériences visuelles cohérentes et
-                engageantes, tout en respectant l'identité de l'organisation, les budgets et les échéanciers. Flexible,
-                attentive et respectueuse, je m'intègre aisément aux équipes et aux environnements de travail.
-              </p>
-            </div>
-
-            <div class="flex gap-6 text-xs font-mono uppercase pt-4">
-              <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
-                class="group inline-flex items-center gap-1 hover:underline">
-                LinkedIn
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                  stroke="currentColor"
-                  class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-                </svg>
-              </a>
-              <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
-                class="group inline-flex items-center gap-1 hover:underline">
-                GitHub
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                  stroke="currentColor"
-                  class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-                </svg>
-              </a>
-            </div>
-
-          </div>
-
-          <!-- Portrait -->
-          <div class="col-span-12 lg:col-span-5 flex justify-end mt-8 lg:mt-0">
-            <div class="w-full max-w-[360px] aspect-[3/4] overflow-hidden rounded-sm border border-gray-100">
-              <img src="assets/img/Nathalie-Depierre-Design-600x681.jpg" alt="Portrait de Nathalie Depierre"
-                class="photo-fade w-full h-full object-cover">
-            </div>
-          </div>
+    <section id="about" data-fade-group="">
+      <div class="w-full grid grid-cols-12 gap-4 px-6 pt-24">
+        <!-- Métadonnées à gauche -->
+        <div class="col-span-12 lg:col-span-2 flex flex-col font-mono fade">
+          <p class="uppercase text-base tracking-wide mb-3">— À propos</p>
 
         </div>
 
-      </div>
 
+        <div class="col-span-12 lg:col-span-10 fade">
+
+          <h1 class="text-6xl sm:text-7xl lg:text-9xl font-light leading-[0.85] tracking-tight">
+            Design<br>
+
+            multimedia<br>
+            <span class="font-normal">intégration</span>
+          </h1>
+        </div>
+      </div>
+      <div class="w-full grid grid-cols-12 gap-4 px-6 py-8">
+        <div class="col-span-12 lg:col-span-2 flex flex-col font-mono">
+          <p class="uppercase text-base tracking-wide mb-3">- EXP 20+</p>
+
+        </div>
+        <!-- Bio -->
+        <div class="col-span-12 lg:col-span-4 space-y-8 fade">
+
+          <div>
+            <p>
+              Designer multidisciplinaire, intégratrice web et conceptrice numérique, j'allie créativité, stratégie
+              et
+              fonctionnalité pour donner vie à des expériences claires, cohérentes et engageantes. Mes
+              collaborations
+              dans les secteurs du sport, de la santé et du corporatif m'ont permis de développer une approche
+              solide,
+              centrée sur l'utilisateur et les objectifs d'affaires.
+            </p>
+            <p>
+              Polyvalente et à l'écoute, je transforme des enjeux complexes en expériences visuelles cohérentes et
+              engageantes, tout en respectant l'identité de l'organisation, les budgets et les échéanciers.
+              Flexible,
+              attentive et respectueuse, je m'intègre aisément aux équipes et aux environnements de travail.
+            </p>
+          </div>
+
+          <div class="flex gap-6 text-base font-mono uppercase pt-4 fade">
+            <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1 hover:underline">
+              LinkedIn
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor"
+                class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
+            <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1 hover:underline">
+              GitHub
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor"
+                class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+
+        <!-- Portrait -->
+        <div class="col-span-12 lg:col-span-4 flex justify-end mt-8 lg:mt-0">
+          <div class="w-full max-w-[360px] aspect-[3/4] overflow-hidden rounded-sm border border-gray-100">
+            <img src="assets/img/Nathalie-Depierre-Design-600x681.jpg" alt="Portrait de Nathalie Depierre"
+              class="photo-fade w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
     </section>
 
 
@@ -166,7 +169,7 @@
         <!-- Ligne 1 - Encart 1 : Démarre à la col 4 -->
         <div class="row-span-1 col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-4 fade">
           <img src="assets/img/Layer_1.png" class="p-3" alt="Exploration UX">
-          <h3 class="py-3 font-mono text-sm">[exploration UX]</h3>
+          <h3 class="py-3 font-mono text-sm uppercase">— Stratégie UX</h3>
           <p class="text-sm">Comprendre les objectifs, les utilisateurs et les défis grâce à la recherche et à la
             discussion afin de définir une orientation claire dès le départ.</p>
         </div>
@@ -174,7 +177,7 @@
         <!-- Ligne 1 - Encart 2 : Démarre à la col 8 -->
         <div class="row-span-1 col-span-12 md:col-span-6 lg:col-span-3  fade">
           <img src="assets/img/Layer_1-2.png" class="p-3" alt="UX/UI Design">
-          <h3 class="py-3 font-mono text-sm">[ux+ui design]</h3>
+          <h3 class="py-3 font-mono text-sm uppercase">- ux+ui design</h3>
           <p class="text-sm">Peaufinage des détails, tests d'ergonomie et vérification de la cohérence, de
             l'efficacité
             et de la préparation au lancement de l'ensemble.</p>
@@ -183,7 +186,7 @@
         <!-- Ligne 2 - Encart 3 : Démarre à la col 4 -->
         <div class="row-span-2 col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-7 fade">
           <img src="assets/img/Layer_1-1.png" class="p-3" alt="Prototypage">
-          <h3 class="py-3 font-mono text-sm">[prototypage UX-UI]</h3>
+          <h3 class="py-3 font-mono text-sm uppercase">- [prototypage UX-UI]</h3>
           <p class="text-sm">Transformer des idées en interfaces intuitives, en visuels percutants et en expériences
             numériques fonctionnelles grâce à la conception et au développement.</p>
         </div>
@@ -191,7 +194,7 @@
         <!-- Ligne 2 - Encart 4 : Démarre à la col 8 -->
         <div class="row-span-2 col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-10 fade">
           <img src="assets/img/Layer_1-3.png" class="p-3" alt="Intégration">
-          <h3 class="py-3 font-mono text-sm">[integration]</h3>
+          <h3 class="py-3 font-mono text-sm uppercase">- [integration]</h3>
           <p class="text-sm">HTML/CSS & JS libraries. Expert-level No-code delivery via SiteCore and WordPress.</p>
         </div>
 

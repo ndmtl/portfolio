@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nathalie Depierre, designer multimedia - intégration, Montréal ou à distance.</title>
+  <meta name="description"
+    content="Designer multidisciplinaire, ux/ui design et intégratrice. Architecture, expérience utilisateur, prototypage, design visuel, Montréal ou à distance.">
+  <!--Favicon-->
+  <link rel="icon" type="image/x-icon" href="../assets/icons/d-final_favicon.png">
+  <!--Tailwind-->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!--Styles-->
+  <!-- <link rel="stylesheet" href="assets/css/normalize.css"> -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <!--GSAP-->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="../assets/js/gsap.js" defer></script>
+  <style type="text/tailwindcss">
+    @theme {
+   --color-ink: #0a0a0a;
+     --color-paper: #deded7;
+     --color-accent: blue;
+
+      --font-mono: "Inter Tight", sans-serif;
+      --font-display: "Inter", sans-serif;
+      --font-sans: 'Neue Haas Display', sans-serif;
+      --font-script: 'Oooh Baby', cursive;
+    }
+     @layer components {
+      .title__work{
+        @apply my-4 uppercase  flex justify-between;
+      }
+    .title__work--tags {
+      @apply bg-ink text-white text-xl w-fit px-2 py-1 inline-block;
+    }
+  }
+
+  </style>
+
+  <!--JS-->
+  <script src="../assets/js/script.js" defer></script>
+</head>
+
+<body class="text-ink">
+  <div id="top"></div>
+  <!--header-->
+  <header id="navbar">
+
+    <nav class="w-full px-6">
+      <div class="w-full grid grid-cols-12">
+        <div class="col-span-2 text-2xl pt-4"><a href="../index.html">Nathalie Depierre</a></div>
+        <div class="col-start-5 col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="../index.html">Index</a>
+        </div>
+        <div class="col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="../projets.html">Projets</a></div>
+        <div class="col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="../a-propos.html">À propos</a></div>
+        <div class="col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="../contact.html">Contact</a></div>
+      </div>
+      <button class="toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+
+    </nav>
+
+    <!-- OVERLAY -->
+    <div class="overlay">
+      <ul class="flex flex-col text-right">
+        <li><a href="../index.html">Index</a></li>
+        <li><a href="../projets.html">Projets</a></li>
+        <li><a href="../a-propos.html">À propos</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+  <!--header-->
+
+
+  <!-- HERO -->
+  <section data-fade-group>
+    <div class="container mx-auto col-span-12 lg:col-span-10 pt-32 ">
+      <p class="uppercase text-sm tracking-wide mb-3">— UX Research • UI Design • Mobile App</p>
+      <h1 class="text-6xl sm:text-7xl lg:text-9xl font-light leading-[0.85] tracking-tight">
+        Wwoof<br>
+        <span class="font-normal">Canada</span>
+      </h1>
+    </div>
+
+    </div>
+  </section>
+  <!-- INFO -->
+  <section data-fade-group>
+    <div class="container mx-auto grid grid-cols-12 items-strech gap-12 px-6 py-32 fade">
+      <div class="col-span-2">
+
+        <div class="pb-4">
+          <p class="font-semibold mb-1">Client</p>
+          <p class="text-neutral-500">Wwoof Canada</p>
+        </div>
+        <div class="pb-4">
+          <p class="font-semibold mb-1">Secteur</p>
+          <p class="text-neutral-500">Écotourisme</p>
+        </div>
+        <div class="pb-4">
+          <p class="font-semibold mb-1">Services</p>
+          <p class="text-neutral-500">Recherche UX</p>
+          <p class="text-neutral-500">UX-UI</p>
+        </div>
+
+
+
+      </div>
+      <div class="col-span-6">
+        <h2 class="text-2xl md:text-2xl font-semibold leading-snug fade">
+          Optimiser la mise en relation hôtes & volontaires
+        </h2>
+        <p class="py-6">Le wwoofing (Willing Workers on Organics Farms ou World Wild Oppotunities on Organics farms) met
+          en relation des fermes bio avec des volontaires. Bien que le concept soit fort, la plateforme actuelle
+          souffrait d'un processus de réservation complexe et d'un manque de fluidité sur mobile.</p>
+        <p><strong>Objectif :</strong> Simplifier le tunnel de conversion et renforcer la confiance entre les membres
+          grâce à une
+          interface intuitive.</p>
+      </div>
+      <div class="col-span-4 p-12 bg-slate-200 fade">
+
+        <p><strong>Problématiques clés</strong></p>
+        <ul>
+          <li>- Trop d'étapes pour contacter un hôte.</li>
+          <li>- Interface non responsive.</li>
+          <li>- Difficulté à filtrer les fermes par besoins spécifiques.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY 3 COLS -->
+  <section data-fade-group>
+    <div class="grid grid-cols-12 gap-0 px-0">
+      <div class="col-span-12 md:col-span-6 min-h-[550px] flex items-center justify-center fade">
+
+        <img src="../assets/img/portfolio//AnalyseUX-2.png" alt="Landwiz"
+          class="w-full h-full object-cover overflow-hidden">
+
+      </div>
+      <div class="col-span-12 md:col-span-6 min-h-[550p flex items-center justify-center fade ">
+
+        <img src="../assets/img/portfolio/AnalyseUX-1.png" alt="Landwiz"
+          class="w-full h-full object-cover overflow-hidden">
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TEXT SECTION -->
+  <section data-fade-group>
+    <div class="container mx-auto grid grid-cols-12 gap-6 px-6 md:px-10 py-20">
+      <div class="col-span-12 md:col-span-4 fade">
+        <h3 class="text-2xl md:text-3xl font-semibold leading-snug">
+          Démarches
+        </h3>
+      </div>
+      <div class="col-span-12 md:col-span-4 fade text-base">
+        <p class="uppercase tracking-wide mb-3">— Recherche qualitative</p>
+        <p class="mb-12">Combinaison d’analyse comparative, d’entretiens utilisateurs et de
+          questionnaires afin de cerner les attentes et les irritants majeurs liés à la planification d’un séjour. Les
+          résultats ont été synthétisés sous forme de personas et d’une carte d’expérience, base stratégique pour la
+          refonte des parcours.</p>
+
+        <p class="uppercase   tracking-wide mb-3">— Visualisation des flows</p>
+        <p class="mb-12">Cartographie des flows existants pour révéler les frictions, les détours
+          inutiles et les moments où l’utilisateur perd du temps. À partir de cette analyse, création d’un flow optimisé
+          visant à réduire les clics, accélérer l’accès aux actions clés et renforcer l’intuitivité globale de
+          l’application.</p>
+      </div>
+      <div class="col-span-12 md:col-span-4 fade">
+        <p class="uppercase   tracking-wide mb-3">— Design des prototypes</p>
+        <p class="mb-12">Développement de prototypes fonctionnels afin de matérialiser les nouveaux
+          parcours et d’évaluer l’efficacité des solutions UX. Les maquettes ont servi de support aux tests
+          utilisateurs, facilitant l’ajustement des interactions et la validation des décisions de design.</p>
+
+        <p class="uppercase   tracking-wide mb-3">— Test experts</p>
+        <p class="mb-12">Audit UX complet de l’interface pour détecter les frictions, les incohérences
+          et les obstacles à la compréhension. Cette évaluation experte a permis d’affiner les interactions et de
+          renforcer la cohérence globale avant la validation finale.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-200 p-12" data-fade-group>
+    <div class="mx-auto grid grid-cols-12 gap-32 py-12">
+      <div class="col-span-12 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/Wwoof-UX-UI-1-scaled.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover overflow-hidden">
+      </div>
+
+
+    </div>
+
+    </div>
+  </section>
+
+  <!-- GALLERY HORIZONTALE -->
+  <section class="bg-ink p-12 overflow-hidden" data-fade-group>
+    <div class="flex flex-nowrap gap-6 py-12 slider w-max">
+      <div class="w-64 flex-shrink-0 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/WC-APP-Home.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover">
+      </div>
+      <div class="w-64 flex-shrink-0 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/WC-APP-Home.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover">
+      </div>
+      <div class="w-64 flex-shrink-0 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/WC-APP-Host-List-–-1.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover">
+      </div>
+      <div class="w-64 flex-shrink-0 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/WC-APP-Host-List.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover">
+      </div>
+      <div class="w-64 flex-shrink-0 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/WC-APP-Host-map.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover">
+      </div>
+
+      <div class="w-64 flex-shrink-0 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/WC-APP-Destinations.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover">
+      </div>
+      <div class="w-64 flex-shrink-0 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/WC-APP-Contacter-hote.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover">
+      </div>
+      <div class="w-64 flex-shrink-0 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/WC-APP-Host-List.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover">
+      </div>
+      <div class="w-64 flex-shrink-0 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/WC-APP-Host-List-–-1.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover">
+      </div>
+
+      <div class="w-64 flex-shrink-0 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/WC-APP-Host-map.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover">
+      </div>
+      <div class="w-64 flex-shrink-0 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/WC-APP-Contacter-hote.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover">
+      </div>
+      <div class="w-64 flex-shrink-0 flex items-center justify-center fade">
+
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOR SWATCHES -->
+  <section>
+    <div class="container mx-auto grid grid-cols-12 py-16 px-6 md:px-10 text-base" data-fade-group="">
+
+      <div class="col-span-12 md:col-span-3 gap-0 bg-[#6abd45] h-56 flex flex-col justify-center pl-6  text-white fade">
+        <span>#6abd45</span>
+      </div>
+      <div class="col-span-12 md:col-span-3 gap-0 bg-[#bcd530] h-56 flex flex-col justify-center pl-6  text-white fade">
+        <span>#bcd530</span>
+      </div>
+      <div class="col-span-12 md:col-span-3 gap-0 bg-[#f7933f] h-56 flex flex-col justify-center pl-6  text-white fade">
+        <span>#f7933f</span>
+      </div>
+      <div class="col-span-12 md:col-span-3 gap-0 bg-[#f3b01a] h-56 flex flex-col justify-center pl-6  text-white fade">
+        <span>#f3b01a</span>
+      </div>
+
+    </div>
+  </section>
+  <section class="bg-slate-200 p-12" data-fade-group>
+    <div class="container mx-auto grid grid-cols-12 gap-32 py-12">
+      <div class="col-span-12 md:col-span-3 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/wwoof-home-1.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover overflow-hidden">
+      </div>
+      <div class="col-span-12 md:col-span-3 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/wwoof-List.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover">
+      </div>
+      <div class="col-span-12 md:col-span-3 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/wwoof-Map-1.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover">
+      </div>
+      <div class="col-span-12 md:col-span-3 flex items-center justify-center fade">
+        <img src="../assets/img/portfolio/wwoof-Details.png" alt="Wwoof Canada - prototype"
+          class="w-full h-full object-cover">
+      </div>
+
+    </div>
+
+    </div>
+  </section>
+  <!-- NEXT ITEM -->
+  <section class="grid grid-cols-12 text-center py-16">
+    <div class="col-span-12">
+      <h4 class="text-2xl font-semibold mb-2">Prochain cas d'étude</h4>
+      <a href="application-wwoof-canada.html" class="  hover:text-accent">Wwoof Canada →</a>
+    </div>
+  </section>
+
+  <!--Footer-->
+  <footer id="footer" class="pt-16 relative">
+    <div class="px-6 mx-auto grid grid-cols-12 gap-12">
+
+
+      <div class="col-span-12 lg:col-span-3 lg:col-start-4">
+        <ul class="flex flex-col">
+          <li><a href="index.html">Index</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="a-propos.html">À propos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col-span-12 lg:col-span-3">
+        <div class="flex flex-col">
+          <p class="group inline-flex items-center w-[200px]">
+            <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank">linkedin</a>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor"
+              class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+            </svg>
+          </p>
+          <p class="group inline-flex items-center w-[200px]">
+            <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank">instagram</a>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor"
+              class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+            </svg>
+          </p>
+          <p class="group inline-flex items-center w-[200px]">
+            <a href="https://github.com/ndmtl" target="_blank">github</a>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+              stroke="currentColor"
+              class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+            </svg>
+          </p>
+        </div>
+      </div>
+
+      <div class="col-span-12 lg:col-span-3 self-end">
+
+        <a href="contact.html" class="contact-circle">
+          <svg id="rotatingText" viewBox="0 0 140 140">
+            <defs>
+              <path id="circle-path" d="M70,70 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
+            </defs>
+            <text>
+              <textPath href="#circle-path">CONTACTEZ-MOI • CONTACTEZ-MOI •</textPath>
+            </text>
+          </svg>
+          <div class="dot">
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+              <path
+                d="M400,600c-50.5,0-89.1-25.2-113.35-47.25-10.29-9.38-19.72-19.65-28.2-30.7-3.82-4.88-7.35-9.97-10.6-15.25-10.38-17.92-4.27-40.86,13.65-51.25,17.47-10.12,39.81-4.6,50.55,12.5,7.14,10.7,15.53,20.5,25,29.2,17.05,15.5,38.45,27.75,62.95,27.75s45.9-12.3,62.9-27.75c9.47-8.7,17.86-18.5,25-29.2,10.7-17.74,33.76-23.45,51.5-12.75s23.45,33.76,12.75,51.5h0l-10.6,15.25c-6.4,8.35-15.85,19.5-28.2,30.7-24.25,22-62.85,47.25-113.35,47.25ZM250,300c0-27.61,22.39-50,50-50h.35c27.61,0,50,22.39,50,50s-22.39,50-50,50h-.35c-27.61,0-50-22.39-50-50ZM500,250c-27.61,0-50,22.39-50,50s22.39,50,50,50h.35c27.61,0,50-22.39,50-50s-22.39-50-50-50h-.35Z" />
+              <path
+                d="M400,0C179.09,0,0,179.09,0,400s179.09,400,400,400,400-179.09,400-400S620.91,0,400,0ZM75,400c0-179.49,145.51-325,325-325s325,145.51,325,325-145.51,325-325,325S75,579.49,75,400Z"
+                style="fill-rule: evenodd;" />
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="px-6 mx-auto grid grid-cols-12 gap-12 items-end">
+      <div class="col-span-12 lg:col-span-3 p-0 m-0">
+        <span class="text-[66px] font-bold tracking-tight">©<span id="year"></span></span>
+      </div>
+
+      <div class="col-span-12 lg:col-span-3 lg:col-start-7 pb-5">
+        <span>Codé avec ♡ par Nathalie Depierre</span>
+      </div>
+      <div class="col-span-12 lg:col-span-3 flex justify-end pb-5">
+        <span><a href="#top">retour en haut</a></span>
+      </div>
+    </div>
+  </footer>
+  <!--Footer-->
+</body>
+
+</html>

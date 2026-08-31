@@ -84,3 +84,20 @@ gsap.from("#logos-clients .logo-item", {
         toggleActions: "play none none reverse"
     }
 });
+
+// Horizontal scroll
+let horizontalScroll = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.horizontal-gallery',
+        start: 'top top',
+        end: () => `+=${document.querySelector('.gallery-container').offsetWidth}`,
+        pin: true,
+        scrub: 1,
+        anticipatePin: 1,
+    }
+});
+
+horizontalScroll.to('.gallery-container', {
+    x: () => -(document.querySelector('.gallery-container').offsetWidth - window.innerWidth + 32),
+    ease: 'none'
+});

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Animation Extérieur</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fff;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+      min-height: 200vh;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero h1 {
+      font-size: 5vw;
+    }
+
+    .projects {
+      padding: 100px 5vw;
+      position: relative;
+      /* Pour le positionnement absolu des cartes */
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2vw;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      /* Pour maintenir l'espacement de la grille */
+    }
+
+    .project-card {
+      aspect-ratio: 1;
+      background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      /* Position initiale hors écran gérée par GSAP */
+      opacity: 0;
+      transform-origin: center;
+    }
+
+    .project-card:nth-child(2n) {
+      background: linear-gradient(45deg, #4ecdc4, #6ee7df);
+    }
+
+    .project-card:nth-child(3n) {
+      background: linear-gradient(45deg, #a78bfa, #c4b5fd);
+    }
+
+    .project-content {
+      position: absolute;
+      inset: 0;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.8);
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover .project-content {
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero">
+    <h1>Mes Projets</h1>
+  </section>
+
+  <section class="projects">
+    <div class="projects-grid">
+      <!-- Les 9 cartes -->
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Projet 1</h3>
+          <p>Description du projet</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Projet 2</h3>
+          <p>Description du projet</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Projet 3</h3>
+          <p>Description du projet</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Projet 4</h3>
+          <p>Description du projet</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Projet 5</h3>
+          <p>Description du projet</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Projet 6</h3>
+          <p>Description du projet</p>
+        </div>
+      </div>
+
+  
+
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animation du titre
+    gsap.from('.hero h1', {
+      opacity: 0,
+      y: 100,
+      duration: 1.5,
+      delay: 0.5,
+      ease: 'power3.out'
+    });
+
+    // Configuration des positions de départ pour chaque carte
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach((card, index) => {
+      // Calcul de la position initiale basée sur l'index
+      const col = index % 3;  // 0, 1, ou 2
+      const row = Math.floor(index / 3);  // 0, 1, ou 2
+
+      // Définir la position et rotation initiales
+      let xStart, yStart, rotation;
+
+      // Cartes des coins
+      if (index === 0) { // Haut gauche
+        xStart = '-100vw';
+        yStart = '-100vh';
+      } else if (index === 2) { // Haut droite
+        xStart = '100vw';
+        yStart = '-100vh';
+      } else if (index === 6) { // Bas gauche
+        xStart = '-100vw';
+        yStart = '100vh';
+      } else if (index === 8) { // Bas droite
+        xStart = '100vw';
+        yStart = '100vh';
+      }
+      // Cartes des bords
+      else if (col === 0) { // Gauche
+        xStart = '-100vw';
+        yStart = 0;
+      } else if (col === 2) { // Droite
+        xStart = '100vw';
+        yStart = 0;
+      } else if (row === 0) { // Haut
+        xStart = 0;
+        yStart = '-100vh';
+      } else if (row === 2) { // Bas
+        xStart = 0;
+        yStart = '100vh';
+      }
+      // Carte centrale
+      else {
+        xStart = 0;
+        yStart = 0;
+        gsap.set(card, { scale: 0, rotation: 180 });
+      }
+
+      // Animation d'entrée
+      gsap.fromTo(card,
+        {
+          x: xStart,
+          y: yStart,
+          opacity: 0,
+          rotation: index === 4 ? 180 : 45 // Rotation différente pour la carte centrale
+        },
+        {
+          scrollTrigger: {
+            trigger: '.projects',
+            start: 'top center',
+            end: 'center center',
+            toggleActions: 'play none none reverse'
+          },
+          x: 0,
+          y: 0,
+          opacity: 1,
+          rotation: 0,
+          duration: 1.5,
+          ease: 'power3.out',
+          delay: index * 0.1 // Léger décalage entre chaque carte
+        }
+      );
+
+      // Animation parallaxe au scroll
+      gsap.to(card, {
+        scrollTrigger: {
+          trigger: '.projects',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1
+        },
+        y: (index % 3 - 1) * 30,
+        rotation: (index % 2 ? 3 : -3),
+      });
+    });
+  </script>
+</body>
+
+</html>

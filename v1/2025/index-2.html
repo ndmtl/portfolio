@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        @font-face {
+            font-family: 'Neue Montreal';
+            src: url('path-to-your-font/NeueMontreal-Regular.woff2') format('woff2');
+        }
+
+        .color-section {
+            height: 100vh;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: background-color 0.5s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Neue Montreal', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            position: fixed;
+            width: 100%;
+            padding: 2rem;
+            z-index: 1000;
+            mix-blend-mode: difference;
+        }
+
+        .hamburger {
+            width: 30px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: white;
+            position: absolute;
+            transition: 0.3s;
+        }
+
+        .hamburger span:nth-child(1) { top: 0; }
+        .hamburger span:nth-child(2) { top: 50%; }
+        .hamburger span:nth-child(3) { top: 100%; }
+
+        .nav.active .hamburger span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav.active .hamburger span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav.active .hamburger span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            display: grid;
+            place-items: center;
+            transform: translateX(-100%);
+            transition: 0.5s;
+        }
+
+        .nav.active .menu {
+            transform: translateX(0);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .close-btn::before,
+        .close-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        .close-btn::before {
+            transform: rotate(45deg);
+        }
+
+        .close-btn::after {
+            transform: rotate(-45deg);
+        }
+
+        .close-btn:hover::before,
+        .close-btn:hover::after {
+            background: #888;
+        }
+
+        .menu ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .menu li {
+            margin: 2rem 0;
+            font-size: 2rem;
+            opacity: 0.9;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .menu li:hover {
+            opacity: 1;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            position: relative;
+            perspective: 1000px;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 8vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .projects {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .project-card {
+            grid-column: span 5;
+            height: 400px;
+            position: relative;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(50px);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card:nth-child(even) {
+            grid-column: 7 / span 5;
+            margin-top: 4rem;
+        }
+
+        .project-card:nth-child(3n) {
+            grid-column: 2 / span 5;
+            margin-top: -2rem;
+        }
+
+        .project-content {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            z-index: 2;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-category {
+            opacity: 0.8;
+        }
+
+        .footer {
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 200px;
+            line-height: 0.9;
+            font-weight: bold;
+        }
+
+        @media (max-width: 1200px) {
+            .footer-title {
+                font-size: 150px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .project-card,
+            .project-card:nth-child(even),
+            .project-card:nth-child(3n) {
+                width: 100%;
+                margin-top: 0;
+            }
+
+            .footer-title {
+                font-size: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="color-section"></div>
+    
+    <nav class="nav">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu">
+            <div class="close-btn"></div>
+            <ul>
+                <li>Home</li>
+                <li>Projects</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Crafting digital experiences through thoughtful design</h1>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="projects-grid" id="projects-grid"></div>
+    </section>
+
+    <footer class="footer">
+        <h2 class="footer-title">LET'S TALK</h2>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const colors = ['#1a1a1a', '#2c3e50', '#8e44ad', '#c0392b', '#16a085'];
+
+        gsap.to('.color-section', {
+            scrollTrigger: {
+                trigger: 'body',
+                start: 'top top',
+                end: 'bottom bottom',
+                scrub: 1,
+                onUpdate: (self) => {
+                    const progress = self.progress;
+                    const totalColors = colors.length - 1;
+                    const colorIndex = Math.floor(progress * totalColors);
+                    const nextColorIndex = Math.min(colorIndex + 1, totalColors);
+                    const colorProgress = (progress * totalColors) % 1;
+
+                    const currentColor = gsap.utils.splitColor(colors[colorIndex]);
+                    const nextColor = gsap.utils.splitColor(colors[nextColorIndex]);
+                    
+                    const r = Math.round(gsap.utils.interpolate(currentColor[0], nextColor[0], colorProgress));
+                    const g = Math.round(gsap.utils.interpolate(currentColor[1], nextColor[1], colorProgress));
+                    const b = Math.round(gsap.utils.interpolate(currentColor[2], nextColor[2], colorProgress));
+
+                    gsap.set('.color-section', {
+                        backgroundColor: `rgb(${r},${g},${b})`
+                    });
+                }
+            }
+        });
+
+        const nav = document.querySelector('.nav');
+        const hamburger = document.querySelector('.hamburger');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        const toggleMenu = () => {
+            nav.classList.toggle('active');
+        };
+        
+        hamburger.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+
+        const projects = [
+            { title: 'Digital Platform', category: 'UX Design', color: '#FF6B6B', height: '400px' },
+            { title: 'Brand Identity', category: 'Branding', color: '#4ECDC4', height: '500px' },
+            { title: 'Mobile App', category: 'UI/UX', color: '#45B7D1', height: '350px' },
+            { title: 'E-commerce', category: 'Web Design', color: '#96CEB4', height: '450px' },
+            { title: 'Marketing Campaign', category: 'Digital', color: '#FFEEAD', height: '380px' },
+            { title: 'Product Design', category: 'Industrial', color: '#D4A5A5', height: '420px' }
+        ];
+
+        const projectsGrid = document.getElementById('projects-grid');
+        projects.forEach(project => {
+            const card = document.createElement('div');
+            card.className = 'project-card';
+            card.style.backgroundColor = project.color;
+            card.style.height = project.height;
+            
+            card.innerHTML = `
+                <div class="project-content">
+                    <h3 class="project-title">${project.title}</h3>
+                    <p class="project-category">${project.category}</p>
+                </div>
+            `;
+            
+            projectsGrid.appendChild(card);
+        });
+
+        gsap.utils.toArray('.project-card').forEach(card => {
+            gsap.set(card, {
+                opacity: 0,
+                y: 50
+            });
+
+            gsap.to(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top bottom-=100',
+                    end: 'top center',
+                    toggleActions: 'play none none reverse'
+                },
+                duration: 1,
+                opacity: 1,
+                y: 0,
+                ease: 'power2.out'
+            });
+        });
+
+        gsap.to('.hero-content', {
+            scrollTrigger: {
+                trigger: '.hero',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 1.5,
+            },
+            scale: 0.5,
+            y: -100,
+            opacity: 0.3,
+            ease: 'power1.inOut'
+        });
+
+        gsap.from('.hero-title', {
+            opacity: 0,
+            y: 50,
+            duration: 1.2,
+            ease: 'power2.out'
+        });
+    </script>
+</body>
+</html>

@@ -34,7 +34,7 @@
         @apply my-4 uppercase  flex justify-between;
       }
     .title__work--tags {
-      @apply bg-ink text-white text-xl w-fit px-2 py-1 inline-block;
+      @apply bg-ink text-white text-base w-fit px-2 py-1 inline-block;
     }
   }
 
@@ -78,21 +78,20 @@
   <main>
     <!--hero-->
 
-    <section id="hero" class="relative w-full h-[100vh] pt-24 flex items-end justify-stretch overflow-hidden">
-      <div class="mx-auto px-6 pb-4">
-
-        <h1 class="font-sans font-bold leading-[0.95] tracking-[-6px]
-      text-[clamp(4.5rem,2.894rem+8.85vw,9.0625rem)]">
+    <section id="hero" class="relative w-full h-[95vh] pb-24 flex items-end justify-start overflow-hidden">
+      <div class="container mx-auto">
+        lalal
+        <h1 class="font-sans leading-[0.95] tracking-[-6px] text-[clamp(4.5rem,2.894rem+8.85vw,9.0625rem)]">
 
           <!-- ligne 1 : les deux mots collés aux bords -->
-          <span class="flex justify-between w-full">
-            <span class="marquee inline-block">Designer multimedia</span>
-            <span class="marquee inline-block text-gray-300">ux - ui</span>
-          </span>
+
+          <span class="block">Designer</span>
+          <span class="pl-32">multimedia</span>
+          <span class="inline-block text-gray-300 font-bold">ux - ui</span>
 
           <!-- ligne 2 : alignée à gauche -->
-          <span class="flex items-baseline gap-4 pb-2">
-            <span class="marquee inline-block"><span class="font-script font-bold text-accent">&</span>
+          <span class="flex gap-4 pb-2">
+            <span class="font-bold  inline-block marquee"><span class="font-script font-bold text-accent">&</span>
               intégration</span>
           </span>
 
@@ -100,7 +99,7 @@
 
         <a href="#portfolio">
           <div
-            class="w-[120px] h-[120px] rounded-full bg-accent flex items-center justify-center absolute bottom-10 right-[30%] z-[1000] text-white">
+            class="w-[120px] h-[120px] rounded-full bg-accent flex items-center justify-center absolute bottom-[35%] right-[30%] z-[1000] text-white photo-fade">
             Scroll down
           </div>
         </a>
@@ -110,12 +109,12 @@
 
     <!--Hero-->
     <!--Projets-->
-    <section id="portfolio" class="w-full h-min-100vh py-24" data-fade-group>
+    <section id="portfolio" class="w-full h-min-100vh py-12" data-fade-group>
       <div class="w-full grid grid-cols-1 md:grid-cols-12 gap-8 px-6 py-24 max-w-[1400px] mx-auto">
 
         <figure class="md:col-start-2 md:col-span-4 md:row-start-1 fade">
           <a href="portfolio/application-landwiz.html">
-            <div class="aspect-[4/5]">
+            <div class="aspect-[4/5] overflow-hidden">
               <img src="assets/img//original-4d3490bf0651f7e962e2bcac988938b2.webp" alt="Landwiz"
                 class="w-full h-full object-cover card__image card__image--animated">
             </div>
@@ -130,58 +129,68 @@
         </figure>
 
         <figure class="md:col-start-9 md:col-span-3 md:row-start-1 md:self-start fade">
-          <div class="aspect-[5/4]">
-            <img src="assets/img/Rectangle 9.png" alt="Projet N.U.X HEC" class="w-full h-full object-cover">
-          </div>
-          <figcaption class="title__work">
-            <span class="title__work--name">landwiz</span>
-            <ul class="title__work--tags-list">
-              <li class="title__work--tags">UX</li>
-              <li class="title__work--tags">UI</li>
-            </ul>
-          </figcaption>
+          <a href="portfolio/application-hec-nux.html">
+            <div class="aspect-[5/4] overflow-hidden">
+              <img src="assets/img/nux-hec.png" alt="Projet N.U.X HEC"
+                class="w-full h-full object-cover card__image card__image--animated">
+            </div>
+            <figcaption class="title__work">
+              <span class="title__work--name">HEC (NUX)</span>
+              <ul class="title__work--tags-list">
+                <li class="title__work--tags">UX</li>
+                <li class="title__work--tags">UI</li>
+              </ul>
+            </figcaption>
+          </a>
         </figure>
 
 
         <figure class="md:col-start-7 md:col-span-4 md:row-start-2 md:self-end fade">
-          <div class="aspect-[5/4]">
-            <img src="assets/img/laremise_montreal_desktop1.png" alt="Coopérative La Remise"
-              class="w-full h-full object-cover">
-          </div>
-          <figcaption class="title__work">
-            <span class="title__work--name">landwiz</span>
-            <ul class="title__work--tags-list">
-              <li class="title__work--tags">UX</li>
-              <li class="title__work--tags">UI</li>
-            </ul>
-          </figcaption>
+          <a href="portfolio/application-wwoof-canada.html">
+            <div class="aspect-[5/4] overflow-hidden">
+              <img src="assets/img/laremise_montreal_desktop1.png" alt="Coopérative La Remise"
+                class="w-full h-full object-cover card__image card__image--animated">
+            </div>
+            <figcaption class="title__work">
+              <span class="title__work--name">La Remise</span>
+              <ul class="title__work--tags-list">
+                <li class="title__work--tags">UX</li>
+                <li class="title__work--tags">UI</li>
+              </ul>
+            </figcaption>
+          </a>
         </figure>
 
         <figure class="md:col-start-2 md:col-span-4 md:row-start-3 fade">
-          <div class="aspect-square">
-            <img src="assets/img/Rectangle 6.png" alt="WWOOF Canada" class="w-full h-full object-cover">
-          </div>
-          <figcaption class="title__work">
-            <span class="title__work--name">landwiz</span>
-            <ul class="title__work--tags-list">
-              <li class="title__work--tags">UX</li>
-              <li class="title__work--tags">UI</li>
-            </ul>
-          </figcaption>
+          <a href="portfolio/application-wwoof-canada.html">
+            <div class="aspect-square overflow-hidden">
+              <img src="assets/img/Rectangle 6.png" alt="WWOOF Canada"
+                class="w-full h-full object-cover card__image card__image--animated">
+            </div>
+            <figcaption class="title__work">
+              <span class="title__work--name">Wwoof Canada</span>
+              <ul class="title__work--tags-list">
+                <li class="title__work--tags">UX</li>
+                <li class="title__work--tags">UI</li>
+              </ul>
+            </figcaption>
+          </a>
         </figure>
 
         <figure class="md:col-start-8 md:col-span-5 md:row-start-4 fade">
-          <div class="aspect-[4/5]">
-            <img src="assets/img/Rectangle 8.png" alt="Centre d'Éducation Petite Enfance"
-              class="w-full h-full object-cover">
-          </div>
-          <figcaption class="title__work">
-            <span class="title__work--name">landwiz</span>
-            <ul class="title__work--tags-list">
-              <li class="title__work--tags">UX</li>
-              <li class="title__work--tags">UI</li>
-            </ul>
-          </figcaption>
+          <a href="portfolio/application-hec-nux.html">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="assets/img/portfolio/cfeducation-1.jpg" alt="Centre d'Éducation Petite Enfance"
+                class="w-full h-full object-cover card__image card__image--animated">
+            </div>
+            <figcaption class="title__work">
+              <span class="title__work--name">Centre de formation en éducation</span>
+              <ul class="title__work--tags-list">
+                <li class="title__work--tags">UX</li>
+                <li class="title__work--tags">UI</li>
+              </ul>
+            </figcaption>
+          </a>
         </figure>
 
       </div>
@@ -195,7 +204,7 @@
     <section id="presentation" class="w-full pt-24 ">
       <div class="px-6 mx-auto grid grid-cols-12 gap-12">
         <div class="col-span-12 m-0">
-          <p class="marquee whitespace-nowrap text-[16vw] leading-[0.85] text-accent font-bold tracking-tighter">
+          <p class="marquee whitespace-nowrap text-[12vw] leading-[0.85] text-accent font-bold tracking-tighter">
             Expertise
           </p>
         </div>

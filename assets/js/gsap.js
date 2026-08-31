@@ -1,14 +1,14 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Hero : animation au chargement (pas de scroll, il est déjà à l'écran)
-const heroTl = gsap.timeline({ delay: 0.2 });
+// // Hero : animation au chargement (pas de scroll, il est déjà à l'écran)
+// const heroTl = gsap.timeline({ delay: 0.2 });
 
-heroTl.fromTo("#hero h1", { opacity: 0.10 }, { opacity: 1, duration: 1 })
-    .from(".hero-left, .hero-left2", { x: -150, opacity: 0, duration: 1 }, "<")
-    .from(".hero-right", { x: 150, opacity: 0, duration: 1 }, "<");
+// heroTl.fromTo("#hero h1", { opacity: 0.10 }, { opacity: 1, duration: 1 })
+//     .from(".hero-left, .hero-left2", { x: -150, opacity: 0, duration: 1 }, "<")
+//     .from(".hero-right", { x: 150, opacity: 0, duration: 1 }, "<");
 
-
+//Déplacement des titres (homepage)
 gsap.utils.toArray(".marquee").forEach((el) => {
     gsap.to(el, {
         xPercent: -50,
@@ -22,7 +22,7 @@ gsap.utils.toArray(".marquee").forEach((el) => {
     });
 });
 
-// Apparition
+// Apparition de la photo 
 gsap.fromTo(".photo-fade",
     {
         opacity: 0,
@@ -35,12 +35,13 @@ gsap.fromTo(".photo-fade",
         ease: "power2.out",
         scrollTrigger: {
             trigger: ".photo-fade",
-            start: "top 50%", // Se déclenche quand le haut de l'image atteint 50vh du viewport
+            start: "top 50%",
             toggleActions: "play none none reverse"
         }
     }
 );
-// Entrée des cartes de services : slide-in + fade, une fois, au moment où chaque carte arrive à l'écran
+
+// Entrée des cartes slide-in + fade
 document.querySelectorAll("[data-fade-group]").forEach((group) => {
     gsap.from(group.querySelectorAll(".fade"), {
         x: -80,
@@ -56,16 +57,22 @@ document.querySelectorAll("[data-fade-group]").forEach((group) => {
     });
 });
 
-// Logos clients en grille : slide-in + fade, groupés par ligne (stagger sur toute la section)
-gsap.from("#logos-clients .logo-item", {
-    x: -60,
-    opacity: 0,
-    duration: 0.7,
-    ease: "power2.out",
-    stagger: 0.08,
-    scrollTrigger: {
-        trigger: "#logos-clients",
-        start: "top 75%",
-        toggleActions: "play none none reverse"
-    }
+//Slide horizontal
+window.addEventListener("load", () => {
+    gsap.utils.toArray(".slider").forEach((el) => {
+        const scrollDistance = el.scrollWidth - el.parentElement.offsetWidth;
+
+        gsap.to(el, {
+            x: -scrollDistance,
+            ease: "none",
+            scrollTrigger: {
+                trigger: el.parentElement,
+                start: "top top",
+                end: () => `+=${scrollDistance}`,
+                scrub: 1,
+                pin: true,
+                invalidateOnRefresh: true,
+            },
+        });
+    });
 });

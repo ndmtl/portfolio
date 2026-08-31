@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Transitions</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        /* Transition overlay */
+        .transition-overlay {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            height: 100vh;
+            background: #2c3e50;
+            z-index: 1000;
+            transform: translateX(0);
+        }
+
+        /* Links that trigger transitions */
+        [data-transition] {
+            cursor: pointer;
+        }
+
+        /* Content wrapper */
+        .content-wrapper {
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        /* Basic navigation style */
+        nav {
+            padding: 1rem;
+        }
+
+        nav a {
+            margin-right: 1rem;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Transition overlay -->
+    <div class="transition-overlay"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="page1.html" data-transition>Page 1</a>
+        <a href="page2.html" data-transition>Page 2</a>
+        <a href="page3.html" data-transition>Page 3</a>
+    </nav>
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+        <h1>Page Content</h1>
+    </div>
+
+    <script>
+        // Page transition handling
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.querySelector('.transition-overlay');
+            const links = document.querySelectorAll('[data-transition]');
+
+            // Initialize GSAP timeline
+            const tl = gsap.timeline({
+                paused: true,
+                onComplete: () => {
+                    // After animation completes, navigate to new page
+                    window.location.href = currentLink;
+                }
+            });
+
+            // Setup the timeline animation
+            tl.to(overlay, {
+                duration: 0.5,
+                translateX: '-100%',
+                ease: 'power2.inOut'
+            })
+            .set(overlay, {
+                left: '-100%',
+                translateX: '0%'
+            });
+
+            let currentLink = '';
+
+            // Add click handlers to all transition links
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentLink = link.href;
+                    tl.restart();
+                });
+            });
+
+            // Handle back/forward browser navigation
+            window.addEventListener('pageshow', (e) => {
+                if (e.persisted) {
+                    // Page was loaded from cache (back/forward navigation)
+                    gsap.set(overlay, {
+                        clearProps: 'all'
+                    });
+                }
+            });
+        });
+
+        // Animation for page entry
+        const entryAnimation = () => {
+            const overlay = document.querySelector('.transition-overlay');
+            
+            gsap.fromTo(overlay, 
+                {
+                    left: '-100%',
+                    translateX: '0%'
+                },
+                {
+                    left: '-200%',
+                    duration: 0.5,
+                    ease: 'power2.inOut',
+                    clearProps: 'all'
+                }
+            );
+        };
+
+        // Run entry animation when page loads
+        window.addEventListener('load', entryAnimation);
+    </script>
+</body>
+</html>
