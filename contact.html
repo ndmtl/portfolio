@@ -42,6 +42,7 @@
 
   <!--JS-->
   <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/validation.js" defer></script>
 </head>
 
 
@@ -124,27 +125,27 @@
             <form id='contactForm' action='#' method=" get" novalidate class="p-4 lg:p-24">
 
               <!-- Champ Nom -->
-              <div class="inputControl mb-6 flex flex-col">
+              <div class="input__control mb-6 flex flex-col">
                 <label for="fullName" class="block mb-1 text-base font-medium">nom et prénom*</label>
                 <input type="text" name="fullName" id="fullName"
                   class="w-full h-[36px] bg-transparent border-b-2 border-black focus:outline-none focus:border-accent">
-                <div class="errorMessage"></div>
+                <div class="message__error "></div>
               </div>
 
               <!-- Champ Email -->
-              <div class="inputControl mb-12 flex flex-col">
+              <div class="input__control mb-12 flex flex-col">
                 <label for="email" class="block mb-1 text-base font-medium">courriel (nom@domaine.com)*</label>
                 <input type="email" name="email" id="email" required
                   class="w-full h-[36px] bg-transparent border-b-2 border-black focus:outline-none focus:border-accent">
-                <div class="errorMessage"></div>
+                <div class="message__error "></div>
               </div>
 
               <!-- Champ Téléphone -->
-              <div class="inputControl mb-12 flex flex-col">
+              <div class="input__control mb-12 flex flex-col">
                 <label for="phone" class="block mb-1 text-base font-medium">téléphone (12345678)</label>
                 <input type="tel" name="phone" id="phone" required
                   class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-accent">
-                <div class="errorMessage"></div>
+                <div class="message__error "></div>
               </div>
 
               <!--Entreprise facultatif-->
@@ -152,11 +153,11 @@
                 <label for="company" class="block mb-1 text-base font-medium">organisation/compagnie</label>
                 <input type="text" name="company" id="company"
                   class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-accent">
-                <div class="errorMessage"></div>
+                <div class="message__error "></div>
               </div>
 
               <!-- Sujet -->
-              <div class="inputControl mb-12 flex flex-col">
+              <div class="input__control mb-12 flex flex-col">
                 <label for="subject" class="block mb-1 text-base font-medium">type de projet*</label>
                 <select name="subject" id="subject" required
                   class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-accent">
@@ -166,10 +167,10 @@
                   <option value="Prototypage UI">Refonte</option>
                   <option value="Graphisme">Graphisme</option>
                 </select>
-                <div class="errorMessage"></div>
+                <div class="message__error "></div>
               </div>
               <!-- Budget -->
-              <div class="inputControl mb-12 flex flex-col">
+              <div class="input__control mb-12 flex flex-col">
                 <label for="budget" class="block mb-1 text-base font-medium">quel est votre budget ?*</label>
                 <select name="budget" id="budget" required
                   class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-accent">
@@ -179,11 +180,11 @@
                   <option value="10000-15000">10000-15000</option>
                   <option value="10000+">10000+</option>
                 </select>
-                <div class="errorMessage"></div>
+                <div class="message__error "></div>
               </div>
 
               <!--Échéance-->
-              <div class="inputControl mb-12 flex flex-col" role="radiogroup" aria-labelledby="deadline-label"
+              <div class="input__control mb-12 flex flex-col" role="radiogroup" aria-labelledby="deadline-label"
                 aria-describedby="deadline-error">
                 <span id="deadline-label">échéance*</span>
                 <div>
@@ -202,17 +203,17 @@
                   <input type="radio" id="size51" name="deadline" value="51+">
                   <label for="size51">flexible</label>
                 </div>
-                <div class="errorMessage"></div>
+                <div class="message__error "></div>
               </div>
               <!-- Champ Message -->
-              <div class="inputControl mb-12 flex flex-col">
+              <div class="input__control mb-12 flex flex-col">
                 <label for="message" required class="block mb-1 text-base font-medium">décrivez votre projet*</label>
 
                 <textarea name="message" id="message" rows="4"
                   class="w-full bg-transparent  border-b-2 border-black  focus:outline-none focus:border-accent resize-none"></textarea>
-                <div class="errorMessage"></div>
+                <div class="message__error "></div>
               </div>
-
+              <p id="confirmation"></p>
               <button type="submit"
                 class="group inline-flex items-center gap-2 bg-black text-white hover:bg-accent transition-colors duration-200 ease-in-out px-6 py-3 cursor-pointer">
                 <span>envoyer le message</span>
@@ -221,15 +222,14 @@
                   class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                   <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                 </svg>
+
               </button>
-              <p id="messageConfirmation"></p>
             </form>
           </div>
 
         </div>
       </div>
     </section>
-
   </main>
 
   <footer id="footer" class="py-8">

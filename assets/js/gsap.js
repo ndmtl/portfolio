@@ -1,13 +1,6 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-// // Hero : animation au chargement (pas de scroll, il est déjà à l'écran)
-// const heroTl = gsap.timeline({ delay: 0.2 });
-
-// heroTl.fromTo("#hero h1", { opacity: 0.10 }, { opacity: 1, duration: 1 })
-//     .from(".hero-left, .hero-left2", { x: -150, opacity: 0, duration: 1 }, "<")
-//     .from(".hero-right", { x: 150, opacity: 0, duration: 1 }, "<");
-
 //Déplacement des titres (homepage)
 gsap.utils.toArray(".marquee").forEach((el) => {
     gsap.to(el, {
@@ -21,8 +14,26 @@ gsap.utils.toArray(".marquee").forEach((el) => {
         },
     });
 });
+// Apparition du btn scroll
+gsap.fromTo(".scroll",
+    {
+        opacity: 0,
+        y: 40
+    },
+    {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: ".scroll",
+            start: "top 50%",
+            toggleActions: "play none none reverse"
+        }
+    }
+);
 
-// Apparition de la photo 
+// Apparition de la photo about
 gsap.fromTo(".photo-fade",
     {
         opacity: 0,
@@ -35,7 +46,7 @@ gsap.fromTo(".photo-fade",
         ease: "power2.out",
         scrollTrigger: {
             trigger: ".photo-fade",
-            start: "top 50%",
+            start: "top 60%",
             toggleActions: "play none none reverse"
         }
     }
