@@ -4,97 +4,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 — Page introuvable</title>
+  <title>Nathalie Depierre, designer multimedia - intégration, Montréal ou à distance.</title>
+  <meta name="description"
+    content="Designer multidisciplinaire, ux/ui design et intégratrice. Architecture, expérience utilisateur, prototypage, design visuel, Montréal ou à distance.">
+  <!--Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/icons/d-final_favicon.png">
+  <!--Tailwind-->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <!--Styles-->
+  <!-- <link rel="stylesheet" href="assets/css/normalize.css"> -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!--GSAP-->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/gsap.js" defer></script>
   <style type="text/tailwindcss">
     @theme {
-    --color-ink: #0a0a0a;
-    --color-paper: #deded7;
-    --color-accent: blue;
+   --color-ink: #0a0a0a;
+     --color-paper: #deded7;
+     --color-accent: blue;
 
-    --font-mono: "Inter Tight", sans-serif;
-    --font-display: "Inter", sans-serif;
-    --font-sans: 'Neue Haas Display', sans-serif;
-    --font-script: 'Oooh Baby', cursive;
+      --font-mono: "Inter Tight", sans-serif;
+      --font-display: "Inter", sans-serif;
+      --font-sans: 'Neue Haas Display', sans-serif;
+      --font-script: 'Oooh Baby', cursive;
+    }
+     @layer components {
+      .title__work{
+        @apply my-4 uppercase text-2xl flex justify-between;
+      }
+    .title__work--tags {
+      @apply bg-ink text-white text-base w-fit px-2 py-1 inline-block;
+    }
   }
-</style>
+
+  </style>
+
+  <!--JS-->
+  <script src="assets/js/script.js" defer></script>
 </head>
+<!--Body-->
 
 <body class="text-ink font-sans overflow-hidden">
 
   <section class="relative w-full h-screen flex items-center justify-center">
 
-    <!-- flèches éclatées en fond, noires opaques -->
-    <svg class="absolute top-[8%] left-[6%] w-24 h-24 text-ink rotate-[35deg]" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5m0 0H8.25m11.25 0v11.25" />
-    </svg>
-    <svg class="absolute top-[15%] right-[10%] w-16 h-16 text-ink rotate-[-120deg]" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5m0 0H8.25m11.25 0v11.25" />
-    </svg>
-    <svg class="absolute top-[40%] left-[3%] w-32 h-32 text-ink rotate-[90deg]" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5m0 0H8.25m11.25 0v11.25" />
-    </svg>
-    <svg class="absolute bottom-[10%] left-[15%] w-20 h-20 text-ink rotate-[-30deg]" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5m0 0H8.25m11.25 0v11.25" />
-    </svg>
-    <svg class="absolute bottom-[20%] right-[8%] w-28 h-28 text-ink rotate-[160deg]" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5m0 0H8.25m11.25 0v11.25" />
-    </svg>
-    <svg class="absolute bottom-[5%] right-[25%] w-14 h-14 text-ink rotate-[210deg]" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5m0 0H8.25m11.25 0v11.25" />
-    </svg>
-    <svg class="absolute top-[60%] left-[45%] w-10 h-10 text-ink rotate-[70deg]" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5m0 0H8.25m11.25 0v11.25" />
-    </svg>
-    <svg class="absolute top-[5%] left-[45%] w-20 h-20 text-ink rotate-[-60deg]" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5m0 0H8.25m11.25 0v11.25" />
-    </svg>
-    <svg class="absolute top-[25%] left-[20%] w-12 h-12 text-ink rotate-[110deg]" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5m0 0H8.25m11.25 0v11.25" />
-    </svg>
-    <svg class="absolute top-[10%] right-[30%] w-16 h-16 text-ink rotate-[15deg]" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5m0 0H8.25m11.25 0v11.25" />
-    </svg>
-    <svg class="absolute bottom-[35%] left-[8%] w-14 h-14 text-ink rotate-[-95deg]" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5m0 0H8.25m11.25 0v11.25" />
-    </svg>
-    <svg class="absolute bottom-[8%] right-[42%] w-10 h-10 text-ink rotate-[140deg]" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5m0 0H8.25m11.25 0v11.25" />
-    </svg>
-    <svg class="absolute top-[70%] right-[15%] w-24 h-24 text-ink rotate-[-15deg]" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5m0 0H8.25m11.25 0v11.25" />
-    </svg>
-    <svg class="absolute top-[2%] left-[15%] w-10 h-10 text-ink rotate-[180deg]" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5m0 0H8.25m11.25 0v11.25" />
-    </svg>
 
+    <div class="absolute top-[8%] left-[6%] w-24 h-24 text-ink rotate-[35deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute top-[10%] right-[6%] w-24 h-24 text-ink rotate-[35deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute top-[40%] left-[8%] w-24 h-24 text-ink rotate-[35deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute top-[80%] left-[67%] w-24 h-24 text-ink rotate-[35deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute bottom-[20%] right-[8%] w-28 h-28 text-ink rotate-[160deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute bottom-[5%] right-[25%] w-14 h-14 text-ink rotate-[210deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute top-[20%] left-[45%] w-10 h-10 text-ink rotate-[70deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute top-[5%] left-[45%] w-20 h-20 text-ink rotate-[-60deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute top-[25%] left-[20%] w-12 h-12 text-ink rotate-[110deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute top-[10%] right-[30%] w-16 h-16 text-ink rotate-[15deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute bottom-[35%] left-[8%] w-14 h-14 text-ink rotate-[-95deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute bottom-[8%] right-[42%] w-10 h-10 text-ink rotate-[140deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute top-[70%] right-[15%] w-24 h-24 text-ink rotate-[-15deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute top-[80%] left-[15%] w-10 h-10 text-ink rotate-[180deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute top-[2%] left-[15%] w-10 h-10 text-ink rotate-[180deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute bottom-[20%] left-[8%] w-28 h-28 text-ink rotate-[160deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute bottom-[10%] left-[25%] w-28 h-28 text-ink rotate-[160deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
+    <div class="absolute bottom-[40%] left-[20%] w-28 h-28 text-ink rotate-[55deg]">
+      <img src="assets/img/illustrations_arrow.png">
+    </div>
     <!-- contenu central -->
     <div class="relative z-10 flex flex-col items-center gap-8 text-center px-6">
-
-      <h1 class="font-display font-bold leading-none tracking-tight text-[24vw]">
+      <h1 class="font-display font-bold leading-none tracking-tight text-[12vw] lg:text-[24vw] pb-[10%]">
         404
       </h1>
 
       <a href="index.html" aria-label="Retour à l'accueil"
-        class="group inline-flex items-center justify-center w-20 h-20 rounded-full hover:bg-white transition-colors">
-        <svg class="w-8 h-8 text-accent rotate-[225deg] transition-transform duration-200 group-hover:-translate-x-1"
-          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5m0 0H8.25m11.25 0v11.25" />
-        </svg>
+        class="absolute bottom-[0%] left-[calc(50%-20)] w-40 text-ink rotate-[0deg]">
+        <img src="assets/img/illustrations_arrow-b.png">
+
       </a>
 
     </div>

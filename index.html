@@ -31,7 +31,7 @@
     }
      @layer components {
       .title__work{
-        @apply my-4 uppercase  flex justify-between;
+        @apply my-4 uppercase text-2xl flex justify-between;
       }
     .title__work--tags {
       @apply bg-ink text-white text-base w-fit px-2 py-1 inline-block;
@@ -51,13 +51,16 @@
   <!--Ancre retour-->
   <!--Header-->
   <header class="relative w-full">
+
+    <!--Accessibilité-->
     <a href="#content" class="sr-only">Aller au contenu principal</a>
+    <!--Accessibilité-->
     <nav class="relative w-full min-h-[50px] p-6">
       <h1 class="absolute text-2xl hover:text-accent">
         <a href="index.html">Nathalie Depierre</a>
       </h1>
       <button id="menuToggle"
-        class="absolute top-6 right-6 z-50 lg:hidden bg-accent p-2 text-body hover:bg-neutral-secondary-soft cursor-pointer"
+        class="absolute top-6 right-6 z-50 lg:hidden bg-accent p-2 text-body text-white hover:bg-neutral-secondary-soft cursor-pointer"
         aria-label="Ouvrir le menu">
         MENU
       </button>
@@ -89,14 +92,16 @@
     <!--Hero-->
     <section id="hero" class="relative w-full h-[95vh] pb-24 flex items-end justify-start overflow-hidden">
       <div class="container mx-auto">
-        lalal
-        <h1 class="font-sans leading-[0.95] tracking-[-6px] text-[clamp(4.5rem,2.894rem+8.85vw,9.0625rem)]">
 
-          <!-- ligne 1 : les deux mots collés aux bords -->
+        <h2 class="font-sans leading-[0.95] tracking-[-6px] text-[clamp(4.5rem,2.894rem+8.85vw,9.0625rem)]">
+
+          <!-- x bords -->
 
           <span class="block">Designer</span>
-          <span class="pl-32">multimedia</span>
-          <span class="inline-block text-gray-300 font-bold">ux - ui</span>
+          <span class="flex justify-between items-baseline">
+            <span class="pl-32">multimedia</span>
+            <span class="text-gray-300 font-bold">ux - ui</span>
+          </span>
 
           <!-- ligne 2 : alignée à gauche -->
           <span class="flex gap-4 pb-2">
@@ -104,11 +109,11 @@
               intégration</span>
           </span>
 
-        </h1>
+        </h2>
 
         <a href="#portfolio">
           <div
-            class="w-[120px] h-[120px] rounded-full bg-accent flex items-center justify-center absolute bottom-[35%] right-[30%] z-[1000] text-white scroll">
+            class="w-[120px] h-[120px] rounded-full bg-accent flex items-center justify-center absolute bottom-[20%] right-[30%] z-[1000] text-white scroll">
             Scroll down
           </div>
         </a>
@@ -119,6 +124,7 @@
     <!--Hero-->
     <!--Projets-->
     <section id="portfolio" class="w-full h-min-100vh py-12" data-fade-group>
+      <span class="inline-block text-gray-300 font-bold text-right marquee">Portfolio</span>
       <div class="w-full grid grid-cols-1 md:grid-cols-12 gap-8 px-6 py-24 max-w-[1400px] mx-auto">
 
         <figure class="md:col-start-2 md:col-span-4 md:row-start-1 fade">
@@ -155,7 +161,7 @@
 
 
         <figure class="md:col-start-7 md:col-span-4 md:row-start-2 md:self-end fade">
-          <a href="portfolio/application-wwoof-canada.html">
+          <a href="portfolio/application-la-remise.html">
             <div class="aspect-[5/4] overflow-hidden">
               <img src="assets/img/laremise_montreal_desktop1.png" alt="Coopérative La Remise"
                 class="w-full h-full object-cover card__image card__image--animated">
@@ -187,13 +193,13 @@
         </figure>
 
         <figure class="md:col-start-8 md:col-span-5 md:row-start-4 fade">
-          <a href="portfolio/application-hec-nux.html">
+          <a href="portfolio/application-cf-education.html">
             <div class="aspect-[4/5] overflow-hidden">
               <img src="assets/img/portfolio/cfeducation-1.jpg" alt="Centre d'Éducation Petite Enfance"
                 class="w-full h-full object-cover card__image card__image--animated">
             </div>
             <figcaption class="title__work">
-              <span class="title__work--name">Centre de formation en éducation</span>
+              <span class="title__work--name">Centre de formation CFEPE</span>
               <ul class="title__work--tags-list">
                 <li class="title__work--tags">UX</li>
                 <li class="title__work--tags">UI</li>
@@ -218,17 +224,18 @@
           </p>
         </div>
       </div>
-      <div class="px-6 mx-auto grid grid-cols-12 gap-12 bg-accent p-24 text-white">
-        <div class="w-full col-span-12 lg:col-span-3 py-4">depuis 2015</div>
+      <div class="px-6 mx-auto grid grid-cols-12 gap-12 bg-accent p-24 text-white text-xl">
+        <div class="w-full col-span-12 lg:col-span-3 py-4">— depuis 2015</div>
         <div class="col-span-12 lg:col-span-3 py-4">Designer multidisciplinaire
-          intégratrice indépendante,
-          J’accompagne les entreprise dans leurs projets de communication visuelle et numérique</div>
+          intégratrice indépendante, j’accompagne les entreprise dans leurs projets de communication visuelle et
+          numérique</div>
 
         <div class="col-span-12 lg:col-span-3 py-4">
           <ul>
             <li class="py-4 border-t-2 border-solid border-white">UX · UI · Editorial </li>
-            <li class="py-4 border-t-2 border-solid border-white">intégration . no code</li>
-            <li class="py-4 border-t-2 border-solid border-white">Adobe . figma . cms </li>
+            <li class="py-4 border-t-2 border-solid border-white">Architecture · Heuristiques · Accesssibilité </li>
+            <li class="py-4 border-t-2 border-solid border-white">intégration · JS · CSS · React · No code</li>
+            <li class="py-4 border-t-2 border-solid border-white">Adobe CS · Figma . CMS </li>
           </ul>
         </div>
         <div class="col-span-12 lg:col-span-3 flex justify-end">Montréal et à
@@ -236,22 +243,24 @@
       </div>
     </section>
   </main>
+
   <!--Footer-->
   <footer id="footer" class="pt-16 relative" data-fade-group>
     <div class="px-6 mx-auto grid grid-cols-12 gap-12">
 
 
-      <div class="col-span-12 lg:col-span-3 lg:col-start-4 fade">
-        <ul class="flex flex-col">
-          <li><a href="index.html">Index</a></li>
-          <li><a href="projets.html">Projets</a></li>
-          <li><a href="a-propos.html">À propos</a></li>
-          <li><a href="contact.html">Contact</a></li>
+      <div class="col-span-12 lg:col-span-3 lg:col-start-4 text-xl fade">
+        <ul class="flex flex-col gap-1">
+          <li><a href="index.html" class="hover:text-accent">Index</a></li>
+          <li><a href="projets.html" class="hover:text-accent">Projets</a></li>
+          <li><a href="a-propos.html" class="hover:text-accent">À propos</a></li>
+          <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
+
         </ul>
       </div>
 
-      <div class="col-span-12 lg:col-span-3 fade">
-        <div class="flex flex-col">
+      <div class="col-span-12 lg:col-span-3 text-xl fade">
+        <div class="flex flex-col gap-1 font-mono uppercase">
 
           <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
             class="group inline-flex items-center gap-1 hover:text-accent">
@@ -264,8 +273,8 @@
           </a>
 
           <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank" rel="noopener noreferrer"
-            class="group inline-flex items-center gap-1 hover:underline">
-            Instgram
+            class="group inline-flex items-center gap-1 hover:text-accent">
+            Instagram
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
               class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
@@ -274,7 +283,7 @@
           </a>
 
           <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
-            class="group inline-flex items-center gap-1 hover:underline">
+            class="group inline-flex items-center gap-1 hover:text-accent">
             GitHub
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
@@ -288,13 +297,13 @@
 
       <div class="col-span-12 lg:col-span-3 fade">
 
-        <a href="contact.html" class="btn__contact absolute -top-40 -p-20 m-0 bg-slate-300">
+        <a href="contact.html" class="btn__contact">
           <svg id="rotatingText" viewBox="0 0 140 140">
             <defs>
               <path id="circle-path" d="M70,70 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
             </defs>
             <text>
-              <textPath href="#circle-path">CONTACTEZ-MOI • CONTACTEZ-MOI •</textPath>
+              <textPath href="#circle-path">CONTACTEZ-MOI * CONTACTEZ-MOI *</textPath>
             </text>
           </svg>
           <div class="dot">

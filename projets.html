@@ -34,55 +34,64 @@
         @apply my-4 uppercase  flex justify-between;
       }
     .title__work--tags {
-      @apply bg-ink text-white text-xl w-fit px-2 py-1 inline-block;
+      @apply bg-ink text-white text-base w-fit px-2 py-1 inline-block;
     }
-    
   }
-   
+
   </style>
 
   <!--JS-->
   <script src="assets/js/script.js" defer></script>
 </head>
+<!--Body-->
 
-
-<body class="text-ink text-2xl">
+<body class="text-ink w-full font-sans">
+  <!--Ancre retour-->
   <div id="top"></div>
-  <!--header-->
-  <header id="navbar">
+  <!--Ancre retour-->
+  <!--Header-->
+  <header class="relative w-full">
 
-    <nav class="w-full px-6">
-      <div class="w-full grid grid-cols-12">
-        <div class="col-span-2 text-2xl pt-4"><a href="index.html">Nathalie Depierre</a></div>
-        <div class="col-start-5 col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="index.html">Index</a>
-        </div>
-        <div class="col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="projets.html">Projets</a></div>
-        <div class="col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="a-propos.html">À propos</a></div>
-        <div class="col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="contact.html">Contact</a></div>
-      </div>
-      <button class="toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
+    <!--Accessibilité-->
+    <a href="#content" class="sr-only">Aller au contenu principal</a>
+    <!--Accessibilité-->
+    <nav class="relative w-full min-h-[50px] p-6">
+      <h1 class="absolute text-2xl hover:text-accent">
+        <a href="index.html">Nathalie Depierre</a>
+      </h1>
+      <button id="menuToggle"
+        class="absolute top-6 right-6 z-50 lg:hidden bg-accent p-2 text-body text-white hover:bg-neutral-secondary-soft cursor-pointer"
+        aria-label="Ouvrir le menu">
+        MENU
       </button>
 
+      <div id="navMenu"
+        class="h-[100vh] p-6 lg:p-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out absolute top-0 left-0 w-full lg:h-[50px] bg-white z-40 lg:max-h-none lg:opacity-100 lg:overflow-visible lg:static lg:grid lg:w-full grid-cols-12 content-center lg:content-stretch items-center justify-items-stretch"
+        data-fade-group>
+
+        <div class="col-span-12 lg:col-span-2 lg:col-start-5 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+          <a href="index.html">Index</a>
+        </div>
+        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+          <a href="projets.html">Projets</a>
+        </div>
+        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+          <a href="a-propos.html">À propos</a>
+        </div>
+        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
     </nav>
-
-    <!-- OVERLAY -->
-    <div class="overlay">
-      <ul class="flex flex-col text-right">
-        <li><a href="index.html">Index</a></li>
-        <li><a href="projets.html">Projets</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
   </header>
-  <!--header-->
+  <!--Header-->
+  <!--Main-->
   <main>
-
     <!--projets-->
     <section id="projects" class="py-8">
 
-      <div class="w-full grid grid-cols-12 gap-4 items-center pt-16 px-4">
+      <div id="filter" class="w-full grid grid-cols-12 gap-4 items-center pt-16 px-4">
 
         <div class="col-span-12 lg:col-span-2">
           <h1 class="font-display font-bold text-[72px] lg:text-[145px] leading-[0.85] space-x-4">
@@ -91,161 +100,173 @@
         </div>
 
 
-        <div class="col-start-5 col-span-2 text-right text-2xl pt-4 text-gray-500""><a href=" index.html">
-          ux<sup>(6)</sup></a></div>
-        <div class="col-span-2 text-right text-2xl pt-4 text-gray-500"><a href="projets.html">ui<sup>(6)</sup></a></div>
-        <div class="col-span-2 text-right text-2xl pt-4 text-gray-500""><a href=" a-propos.html">
-          integration<sup>(6)</sup></a></div>
-        <div class="col-span-2 text-right text-2xl pt-4 text-gray-500""><a href=" contact.html">
-          editorial<sup>(6)</sup></a></div>
-      </div>
-
-      </div>
+        <div class="col-start-5 col-span-2 text-right text-2xl text-gray-500">
+          <button class="text-2xl text-gray-500 cursor-pointer" onClick="filterCategory('all')">
+            tous<sup>(5)</sup></button>
+        </div>
+        <div class="col-span-2 text-right text-2xl text-gray-500 cursor-pointer">
+          <button class="text-2xl text-gray-500 cursor-pointer" onClick="filterCategory('ux')">
+            ux<sup>(5)</sup></button>
+        </div>
+        <div class="col-span-2 text-right text-2xl text-gray-500 cursor-pointer">
+          <button class="text-2xl text-gray-500 cursor-pointer" onClick="filterCategory('ui')">
+            ui<sup>(5)</sup></button>
+        </div>
+        <div class="col-span-2 text-right text-2xl text-gray-500 cursor-pointer">
+          <button class="text-2xl text-gray-500 cursor-pointer" onClick="filterCategory('integration')">
+            Intégration<sup>(2)</sup></button>
+        </div>
 
     </section>
+
+    <!--Projets-->
+    <!--Galerie-->
     <section id="portfolio" class="w-full h-min-100vh py-24" data-fade-group>
-      <div class="w-full grid grid-cols-12 gap-8 px-6 py-2 mx-auto">
+      <div id="category" class="w-full grid grid-cols-12 gap-8 px-6 py-2 mx-auto">
 
-        <figure class="col-span-12 lg:col-span-4 md:col-span-6 fade">
-          <div class="w-full h-100">
-            <img src="assets/img//original-4d3490bf0651f7e962e2bcac988938b2.webp" alt="Landwiz"
-              class="w-full h-full object-cover overflow-hidden">
-          </div>
-          <figcaption class="title__work">
-            <span class="title__work--name">landwiz</span>
-            <ul class="title__work--tags-list">
-              <li class="title__work--tags">UX</li>
-              <li class="title__work--tags">UI</li>
-            </ul>
-          </figcaption>
+        <figure class="col-span-12 lg:col-span-4 md:col-span-6 fade project__card ux ui">
+          <a href="portfolio/application-landwiz.html">
+            <div class="w-full h-100 overflow-hidden">
+              <img src="assets/img//original-4d3490bf0651f7e962e2bcac988938b2.webp" alt="Landwiz"
+                class="w-full h-full object-cover card__image card__image--animated">
+            </div>
+            <figcaption class="title__work">
+              <span class="title__work--name">landwiz</span>
+              <ul class="title__work--tags-list">
+                <li class="title__work--tags">UX</li>
+                <li class="title__work--tags">UI</li>
+              </ul>
+            </figcaption>
+          </a>
         </figure>
 
-        <figure class="col-span-12 lg:col-span-4 md:col-span-6 fade">
-          <div class="w-full h-100">
-            <img src="assets/img/nux-hec.png" alt="Projet N.U.X HEC" class="w-full h-full object-cover">
-          </div>
-          <figcaption class="title__work">
-            <span class="title__work--name">landwiz</span>
-            <ul class="title__work--tags-list">
-              <li class="title__work--tags">UX</li>
-              <li class="title__work--tags">UI</li>
-            </ul>
-          </figcaption>
+        <figure class="col-span-12 lg:col-span-4 md:col-span-6 project__card ux ui fade">
+          <a href="portfolio/application-hec-nux.html">
+            <div class="w-full h-100 overflow-hidden">
+              <img src="assets/img/nux-hec.png" alt="Projet N.U.X HEC"
+                class="w-full h-full object-cover card__image card__image--animated">
+            </div>
+            <figcaption class="title__work">
+              <span class="title__work--name">HEC (NUX)</span>
+              <ul class="title__work--tags-list">
+                <li class="title__work--tags">UX</li>
+                <li class="title__work--tags">UI</li>
+              </ul>
+            </figcaption>
+          </a>
         </figure>
 
-
-        <figure class="col-span-12 lg:col-span-4 md:col-span-6 fade">
-          <div class="w-full h-100">
-            <img src="assets/img/laremise_montreal_desktop1.png" alt="Coopérative La Remise"
-              class="w-full h-full object-cover">
-          </div>
-          <figcaption class="title__work">
-            <span class="title__work--name">landwiz</span>
-            <ul class="title__work--tags-list">
-              <li class="title__work--tags">UX</li>
-              <li class="title__work--tags">UI</li>
-            </ul>
-          </figcaption>
+        <figure class="col-span-12 lg:col-span-4 md:col-span-6 project__card ux ui integration fade">
+          <a href="portfolio/application-la-remise.html">
+            <div class="w-full h-100 overflow-hidden">
+              <img src="assets/img/laremise_montreal_desktop1.png" alt="Coopérative La Remise"
+                class="w-full h-full object-cover card__image card__image--animated">
+            </div>
+            <figcaption class="title__work">
+              <span class="title__work--name">La Remise</span>
+              <ul class="title__work--tags-list">
+                <li class="title__work--tags">UX</li>
+                <li class="title__work--tags">UI</li>
+                <li class="title__work--tags">Intégration</li>
+              </ul>
+            </figcaption>
+          </a>
         </figure>
 
-        <figure class="col-span-12 lg:col-span-4 md:col-span-6 fade">
-          <div class="w-full h-100">
-            <img src="assets/img/Rectangle 6.png" alt="WWOOF Canada" class="w-full h-full object-cover">
-          </div>
-          <figcaption class="title__work">
-            <span class="title__work--name">landwiz</span>
-            <ul class="title__work--tags-list">
-              <li class="title__work--tags">UX</li>
-              <li class="title__work--tags">UI</li>
-            </ul>
-          </figcaption>
+        <figure class="col-span-12 lg:col-span-4 md:col-span-6 project__card ux ui fade">
+          <a href="portfolio/application-wwoof-canada.html">
+            <div class="w-full h-100 overflow-hidden">
+              <img src="assets/img/Rectangle 6.png" alt="WWOOF Canada"
+                class="w-full h-full object-cover card__image card__image--animated">
+            </div>
+            <figcaption class="title__work">
+              <span class="title__work--name">Wwoof Canada</span>
+              <ul class="title__work--tags-list">
+                <li class="title__work--tags">UX</li>
+                <li class="title__work--tags">UI</li>
+              </ul>
+            </figcaption>
+          </a>
         </figure>
-
-        <figure class="col-span-12 lg:col-span-4 md:col-span-6 fade">
-          <div class="w-full h-100">
-            <img src="assets/img/Rectangle 8.png" alt="Centre d'Éducation Petite Enfance"
-              class="w-full h-full object-cover">
-          </div>
-          <figcaption class="title__work">
-            <span class="title__work--name">landwiz</span>
-            <ul class="title__work--tags-list">
-              <li class="title__work--tags">UX</li>
-              <li class="title__work--tags">UI</li>
-            </ul>
-          </figcaption>
+        <figure class="col-span-12 lg:col-span-4 md:col-span-6 project__card ux ui integration fade">
+          <a href="portfolio/application-cf-education.html">
+            <div class="w-full h-100 overflow-hidden">
+              <img src="assets/img/portfolio/cfeducation-1.jpg" alt="Centre d'Éducation Petite Enfance"
+                class="w-full h-full object-cover card__image card__image--animated">
+            </div>
+            <figcaption class="title__work">
+              <span class="title__work--name">Centre de formation en éducation</span>
+              <ul class="title__work--tags-list">
+                <li class="title__work--tags">UX</li>
+                <li class="title__work--tags">UI</li>
+                <li class="title__work--tags">Intégration</li>
+              </ul>
+            </figcaption>
+          </a>
         </figure>
-        <figure class="col-span-12 lg:col-span-4 md:col-span-6 fade">
-          <div class="w-full h-100">
-            <img src="assets/img/Rectangle 8.png" alt="Centre d'Éducation Petite Enfance"
-              class="w-full h-full object-cover">
-          </div>
-          <figcaption class="title__work">
-            <span class="title__work--name">landwiz</span>
-            <ul class="title__work--tags-list">
-              <li class="title__work--tags">UX</li>
-              <li class="title__work--tags">UI</li>
-            </ul>
-          </figcaption>
-        </figure>
-      </div>
-      </div>
-    </section>
-
-
 
   </main>
+
   <!--Footer-->
-  <footer id="footer" class="pt-16 relative">
+  <footer id="footer" class="pt-16 relative" data-fade-group>
     <div class="px-6 mx-auto grid grid-cols-12 gap-12">
 
 
-      <div class="col-span-12 lg:col-span-3 lg:col-start-4">
-        <ul class="flex flex-col">
-          <li><a href="index.html">Index</a></li>
-          <li><a href="projets.html">Projets</a></li>
-          <li><a href="a-propos.html">À propos</a></li>
-          <li><a href="contact.html">Contact</a></li>
+      <div class="col-span-12 lg:col-span-3 lg:col-start-4 text-xl fade">
+        <ul class="flex flex-col gap-1">
+          <li><a href="index.html" class="hover:text-accent">Index</a></li>
+          <li><a href="projets.html" class="hover:text-accent">Projets</a></li>
+          <li><a href="a-propos.html" class="hover:text-accent">À propos</a></li>
+          <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
+
         </ul>
       </div>
 
-      <div class="col-span-12 lg:col-span-3">
-        <div class="flex flex-col">
-          <p class="group inline-flex items-center w-[200px]">
-            <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank">linkedin</a>
+      <div class="col-span-12 lg:col-span-3 text-xl fade">
+        <div class="flex flex-col gap-1 font-mono uppercase">
+
+          <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
+            class="group inline-flex items-center gap-1 hover:text-accent">
+            LinkedIn
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
-              class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
-          </p>
-          <p class="group inline-flex items-center w-[200px]">
-            <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank">instagram</a>
+          </a>
+
+          <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank" rel="noopener noreferrer"
+            class="group inline-flex items-center gap-1 hover:text-accent">
+            Instagram
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
-              class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
-          </p>
-          <p class="group inline-flex items-center w-[200px]">
-            <a href="https://github.com/ndmtl" target="_blank">github</a>
+          </a>
+
+          <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
+            class="group inline-flex items-center gap-1 hover:text-accent">
+            GitHub
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
-              class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
-          </p>
+          </a>
+
         </div>
       </div>
 
-      <div class="col-span-12 lg:col-span-3 self-end">
+      <div class="col-span-12 lg:col-span-3 fade">
 
-        <a href="contact.html" class="contact-circle">
+        <a href="contact.html" class="btn__contact">
           <svg id="rotatingText" viewBox="0 0 140 140">
             <defs>
               <path id="circle-path" d="M70,70 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
             </defs>
             <text>
-              <textPath href="#circle-path">CONTACTEZ-MOI • CONTACTEZ-MOI •</textPath>
+              <textPath href="#circle-path">CONTACTEZ-MOI * CONTACTEZ-MOI *</textPath>
             </text>
           </svg>
           <div class="dot">

@@ -1,14 +1,5 @@
  @import "tailwindcss";
 
- :root {
-     --color-ink: #0a0a0a;
-     --color-paper: #deded7;
-     --color-accent: blue;
-     --color-lighter: #fff;
- }
-
-
-
  /* Typographies */
  @font-face {
      font-family: 'Neue Haas Display';
@@ -96,7 +87,9 @@
 
  /*ANIMATION SUR BTN CONTACT*/
  .btn__contact {
-     position: relative;
+     position: absolute;
+     top: -100%;
+     left: -25%;
      display: flex;
      align-items: center;
      justify-content: center;
@@ -112,8 +105,8 @@
      height: 200px;
  }
 
- .btn__contact text {
-     fill: var(--accent);
+ .btn__contact .text {
+
      font-size: 11.5px;
      letter-spacing: 3px;
  }
@@ -155,4 +148,17 @@
 
  .card__image:hover {
      transform: scale(1.25) rotate(-3deg);
+ }
+
+
+
+ /* filtre des project*/
+
+ .project__card {
+     display: none;
+
+ }
+
+ .project__card--show {
+     display: block;
  }

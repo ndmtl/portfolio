@@ -34,57 +34,78 @@
         @apply my-4 uppercase  flex justify-between;
       }
     .title__work--tags {
-      @apply bg-ink text-white text-xl w-fit px-2 py-1 inline-block;
+      @apply bg-ink text-white text-base w-fit px-2 py-1 inline-block;
     }
   }
 
   </style>
 
   <!--JS-->
-  <script src="../assets/js/script.js" defer></script>
+  <script src="assets/js/script.js" defer></script>
 </head>
+<!--Body-->
 
-<body class="text-ink">
+<body class="text-ink w-full font-sans">
+  <!--Ancre retour-->
   <div id="top"></div>
-  <!--header-->
-  <header id="navbar">
+  <!--Ancre retour-->
+  <!--Header-->
+  <header class="relative w-full">
 
-    <nav class="w-full px-6">
-      <div class="w-full grid grid-cols-12">
-        <div class="col-span-2 text-2xl pt-4"><a href="../index.html">Nathalie Depierre</a></div>
-        <div class="col-start-5 col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="../index.html">Index</a>
-        </div>
-        <div class="col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="../projets.html">Projets</a></div>
-        <div class="col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="../a-propos.html">À propos</a></div>
-        <div class="col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="../contact.html">Contact</a></div>
-      </div>
-      <button class="toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
+    <!--Accessibilité-->
+    <a href="#content" class="sr-only">Aller au contenu principal</a>
+    <!--Accessibilité-->
+    <nav class="relative w-full min-h-[50px] p-6">
+      <h1 class="absolute text-2xl hover:text-accent">
+        <a href="../index.html">Nathalie Depierre</a>
+      </h1>
+      <button id="menuToggle"
+        class="absolute top-6 right-6 z-50 lg:hidden bg-accent p-2 text-body text-white hover:bg-neutral-secondary-soft cursor-pointer"
+        aria-label="Ouvrir le menu">
+        MENU
       </button>
 
+      <div id="navMenu"
+        class="h-[100vh] p-6 lg:p-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out absolute top-0 left-0 w-full lg:h-[50px] bg-white z-40 lg:max-h-none lg:opacity-100 lg:overflow-visible lg:static lg:grid lg:w-full grid-cols-12 content-center lg:content-stretch items-center justify-items-stretch"
+        data-fade-group>
+
+        <div class="col-span-12 lg:col-span-2 lg:col-start-5 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+          <a href="../index.html">Index</a>
+        </div>
+        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+          <a href="../projets.html">Projets</a>
+        </div>
+        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+          <a href="../a-propos.html">À propos</a>
+        </div>
+        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+          <a href="../contact.html">Contact</a>
+        </div>
+      </div>
+
     </nav>
-
-    <!-- OVERLAY -->
-    <div class="overlay">
-      <ul class="container flex flex-col text-right">
-        <li><a href="index.html">Index</a></li>
-        <li><a href="projets.html">Projets</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
   </header>
-  <!--header-->
-
+  <!--Header-->
 
   <!-- HERO -->
   <section data-fade-group>
-    <div class="container mx-auto col-span-12 lg:col-span-10 pt-32 ">
-      <p class="uppercase text-xs tracking-wide mb-3">- SaaS • Immobilier • Tableau de bord</p>
-      <h1 class="text-6xl sm:text-7xl lg:text-9xl font-light leading-[0.85] tracking-tight">
-        Application<br>
-        <span class="font-normal">Landwiz</span>
-      </h1>
+    <div class="w-full grid grid-cols-12 gap-4 px-6 pt-24">
+      <!-- Métadonnées à gauche -->
+      <div class="col-span-12 lg:col-span-2 flex flex-col font-mono fade">
+        <p class="uppercase text-base tracking-wide mb-3">— UX-UI</p>
+
+      </div>
+
+
+      <div class="col-span-12 lg:col-span-10 fade">
+
+        <h1 class="text-6xl sm:text-7xl lg:text-9xl font-light leading-[0.85] tracking-tight">
+          Application<br>
+
+          Landwiz<br>
+
+        </h1>
+      </div>
     </div>
 
     </div>
@@ -242,58 +263,67 @@
     </div>
   </section>
 
+
   <!--Footer-->
-  <footer id="footer" class="pt-16 relative">
+  <footer id="footer" class="pt-16 relative" data-fade-group>
     <div class="px-6 mx-auto grid grid-cols-12 gap-12">
 
 
-      <div class="col-span-12 lg:col-span-3 lg:col-start-4">
-        <ul class="flex flex-col">
-          <li><a href="index.html">Index</a></li>
-          <li><a href="projets.html">Projets</a></li>
-          <li><a href="a-propos.html">À propos</a></li>
-          <li><a href="contact.html">Contact</a></li>
+      <div class="col-span-12 lg:col-span-3 lg:col-start-4 text-xl fade">
+        <ul class="flex flex-col gap-1">
+          <li><a href="../index.html" class="hover:text-accent">Index</a></li>
+          <li><a href="../projets.html" class="hover:text-accent">Projets</a></li>
+          <li><a href="../a-propos.html" class="hover:text-accent">À propos</a></li>
+          <li><a href="../contact.html" class="hover:text-accent">Contact</a></li>
+
         </ul>
       </div>
 
-      <div class="col-span-12 lg:col-span-3">
-        <div class="flex flex-col">
-          <p class="group inline-flex items-center w-[200px]">
-            <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank">linkedin</a>
+      <div class="col-span-12 lg:col-span-3 text-xl fade">
+        <div class="flex flex-col gap-1 font-mono uppercase">
+
+          <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
+            class="group inline-flex items-center gap-1 hover:text-accent">
+            LinkedIn
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
-              class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
-          </p>
-          <p class="group inline-flex items-center w-[200px]">
-            <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank">instagram</a>
+          </a>
+
+          <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank" rel="noopener noreferrer"
+            class="group inline-flex items-center gap-1 hover:text-accent">
+            Instagram
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
-              class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
-          </p>
-          <p class="group inline-flex items-center w-[200px]">
-            <a href="https://github.com/ndmtl" target="_blank">github</a>
+          </a>
+
+          <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
+            class="group inline-flex items-center gap-1 hover:text-accent">
+            GitHub
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
-              class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
-          </p>
+          </a>
+
         </div>
       </div>
 
-      <div class="col-span-12 lg:col-span-3 self-end">
+      <div class="col-span-12 lg:col-span-3 fade">
 
-        <a href="contact.html" class="contact-circle">
+        <a href="contact.html" class="btn__contact">
           <svg id="rotatingText" viewBox="0 0 140 140">
             <defs>
               <path id="circle-path" d="M70,70 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
             </defs>
             <text>
-              <textPath href="#circle-path">CONTACTEZ-MOI • CONTACTEZ-MOI •</textPath>
+              <textPath href="#circle-path">CONTACTEZ-MOI * CONTACTEZ-MOI *</textPath>
             </text>
           </svg>
           <div class="dot">

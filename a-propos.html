@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,48 +30,62 @@
       --font-script: 'Oooh Baby', cursive;
     }
      @layer components {
+      .title__work{
+        @apply my-4 uppercase  flex justify-between;
+      }
     .title__work--tags {
-      @apply bg-ink text-white text-xl w-fit px-2 py-1 m-2;
+      @apply bg-ink text-white text-xl w-fit px-2 py-1 inline-block;
     }
   }
-   
+
   </style>
 
   <!--JS-->
   <script src="assets/js/script.js" defer></script>
 </head>
+<!--Body-->
 
-<body class="text-ink">
+<body class="text-ink w-full font-sans">
+  <!--Ancre retour-->
   <div id="top"></div>
-  <!--header-->
-  <header id="navbar">
+  <!--Ancre retour-->
+  <!--Header-->
+  <header class="relative w-full">
 
-    <nav class="w-full px-6">
-      <div class="w-full grid grid-cols-12">
-        <div class="col-span-2 text-2xl pt-4"><a href="index.html">Nathalie Depierre</a></div>
-        <div class="col-start-5 col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="index.html">Index</a>
-        </div>
-        <div class="col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="projets.html">Projets</a></div>
-        <div class="col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="a-propos.html">À propos</a></div>
-        <div class="col-span-2 text-right text-2xl pt-4 hover:text-accent"><a href="contact.html">Contact</a></div>
-      </div>
-      <button class="toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
+    <!--Accessibilité-->
+    <a href="#content" class="sr-only">Aller au contenu principal</a>
+    <!--Accessibilité-->
+    <nav class="relative w-full min-h-[50px] p-6">
+      <h1 class="absolute text-2xl hover:text-accent">
+        <a href="index.html">Nathalie Depierre</a>
+      </h1>
+      <button id="menuToggle"
+        class="absolute top-6 right-6 z-50 lg:hidden bg-accent p-2 text-body text-white hover:bg-neutral-secondary-soft cursor-pointer"
+        aria-label="Ouvrir le menu">
+        MENU
       </button>
 
-    </nav>
+      <div id="navMenu"
+        class="h-[100vh] p-6 lg:p-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out absolute top-0 left-0 w-full lg:h-[50px] bg-white z-40 lg:max-h-none lg:opacity-100 lg:overflow-visible lg:static lg:grid lg:w-full grid-cols-12 content-center lg:content-stretch items-center justify-items-stretch"
+        data-fade-group>
 
-    <!-- OVERLAY -->
-    <div class="overlay">
-      <ul class="flex flex-col text-right">
-        <li><a href="index.html">Index</a></li>
-        <li><a href="projets.html">Projets</a></li>
-        <li><a href="a-propos.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
+        <div class="col-span-12 lg:col-span-2 lg:col-start-5 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+          <a href="index.html">Index</a>
+        </div>
+        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+          <a href="projets.html">Projets</a>
+        </div>
+        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+          <a href="a-propos.html">À propos</a>
+        </div>
+        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+    </nav>
   </header>
-  <!--header-->
+  <!--Header-->
   <!--Main-->
   <main>
 
@@ -93,7 +110,7 @@
       </div>
       <div class="w-full grid grid-cols-12 gap-4 px-6 py-8">
         <div class="col-span-12 lg:col-span-2 flex flex-col font-mono">
-          <p class="uppercase text-base tracking-wide mb-3">- EXP 20+</p>
+          <p class="uppercase text-base tracking-wide mb-3">— EXP 20+</p>
 
         </div>
         <!-- Bio -->
@@ -118,8 +135,9 @@
           </div>
 
           <div class="flex gap-6 text-base font-mono uppercase pt-4 fade">
+
             <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
-              class="group inline-flex items-center gap-1 hover:underline">
+              class="group inline-flex items-center gap-1 hover:text-accent">
               LinkedIn
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                 stroke="currentColor"
@@ -127,14 +145,28 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
               </svg>
             </a>
+
+            <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank" rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1 hover:text-accent">
+              Instagram
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor"
+                class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
+
             <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
-              class="group inline-flex items-center gap-1 hover:underline">
+              class="group inline-flex items-center gap-1 hover:text-accent">
               GitHub
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                 stroke="currentColor"
                 class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
               </svg>
+            </a>
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+            </svg>
             </a>
           </div>
         </div>
@@ -154,48 +186,62 @@
 
     <section id="motto" class="relative">
       <div
-        class="sticky top-0 z-10 min-h-[80vh] flex items-center justify-center bg-accent text-white text-6xl font-bold">
-        Explorer</div>
+        class="sticky top-0 z-10 min-h-[80vh] flex items-center justify-center bg-accent bg-[url(assets/img/illustrations_1.png)] bg-cover">
+        <h2
+          class="font-sans font-bold leading-[0.95] text-white text-[clamp(4.5rem,2.894rem+8.85vw,9.0625rem)] tracking-wide">
+          Explorer
+        </h2>
+
+      </div>
       <div
-        class="sticky top-0 z-20 min-h-[80vh] flex items-center justify-center bg-gray-200 text-white text-6xl font-bold">
-        Collaborer</div>
-      <div class="sticky top-0 z-30 min-h-[80vh] flex items-center justify-center bg-ink text-white text-6xl font-bold">
-        Créer</div>
+        class="sticky top-0 z-20 min-h-[80vh] flex items-center justify-center bg-gray-200 bg-[url(assets/img/illustrations_2.png)] bg-cover">
+        <h2
+          class="font-sans font-bold leading-[0.95] text-white text-[clamp(4.5rem,2.894rem+8.85vw,9.0625rem)] tracking-wide">
+          Collaborer
+        </h2>
+      </div>
+      <div
+        class="sticky top-0 z-30 min-h-[80vh] flex items-center justify-center bg-ink bg-[url(assets/img/illustrations_3.png)] bg-cover">
+        <h2
+          class="font-sans font-bold leading-[0.95] text-white text-[clamp(4.5rem,2.894rem+8.85vw,9.0625rem)] tracking-wide">
+          Créer
+        </h2>
+      </div>
     </section>
     </section>
     <section id="services" class="py-32" data-fade-group>
-      <div class="grid-row px-6 mx-auto grid grid-cols-12 gap-8">
+      <div class="grid-row px-6 mx-auto grid grid-cols-12 gap-12">
 
         <!-- Ligne 1 - Encart 1 : Démarre à la col 4 -->
-        <div class="row-span-1 col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-4 fade">
+        <div class="row-span-1 col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-4 text-xl fade">
           <img src="assets/img/Layer_1.png" class="p-3" alt="Exploration UX">
-          <h3 class="py-3 font-mono text-sm uppercase">— Stratégie UX</h3>
-          <p class="text-sm">Comprendre les objectifs, les utilisateurs et les défis grâce à la recherche et à la
+          <h3 class="py-3 font-mono uppercase">— Stratégie UX</h3>
+          <p>Comprendre les objectifs, les utilisateurs et les défis grâce à la recherche et à la
             discussion afin de définir une orientation claire dès le départ.</p>
         </div>
 
         <!-- Ligne 1 - Encart 2 : Démarre à la col 8 -->
-        <div class="row-span-1 col-span-12 md:col-span-6 lg:col-span-3  fade">
+        <div class="row-span-1 col-span-12 md:col-span-6 lg:col-span-3 text-xl fade">
           <img src="assets/img/Layer_1-2.png" class="p-3" alt="UX/UI Design">
-          <h3 class="py-3 font-mono text-sm uppercase">- ux+ui design</h3>
-          <p class="text-sm">Peaufinage des détails, tests d'ergonomie et vérification de la cohérence, de
+          <h3 class="py-3 font-mono uppercase">- ux+ui design</h3>
+          <p>Peaufinage des détails, tests d'ergonomie et vérification de la cohérence, de
             l'efficacité
             et de la préparation au lancement de l'ensemble.</p>
         </div>
 
         <!-- Ligne 2 - Encart 3 : Démarre à la col 4 -->
-        <div class="row-span-2 col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-7 fade">
+        <div class="row-span-2 col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-7 text-xl fade">
           <img src="assets/img/Layer_1-1.png" class="p-3" alt="Prototypage">
-          <h3 class="py-3 font-mono text-sm uppercase">- [prototypage UX-UI]</h3>
-          <p class="text-sm">Transformer des idées en interfaces intuitives, en visuels percutants et en expériences
+          <h3 class="py-3 font-mono uppercase">- [prototypage UX-UI]</h3>
+          <p>Transformer des idées en interfaces intuitives, en visuels percutants et en expériences
             numériques fonctionnelles grâce à la conception et au développement.</p>
         </div>
 
         <!-- Ligne 2 - Encart 4 : Démarre à la col 8 -->
-        <div class="row-span-2 col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-10 fade">
+        <div class="row-span-2 col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-10 text-xl fade">
           <img src="assets/img/Layer_1-3.png" class="p-3" alt="Intégration">
-          <h3 class="py-3 font-mono text-sm uppercase">- [integration]</h3>
-          <p class="text-sm">HTML/CSS & JS libraries. Expert-level No-code delivery via SiteCore and WordPress.</p>
+          <h3 class="py-3 font-mono uppercase">- [integration]</h3>
+          <p>HTML/CSS & JS libraries. Expert-level No-code delivery via SiteCore and WordPress.</p>
         </div>
 
       </div>
@@ -300,57 +346,67 @@
       </div>
     </section>
   </main>
+  <!--Main-->
   <!--Footer-->
-  <footer id="footer" class="pt-16">
+  <footer id="footer" class="pt-16 relative" data-fade-group>
     <div class="px-6 mx-auto grid grid-cols-12 gap-12">
 
 
-      <div class="col-span-12 lg:col-span-3 lg:col-start-4">
-        <ul class="flex flex-col">
-          <li><a href="index.html">Index</a></li>
-          <li><a href="projets.html">Projets</a></li>
-          <li><a href="a-propos.html">À propos</a></li>
-          <li><a href="contact.html">Contact</a></li>
+      <div class="col-span-12 lg:col-span-3 lg:col-start-4 text-xl fade">
+        <ul class="flex flex-col gap-1">
+          <li><a href="index.html" class="hover:text-accent">Index</a></li>
+          <li><a href="projets.html" class="hover:text-accent">Projets</a></li>
+          <li><a href="a-propos.html" class="hover:text-accent">À propos</a></li>
+          <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
+
         </ul>
       </div>
 
-      <div class="col-span-12 lg:col-span-3">
-        <div class="flex flex-col">
-          <p class="group inline-flex items-center w-[200px]">
-            <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank">linkedin</a>
+      <div class="col-span-12 lg:col-span-3 text-xl fade">
+        <div class="flex flex-col gap-1 font-mono uppercase">
+
+          <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
+            class="group inline-flex items-center gap-1 hover:text-accent">
+            LinkedIn
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
-              class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
-          </p>
-          <p class="group inline-flex items-center w-[200px]">
-            <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank">instagram</a>
+          </a>
+
+          <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank" rel="noopener noreferrer"
+            class="group inline-flex items-center gap-1 hover:text-accent">
+            Instagram
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
-              class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
-          </p>
-          <p class="group inline-flex items-center w-[200px]">
-            <a href="https://github.com/ndmtl" target="_blank">github</a>
+          </a>
+
+          <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
+            class="group inline-flex items-center gap-1 hover:text-accent">
+            GitHub
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
-              class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+              class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
             </svg>
-          </p>
+          </a>
+
         </div>
       </div>
 
-      <div class="col-span-12 lg:col-span-3 self-end">
-        <a class="contact-circle">
+      <div class="col-span-12 lg:col-span-3 fade">
+
+        <a href="contact.html" class="btn__contact">
           <svg id="rotatingText" viewBox="0 0 140 140">
             <defs>
               <path id="circle-path" d="M70,70 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
             </defs>
             <text>
-              <textPath href="#circle-path">CONTACTEZ-MOI • CONTACTEZ-MOI •</textPath>
+              <textPath href="#circle-path">CONTACTEZ-MOI * CONTACTEZ-MOI *</textPath>
             </text>
           </svg>
           <div class="dot">
