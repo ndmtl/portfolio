@@ -87,24 +87,20 @@
     </nav>
   </header>
   <!--Header-->
-  <main>
-
-
+  <main id="content">
     <!-- Contact-->
-    <section id="contact" class="w-full px-6 py-8" data-fade-group>
-      <div class="w-full mx-auto">
+    <section id="contact" class="w-full px-6 py-16" data-fade-group>
+      <div class="w-full">
         <div class="w-full grid grid-cols-12 lg:gap-12">
 
-          <!-- Colonne texte -->
-          <div class="col-span-12 lg:col-span-5 lg:pt-18 fade">
-            <div>
+          <!-- Colonne gauche -->
+          <div class="col-span-12 lg:col-span-5 pt-18 fade">
+            <h1 class="font-bold text-[72px] lg:text-[145px] leading-[0.85]">
+              Partagez votre projet
+            </h1>
 
-              <h1 class="font-display font-bold text-[72px] lg:text-[145px] leading-[0.85] space-x-4">
-                Partagez <span class="text-accent">votre</span> projet
-              </h1>
-
-            </div>
-            <div class="pl-24 pt-12 flex flex-col gap-3 text-base font-mono uppercase">
+            <!-- Colonne gauche  -->
+            <div class="hidden lg:pl-24 lg:pt-12 lg:flex lg:flex-col gap-3 text-base font-mono uppercase">
 
               <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
                 class="group inline-flex items-center gap-1 hover:text-accent">
@@ -138,11 +134,12 @@
 
             </div>
           </div>
+          <!-- Colonne gauche  -->
           <!-- Colonne formulaire -->
-          <div class="col-span-12 lg:col-span-7 sm:col-span-12 fade">
+          <div class="col-span-12 lg:col-span-7 fade">
 
             <!-- Bizarrement si je mets des guillemets le prettier met espace devant la classe o_O-->
-            <form id='contactForm' action='#' method=" get" novalidate class="p-4 lg:p-24">
+            <form id='contactForm' action='#' method=" get" novalidate class="p-0 py-12 lg:p-24">
 
               <!-- Champ Nom -->
               <div class="input__control mb-6 flex flex-col">
@@ -256,7 +253,7 @@
     <div class="px-6 mx-auto grid grid-cols-12 gap-12">
 
 
-      <div class="col-span-12 lg:col-span-3 lg:col-start-4 text-xl fade">
+      <div class="col-span-12 lg:col-span-3 lg:col-start-4 md:col-span-6 text-xl fade">
         <ul class="flex flex-col gap-1">
           <li><a href="index.html" class="hover:text-accent">Index</a></li>
           <li><a href="projets.html" class="hover:text-accent">Projets</a></li>
@@ -266,7 +263,7 @@
         </ul>
       </div>
 
-      <div class="col-span-12 lg:col-span-3 text-xl fade">
+      <div class="col-span-12 lg:col-span-3 md:col-span-6 text-xl fade">
         <div class="flex flex-col gap-1 font-mono uppercase">
 
           <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
@@ -310,31 +307,26 @@
               <path id="circle-path" d="M70,70 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
             </defs>
             <text>
-              <textPath href="#circle-path">MERCI DE VOTRE VISITE ** MERCI ** •</textPath>
+              <textPath href="#circle-path">MERCI DE VOTRE VISITE ET À BIENTÔT **</textPath>
             </text>
           </svg>
           <div class="dot">
-            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
-              <path
-                d="M400,600c-50.5,0-89.1-25.2-113.35-47.25-10.29-9.38-19.72-19.65-28.2-30.7-3.82-4.88-7.35-9.97-10.6-15.25-10.38-17.92-4.27-40.86,13.65-51.25,17.47-10.12,39.81-4.6,50.55,12.5,7.14,10.7,15.53,20.5,25,29.2,17.05,15.5,38.45,27.75,62.95,27.75s45.9-12.3,62.9-27.75c9.47-8.7,17.86-18.5,25-29.2,10.7-17.74,33.76-23.45,51.5-12.75s23.45,33.76,12.75,51.5h0l-10.6,15.25c-6.4,8.35-15.85,19.5-28.2,30.7-24.25,22-62.85,47.25-113.35,47.25ZM250,300c0-27.61,22.39-50,50-50h.35c27.61,0,50,22.39,50,50s-22.39,50-50,50h-.35c-27.61,0-50-22.39-50-50ZM500,250c-27.61,0-50,22.39-50,50s22.39,50,50,50h.35c27.61,0,50-22.39,50-50s-22.39-50-50-50h-.35Z" />
-              <path
-                d="M400,0C179.09,0,0,179.09,0,400s179.09,400,400,400,400-179.09,400-400S620.91,0,400,0ZM75,400c0-179.49,145.51-325,325-325s325,145.51,325,325-145.51,325-325,325S75,579.49,75,400Z"
-                style="fill-rule: evenodd;" />
+            <img src="assets/img/illustrations_merci.png" />
             </svg>
           </div>
         </a>
       </div>
     </div>
 
-    <div class="px-6 mx-auto grid grid-cols-12 gap-12 items-end">
-      <div class="col-span-12 lg:col-span-3 p-0 m-0">
+    <div class="px-6 grid grid-cols-12 gap-12 items-end">
+      <div class="col-span-12 lg:col-span-3 md:col-span-6  p-0 m-0">
         <span class="text-[66px] font-bold tracking-tight">©<span id="year"></span></span>
       </div>
 
-      <div class="col-span-12 lg:col-span-3 lg:col-start-7 pb-5">
+      <div class="col-span-12 lg:col-span-3 lg:col-start-7 md:col-span-6  pb-5">
         <span>Codé avec ♡ par Nathalie Depierre</span>
       </div>
-      <div class="col-span-12 lg:col-span-3 flex justify-end pb-5">
+      <div class=" pb-5 col-span-12 justify-center xs:bg-accent xs:text-white lg:col-span-3 flex md:justify-end ">
         <span><a href="#top">retour en haut</a></span>
       </div>
     </div>

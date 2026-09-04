@@ -31,10 +31,10 @@
     }
      @layer components {
       .title__work{
-        @apply my-4 uppercase  flex justify-between;
+        @apply my-4 uppercase text-xl flex justify-between;
       }
     .title__work--tags {
-      @apply bg-ink text-white text-base w-fit px-2 py-1 inline-block;
+      @apply bg-ink text-white text-xs w-fit px-2 py-1 inline-block;
     }
   }
 
@@ -60,25 +60,26 @@
         <a href="index.html">Nathalie Depierre</a>
       </h1>
       <button id="menuToggle"
-        class="absolute top-6 right-6 z-50 lg:hidden bg-accent p-2 text-body text-white hover:bg-neutral-secondary-soft cursor-pointer"
+        class="absolute top-6 right-6 z-30 lg:hidden bg-accent p-2 text-body text-white hover:bg-neutral-secondary-soft cursor-pointer"
         aria-label="Ouvrir le menu">
         MENU
       </button>
 
       <div id="navMenu"
-        class="h-[100vh] p-6 lg:p-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out absolute top-0 left-0 w-full lg:h-[50px] bg-white z-40 lg:max-h-none lg:opacity-100 lg:overflow-visible lg:static lg:grid lg:w-full grid-cols-12 content-center lg:content-stretch items-center justify-items-stretch"
+        class="max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out absolute top-0 left-0 w-full bg-white z-40 p-6 lg:p-0 lg:max-h-none lg:opacity-100 lg:overflow-visible lg:static lg:grid lg:w-full grid-cols-12 content-center lg:content-stretch items-center justify-items-stretch"
         data-fade-group>
 
-        <div class="col-span-12 lg:col-span-2 lg:col-start-5 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+        <div
+          class="col-span-12 lg:col-span-2 lg:col-start-5 lg:text-right text-[5rem] lg:text-2xl hover:text-accent fade">
           <a href="index.html">Index</a>
         </div>
-        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent fade">
           <a href="projets.html">Projets</a>
         </div>
-        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent fade">
           <a href="a-propos.html">À propos</a>
         </div>
-        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent fade">
           <a href="contact.html">Contact</a>
         </div>
       </div>
@@ -87,47 +88,48 @@
   </header>
   <!--Header-->
   <!--Main-->
-  <main>
+  <main id="content">
+
     <!--projets-->
     <section id="projects" class="py-8">
 
-      <div id="filter" class="w-full grid grid-cols-12 gap-4 items-center pt-16 px-4">
+      <div id="filter" class="z-50 w-full grid grid-cols-12 grid-row gap-4 items-center pt-16 px-4">
 
-        <div class="col-span-12 lg:col-span-2">
-          <h1 class="font-display font-bold text-[72px] lg:text-[145px] leading-[0.85] space-x-4">
+        <div class="col-span-12 pb-6 lg:col-span-2 grid-rows-1">
+          <h1 class="font-display font-bold text-[72px] lg:text-[145px] leading-[0.85]">
             Projets
           </h1>
         </div>
 
-
-        <div class="col-start-5 col-span-2 text-right text-2xl text-gray-500">
+        <!--Filtre-->
+        <div
+          class="col-span-3 lg:col-span-2 pt-6 grid-rows-2 lg:col-start-5 md:grid-rows-1 lg:text-right text-2xl text-gray-500">
           <button class="text-2xl text-gray-500 cursor-pointer" onClick="filterCategory('all')">
             tous<sup>(5)</sup></button>
         </div>
-        <div class="col-span-2 text-right text-2xl text-gray-500 cursor-pointer">
+        <div class="col-span-3 lg:col-span-2 pt-6 grid-rows-2 lg:grid-rows-1 lg:text-right text-2xl text-gray-500">
           <button class="text-2xl text-gray-500 cursor-pointer" onClick="filterCategory('ux')">
             ux<sup>(5)</sup></button>
         </div>
-        <div class="col-span-2 text-right text-2xl text-gray-500 cursor-pointer">
+        <div class="col-span-3 lg:col-span-2  pt-6 grid-rows-2 lg:grid-rows-1 lg:text-right text-2xl text-gray-500">
           <button class="text-2xl text-gray-500 cursor-pointer" onClick="filterCategory('ui')">
             ui<sup>(5)</sup></button>
         </div>
-        <div class="col-span-2 text-right text-2xl text-gray-500 cursor-pointer">
+        <div class="col-span-3 lg:col-span-2 pt-6 grid-rows-2 lg:grid-rows-1 lg:text-right text-2xl text-gray-500">
           <button class="text-2xl text-gray-500 cursor-pointer" onClick="filterCategory('integration')">
             Intégration<sup>(2)</sup></button>
         </div>
-
+        <!--Filtre-->
     </section>
-
     <!--Projets-->
     <!--Galerie-->
-    <section id="portfolio" class="w-full h-min-100vh py-24" data-fade-group>
+    <section id="portfolio" class="w-full h-min-100vh lg:py-24" data-fade-group>
       <div id="category" class="w-full grid grid-cols-12 gap-8 px-6 py-2 mx-auto">
 
         <figure class="col-span-12 lg:col-span-4 md:col-span-6 fade project__card ux ui">
           <a href="portfolio/application-landwiz.html">
             <div class="w-full h-100 overflow-hidden">
-              <img src="assets/img//original-4d3490bf0651f7e962e2bcac988938b2.webp" alt="Landwiz"
+              <img src="assets/img/portfolio/-landwiz.webp" alt="Landwiz"
                 class="w-full h-full object-cover card__image card__image--animated">
             </div>
             <figcaption class="title__work">
@@ -143,7 +145,7 @@
         <figure class="col-span-12 lg:col-span-4 md:col-span-6 project__card ux ui fade">
           <a href="portfolio/application-hec-nux.html">
             <div class="w-full h-100 overflow-hidden">
-              <img src="assets/img/nux-hec.png" alt="Projet N.U.X HEC"
+              <img src="assets/img/portfolio/-nux-hec.png" alt="Projet N.U.X HEC"
                 class="w-full h-full object-cover card__image card__image--animated">
             </div>
             <figcaption class="title__work">
@@ -157,9 +159,9 @@
         </figure>
 
         <figure class="col-span-12 lg:col-span-4 md:col-span-6 project__card ux ui integration fade">
-          <a href="portfolio/application-la-remise.html">
+          <a href="#">
             <div class="w-full h-100 overflow-hidden">
-              <img src="assets/img/laremise_montreal_desktop1.png" alt="Coopérative La Remise"
+              <img src="assets/img/portfolio/-la-remise.png" alt="Coopérative La Remise"
                 class="w-full h-full object-cover card__image card__image--animated">
             </div>
             <figcaption class="title__work">
@@ -176,7 +178,7 @@
         <figure class="col-span-12 lg:col-span-4 md:col-span-6 project__card ux ui fade">
           <a href="portfolio/application-wwoof-canada.html">
             <div class="w-full h-100 overflow-hidden">
-              <img src="assets/img/Rectangle 6.png" alt="WWOOF Canada"
+              <img src="assets/img/portfolio/-wwoof-canada.png" alt="WWOOF Canada"
                 class="w-full h-full object-cover card__image card__image--animated">
             </div>
             <figcaption class="title__work">
@@ -188,11 +190,16 @@
             </figcaption>
           </a>
         </figure>
-        <figure class="col-span-12 lg:col-span-4 md:col-span-6 project__card ux ui integration fade">
-          <a href="portfolio/application-cf-education.html">
-            <div class="w-full h-100 overflow-hidden">
-              <img src="assets/img/portfolio/cfeducation-1.jpg" alt="Centre d'Éducation Petite Enfance"
+
+
+        <figure class="relative col-span-12 lg:col-span-4 md:col-span-6 project__card ux ui integration fade">
+          <a href="#">
+            <div class="relative w-full h-100 overflow-hidden">
+              <img src="assets/img/portfolio/-cfeducation-1.jpg" alt="Centre d'Éducation Petite Enfance"
                 class="w-full h-full object-cover card__image card__image--animated">
+              <div class="absolute left-10 bottom-10 z-50 bg-red-500 text-white text-base w-fit px-2 py-1 inline-block">
+                À venir
+              </div>
             </div>
             <figcaption class="title__work">
               <span class="title__work--name">Centre de formation en éducation</span>

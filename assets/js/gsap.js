@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger);
 //Déplacement des titres (homepage)
 gsap.utils.toArray(".marquee").forEach((el) => {
     gsap.to(el, {
-        xPercent: -50,
+        xPercent: -25,
         ease: "none",
         scrollTrigger: {
             trigger: el,
@@ -14,6 +14,19 @@ gsap.utils.toArray(".marquee").forEach((el) => {
         },
     });
 });
+gsap.utils.toArray(".marquee2").forEach((el) => {
+    gsap.to(el, {
+        xPercent: +35,
+        ease: "none",
+        scrollTrigger: {
+            trigger: el,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+        },
+    });
+});
+
 // Apparition du btn scroll
 gsap.fromTo(".scroll",
     {
@@ -68,7 +81,7 @@ document.querySelectorAll("[data-fade-group]").forEach((group) => {
     });
 });
 
-//Slide horizontal
+//Slide horizontal 
 window.addEventListener("load", () => {
     gsap.utils.toArray(".slider").forEach((el) => {
         const scrollDistance = el.scrollWidth - el.parentElement.offsetWidth;

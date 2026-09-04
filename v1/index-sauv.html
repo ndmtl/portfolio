@@ -8,7 +8,7 @@
   <meta name="description"
     content="Designer multidisciplinaire, ux/ui design et intégratrice. Architecture, expérience utilisateur, prototypage, design visuel, Montréal ou à distance.">
   <!--Favicon-->
-  <link rel="icon" type="image/png" href="assets/icons/d-final_favicon.png">
+  <link rel="icon" type="image/x-icon" href="assets/icons/d-final_favicon.png">
   <!--Tailwind-->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <!--Styles-->
@@ -29,15 +29,14 @@
       --font-sans: 'Neue Haas Display', sans-serif;
       --font-script: 'Oooh Baby', cursive;
     }
-    @layer components {
+     @layer components {
       .title__work{
-        @apply my-4 uppercase text-xl flex justify-between;
+        @apply my-4 uppercase text-2xl flex justify-between;
       }
     .title__work--tags {
-      @apply bg-ink text-white text-xs w-fit px-2 py-1 inline-block;
+      @apply bg-ink text-white text-base w-fit px-2 py-1 inline-block;
     }
   }
-  
 
   </style>
 
@@ -61,26 +60,25 @@
         <a href="index.html">Nathalie Depierre</a>
       </h1>
       <button id="menuToggle"
-        class="absolute top-6 right-6 z-30 lg:hidden bg-accent p-2 text-body text-white hover:bg-neutral-secondary-soft cursor-pointer"
+        class="absolute top-6 right-6 z-50 lg:hidden bg-accent p-2 text-body text-white hover:bg-neutral-secondary-soft cursor-pointer"
         aria-label="Ouvrir le menu">
         MENU
       </button>
 
       <div id="navMenu"
-        class="max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out absolute top-0 left-0 w-full bg-white z-40 p-6 lg:p-0 lg:max-h-none lg:opacity-100 lg:overflow-visible lg:static lg:grid lg:w-full grid-cols-12 content-center lg:content-stretch items-center justify-items-stretch"
+        class="h-[100vh] p-6 lg:p-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out absolute top-0 left-0 w-full lg:h-[50px] bg-white z-40 lg:max-h-none lg:opacity-100 lg:overflow-visible lg:static lg:grid lg:w-full grid-cols-12 content-center lg:content-stretch items-center justify-items-stretch"
         data-fade-group>
 
-        <div
-          class="col-span-12 lg:col-span-2 lg:col-start-5 lg:text-right text-[5rem] lg:text-2xl hover:text-accent fade">
+        <div class="col-span-12 lg:col-span-2 lg:col-start-5 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
           <a href="index.html">Index</a>
         </div>
-        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent fade">
+        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
           <a href="projets.html">Projets</a>
         </div>
-        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent fade">
+        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
           <a href="a-propos.html">À propos</a>
         </div>
-        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent fade">
+        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
           <a href="contact.html">Contact</a>
         </div>
       </div>
@@ -90,42 +88,49 @@
   <!--Header-->
 
   <!--Main-->
-  <main id="content">
+  <main>
     <!--Hero-->
-    <section id="hero" class="relative w-full h-[95vh] pb-24 overflow-hidden">
-      <div class="w-full h-full px-[5vw] grid grid-cols-12 content-end">
+    <section id="hero" class="relative w-full h-[95vh] pb-24 flex overflow-hidden">
+      <div class="w-full p-6">
 
-        <div class="col-span-12 md:col-span-6">
-          <a href="#portfolio">
-            <div
-              class="w-[120px] h-[120px] rounded-full bg-accent flex items-center justify-center absolute left-1/2 -translate-x-1/2 bottom-[30%] z-[1000] text-white scroll">
-              Scroll down
-            </div>
-          </a>
-          <h2 class="font-sans leading-[0.95] tracking-[-6px] text-[clamp(4.5rem,2.894rem+10vw,12rem)]">
-            <span class="inline-block marquee">Designer</span> <span
-              class="inline-block text-gray-200 marquee2">ux-ui</span>
-            <span class="pl-32 inline-block marquee">multimedia</span>
-          </h2>
-        </div>
-        <div class="col-span-12 md:col-span-6 content-end flex">
-          <h3 class="font-sans leading-[0.95] tracking-[-6px] text-[clamp(4.5rem,2.894rem+10vw,12rem)]">
-            <span class="block marquee2">
-              <span class="text-gray-300">+</span> intégration</span>
-          </h3>
-        </div>
+        <h2 class="font-sans leading-[0.95] tracking-[-6px] text-[clamp(4.5rem,2.894rem+8.85vw,9.0625rem)]">
+
+          <!-- x bords -->
+
+          <span class="block">Designer</span>
+          <span class="flex justify-between items-baseline">
+            <span class="pl-32">multimedia</span>
+            <span class="text-gray-300 font-bold">ux - ui</span>
+          </span>
+
+          <!-- ligne 2 : alignée à gauche -->
+          <span class="flex gap-4 pb-2">
+            <span class="font-bold  inline-block marquee"><span class="font-script font-bold text-accent">&</span>
+              intégration</span>
+          </span>
+
+        </h2>
+
+        <a href="#portfolio">
+          <div
+            class="w-[120px] h-[120px] rounded-full bg-accent flex items-center justify-center absolute bottom-[20%] right-[30%] z-[1000] text-white scroll">
+            Scroll down
+          </div>
+        </a>
+
       </div>
     </section>
 
     <!--Hero-->
     <!--Projets-->
-    <section id="portfolio" class="w-full h-min-100vh py-0" data-fade-group>
-      <div class="w-full grid grid-cols-12 gap-8 px-6 py-24 max-w-[1400px] mx-auto">
+    <section id="portfolio" class="w-full h-min-100vh py-12" data-fade-group>
+      <span class="inline-block text-gray-300 font-bold text-right marquee">Portfolio</span>
+      <div class="w-full grid grid-cols-1 md:grid-cols-12 gap-8 px-6 py-24 max-w-[1400px] mx-auto">
 
-        <figure class="col-span-12 md:col-start-2 md:col-span-4 md:row-start-1 fade">
+        <figure class="md:col-start-2 md:col-span-4 md:row-start-1 fade">
           <a href="portfolio/application-landwiz.html">
             <div class="aspect-[4/5] overflow-hidden">
-              <img src="assets/img/portfolio/-landwiz.webp" alt="Landwiz"
+              <img src="assets/img//original-4d3490bf0651f7e962e2bcac988938b2.webp" alt="Landwiz"
                 class="w-full h-full object-cover card__image card__image--animated">
             </div>
             <figcaption class="title__work">
@@ -138,10 +143,10 @@
           </a>
         </figure>
 
-        <figure class="col-span-12 md:col-start-9 md:col-span-3 md:row-start-1 md:self-start fade">
+        <figure class="md:col-start-9 md:col-span-3 md:row-start-1 md:self-start fade">
           <a href="portfolio/application-hec-nux.html">
             <div class="aspect-[5/4] overflow-hidden">
-              <img src="assets/img/portfolio/-nux-hec.png" alt="Projet N.U.X HEC"
+              <img src="assets/img/nux-hec.png" alt="Projet N.U.X HEC"
                 class="w-full h-full object-cover card__image card__image--animated">
             </div>
             <figcaption class="title__work">
@@ -155,10 +160,10 @@
         </figure>
 
 
-        <figure class="col-span-12 md:col-start-7 md:col-span-4 md:row-start-2 md:self-end fade">
-          <a href="#">
+        <figure class="md:col-start-7 md:col-span-4 md:row-start-2 md:self-end fade">
+          <a href="portfolio/application-la-remise.html">
             <div class="aspect-[5/4] overflow-hidden">
-              <img src="assets/img/portfolio/-la-remise.png" alt="Coopérative La Remise"
+              <img src="assets/img/laremise_montreal_desktop1.png" alt="Coopérative La Remise"
                 class="w-full h-full object-cover card__image card__image--animated">
             </div>
             <figcaption class="title__work">
@@ -171,10 +176,10 @@
           </a>
         </figure>
 
-        <figure class="col-span-12 md:col-start-2 md:col-span-4 md:row-start-3 fade">
+        <figure class="md:col-start-2 md:col-span-4 md:row-start-3 fade">
           <a href="portfolio/application-wwoof-canada.html">
             <div class="aspect-square overflow-hidden">
-              <img src="assets/img/portfolio/-wwoof-canada.png" alt="WWOOF Canada"
+              <img src="assets/img/Rectangle 6.png" alt="WWOOF Canada"
                 class="w-full h-full object-cover card__image card__image--animated">
             </div>
             <figcaption class="title__work">
@@ -187,13 +192,10 @@
           </a>
         </figure>
 
-        <figure class="relative col-span-12 md:col-start-8 md:col-span-5 md:row-start-4 fade">
-          <a href="#">
-            <div class="relative aspect-[4/5] overflow-hidden">
-              <div class="absolute left-10 bottom-10 z-50 bg-red-500 text-white text-base w-fit px-2 py-1 inline-block">
-                À venir
-              </div>
-              <img src="assets/img/portfolio/-cfeducation-1.jpg" alt="Centre d'Éducation Petite Enfance"
+        <figure class="md:col-start-8 md:col-span-5 md:row-start-4 fade">
+          <a href="portfolio/application-cf-education.html">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="assets/img/portfolio/cfeducation-1.jpg" alt="Centre d'Éducation Petite Enfance"
                 class="w-full h-full object-cover card__image card__image--animated">
             </div>
             <figcaption class="title__work">
@@ -205,8 +207,12 @@
             </figcaption>
           </a>
         </figure>
+
+      </div>
       </div>
     </section>
+    </div>
+
     </section>
 
     <!--intro courte-->
@@ -232,7 +238,7 @@
             <li class="py-4 border-t-2 border-solid border-white">Adobe CS · Figma . CMS </li>
           </ul>
         </div>
-        <div class="col-span-12 lg:col-span-3 flex lg:justify-end">Montréal et à
+        <div class="col-span-12 lg:col-span-3 flex justify-end">Montréal et à
           distance</div>
       </div>
     </section>
@@ -243,16 +249,17 @@
     <div class="px-6 mx-auto grid grid-cols-12 gap-12">
 
 
-      <div class="col-span-12 md:col-span-3 lg:col-start-4 text-xl fade">
+      <div class="col-span-12 lg:col-span-3 lg:col-start-4 text-xl fade">
         <ul class="flex flex-col gap-1">
           <li><a href="index.html" class="hover:text-accent">Index</a></li>
           <li><a href="projets.html" class="hover:text-accent">Projets</a></li>
           <li><a href="a-propos.html" class="hover:text-accent">À propos</a></li>
           <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
+
         </ul>
       </div>
 
-      <div class="col-span-12 md:col-span-3 text-xl fade">
+      <div class="col-span-12 lg:col-span-3 text-xl fade">
         <div class="flex flex-col gap-1 font-mono uppercase">
 
           <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
@@ -288,37 +295,40 @@
         </div>
       </div>
 
-      <div class="col-span-12 md:col-span-3 fade">
+      <div class="col-span-12 lg:col-span-3 fade">
+
         <a href="contact.html" class="btn__contact">
           <svg id="rotatingText" viewBox="0 0 140 140">
             <defs>
               <path id="circle-path" d="M70,70 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
             </defs>
             <text>
-              <textPath href="#circle-path">CONTACTEZ-MOI ** CONTACTEZ-MOI **</textPath>
+              <textPath href="#circle-path">CONTACTEZ-MOI * CONTACTEZ-MOI *</textPath>
             </text>
           </svg>
           <div class="dot">
-            <img src="assets/img/illustrations_contact.png" alt="Illustrations pour bouton de contact"
-              class="w-[120px]" />
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+              <path
+                d="M400,600c-50.5,0-89.1-25.2-113.35-47.25-10.29-9.38-19.72-19.65-28.2-30.7-3.82-4.88-7.35-9.97-10.6-15.25-10.38-17.92-4.27-40.86,13.65-51.25,17.47-10.12,39.81-4.6,50.55,12.5,7.14,10.7,15.53,20.5,25,29.2,17.05,15.5,38.45,27.75,62.95,27.75s45.9-12.3,62.9-27.75c9.47-8.7,17.86-18.5,25-29.2,10.7-17.74,33.76-23.45,51.5-12.75s23.45,33.76,12.75,51.5h0l-10.6,15.25c-6.4,8.35-15.85,19.5-28.2,30.7-24.25,22-62.85,47.25-113.35,47.25ZM250,300c0-27.61,22.39-50,50-50h.35c27.61,0,50,22.39,50,50s-22.39,50-50,50h-.35c-27.61,0-50-22.39-50-50ZM500,250c-27.61,0-50,22.39-50,50s22.39,50,50,50h.35c27.61,0,50-22.39,50-50s-22.39-50-50-50h-.35Z" />
+              <path
+                d="M400,0C179.09,0,0,179.09,0,400s179.09,400,400,400,400-179.09,400-400S620.91,0,400,0ZM75,400c0-179.49,145.51-325,325-325s325,145.51,325,325-145.51,325-325,325S75,579.49,75,400Z"
+                style="fill-rule: evenodd;" />
             </svg>
           </div>
         </a>
       </div>
     </div>
 
-    <div class="px-6 grid grid-cols-12 gap-12 items-end">
-
-      <div class="col-span-6 md:col-span-3 lg:p-0 m-0">
-        <span class="text-[33px] lg:text-[66px] font-bold tracking-tight">©<span id="year"></span></span>
+    <div class="px-6 mx-auto grid grid-cols-12 gap-12 items-end">
+      <div class="col-span-12 lg:col-span-3 p-0 m-0">
+        <span class="text-[66px] font-bold tracking-tight">©<span id="year"></span></span>
       </div>
 
-      <div class="col-span-6 lg:col-span-3 md:col-span-5 lg:col-start-7 pb-5">
+      <div class="col-span-12 lg:col-span-3 lg:col-start-7 pb-5">
         <span>Codé avec ♡ par Nathalie Depierre</span>
       </div>
-      <div
-        class="m-0 pb-5 col-span-12 bg-accent text-white lg:col-span-3 md:col-span-4 flex justify-center lg:justify-end ">
-        <span><a href=" #top">retour en haut</a></span>
+      <div class="col-span-12 lg:col-span-3 flex justify-end pb-5">
+        <span><a href="#top">retour en haut</a></span>
       </div>
     </div>
   </footer>
