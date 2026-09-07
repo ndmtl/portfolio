@@ -7,6 +7,11 @@
   "background_color": "#fff",
   "theme_color": "#000",
 "icons": [
+   {
+    "src": "assets/icons/d-final_icon-144.png",
+    "sizes": "144x144",
+    "type": "image/png"
+  },
   {
     "src": "assets/icons/d-final_icon-192.png",
     "sizes": "192x192",

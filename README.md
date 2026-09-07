@@ -6,9 +6,10 @@
 
 ### https://ndmtl.github.io/portfolio/
 
-| Animations GSAP                                              | Animations CSS                              |
+| Animations JS et GSAP                                        | Animations CSS                              |
 | :----------------------------------------------------------- | :------------------------------------------ |
 | Déplacement des titres (marquee)                             | Déplacement "smooth" au "scroll"            |
 | Apparition au scroll (fade in et position sur le viewport)   | Animations sur photo (transition, rotation) |
 | Apparition des éléments au scroll (fade In)                  | Animation rotation sur texte                |
 | Galerie avec scroll horizontal (présentation des prototypes) |                                             |
+| Création d'un filtre par classes                             |                                             |
