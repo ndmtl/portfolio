@@ -6,9 +6,9 @@
 
 ### https://ndmtl.github.io/portfolio/
 
-| Animations JS et GSAP                                        | Animations CSS                              |
-| :----------------------------------------------------------- | :------------------------------------------ |
-| Déplacement des titres (marquee)                             | Déplacement "smooth" au "scroll"            |
+| Animations JS et GSAP                                        | Animations CSS                              | Composant Tailwind                                                                      |
+| :----------------------------------------------------------- | :------------------------------------------ | :-------------------------------------------------------------------------------------- |
+| Déplacement des titres (marquee)                             | Déplacement "smooth" au "scroll"            | Composant STAT https://tailwindcss.com/plus/ui-blocks/marketing/sections/stats-sections |
 | Apparition au scroll (fade in et position sur le viewport)   | Animations sur photo (transition, rotation) |
 | Apparition des éléments au scroll (fade In)                  | Animation rotation sur texte                |
 | Galerie avec scroll horizontal (présentation des prototypes) |                                             |
