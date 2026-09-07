@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+<!--Head-->
 
 <head>
   <meta charset="UTF-8">
@@ -8,16 +9,22 @@
   <meta name="description"
     content="Designer multidisciplinaire, ux/ui design et intégratrice. Architecture, expérience utilisateur, prototypage, design visuel, Montréal ou à distance.">
   <!--Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/icons/d-final_favicon.png">
-  <!--Tailwind-->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="icon" type="image/png" href="assets/icons/d-final_favicon.png">
+  <!--Manifest-->
+  <link rel="manifest" href="manifest.json">
   <!--Styles-->
   <!-- <link rel="stylesheet" href="assets/css/normalize.css"> -->
+  <link rel="stylesheet" href="assets/css/normalize.css">
   <link rel="stylesheet" href="assets/css/styles.css">
   <!--GSAP-->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
   <script src="assets/js/gsap.js" defer></script>
+  <!--JS-->
+  <script src="assets/js/script.js" defer></script>
+  <script src="assets/js/validation.js" defer></script>
+  <!--Tailwind-->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
     @theme {
    --color-ink: #0a0a0a;
@@ -25,254 +32,243 @@
      --color-accent: blue;
 
       --font-mono: "Inter Tight", sans-serif;
-      --font-display: "Inter", sans-serif;
       --font-sans: 'Neue Haas Display', sans-serif;
-      --font-script: 'Oooh Baby', cursive;
     }
-     @layer components {
+    @layer components {
       .title__work{
-        @apply my-4 uppercase  flex justify-between;
+        @apply my-4 uppercase text-xl flex justify-between;
       }
     .title__work--tags {
-      @apply bg-ink text-white text-base w-fit px-2 py-1 inline-block;
+      @apply bg-ink text-white text-xs w-fit px-2 py-1 inline-block;
     }
   }
-
   </style>
-
-  <!--JS-->
-  <script src="assets/js/script.js" defer></script>
-  <script src="assets/js/validation.js" defer></script>
+  <!--Tailwind-->
 </head>
+<!--Head-->
 <!--Body-->
 
 <body class="text-ink w-full font-sans">
-  <!--Ancre retour-->
-  <div id="top"></div>
-  <!--Ancre retour-->
   <!--Header-->
-  <header class="relative w-full">
-
+  <header class="relative w-full top">
     <!--Accessibilité-->
     <a href="#content" class="sr-only">Aller au contenu principal</a>
     <!--Accessibilité-->
-    <nav class="relative w-full min-h-[50px] p-6">
-      <h1 class="absolute text-2xl hover:text-accent">
+    <nav class="absolute z-50 w-full p-6">
+      <h1 class="absolute z-50 text-2xl hover:text-accent">
         <a href="index.html">Nathalie Depierre</a>
       </h1>
-      <button id="menuToggle"
-        class="absolute top-6 right-6 z-50 lg:hidden bg-accent p-2 text-body text-white hover:bg-neutral-secondary-soft cursor-pointer"
-        aria-label="Ouvrir le menu">
-        MENU
+
+      <button id="menuToggle" class="absolute top-6 right-6 z-50 lg:hidden bg-accent p-2 text-white cursor-pointer"
+        aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="menu__text">MENU</span>
+        <span class="menu__text--close hidden">FERMER</span>
       </button>
-
       <div id="navMenu"
-        class="h-[100vh] p-6 lg:p-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out absolute top-0 left-0 w-full lg:h-[50px] bg-white z-40 lg:max-h-none lg:opacity-100 lg:overflow-visible lg:static lg:grid lg:w-full grid-cols-12 content-center lg:content-stretch items-center justify-items-stretch"
-        data-fade-group>
-
-        <div class="col-span-12 lg:col-span-2 lg:col-start-5 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+        class="hidden opacity-0 transition-opacity duration-300 ease-in-out fixed inset-0 w-full h-screen bg-white z-40 p-6 pt-24 flex flex-col justify-center space-y-6 lg:static lg:h-auto lg:p-0 lg:pt-0 lg:opacity-100 lg:grid lg:w-full grid-cols-12 content-center">
+        <div class="lg:col-span-2 lg:col-start-5 lg:text-right text-4xl sm:text-5xl lg:text-2xl hover:text-accent">
           <a href="index.html">Index</a>
         </div>
-        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+        <div class="lg:col-span-2 lg:text-right text-4xl sm:text-5xl lg:text-2xl hover:text-accent">
           <a href="projets.html">Projets</a>
         </div>
-        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+        <div class="lg:col-span-2 lg:text-right text-4xl sm:text-5xl lg:text-2xl hover:text-accent">
           <a href="a-propos.html">À propos</a>
         </div>
-        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+        <div class="lg:col-span-2 lg:text-right text-4xl sm:text-5xl lg:text-2xl text-accent hover:text-accent">
           <a href="contact.html">Contact</a>
         </div>
       </div>
-
     </nav>
   </header>
   <!--Header-->
+  <!--Main-->
   <main id="content">
     <!-- Contact-->
     <section id="contact" class="w-full px-6 py-16" data-fade-group>
-      <div class="w-full">
-        <div class="w-full grid grid-cols-12 lg:gap-12">
 
-          <!-- Colonne gauche -->
-          <div class="col-span-12 lg:col-span-5 pt-18 fade">
-            <h1 class="font-bold text-[72px] lg:text-[145px] leading-[0.85]">
-              Partagez votre projet
-            </h1>
+      <div class="w-full grid grid-cols-12 lg:gap-12">
 
-            <!-- Colonne gauche  -->
-            <div class="hidden lg:pl-24 lg:pt-12 lg:flex lg:flex-col gap-3 text-base font-mono uppercase">
+        <!-- Colonne gauche -->
+        <div class="col-span-12 lg:col-span-5 pt-18 fade">
+          <h1 class="text-6xl sm:text-7xl lg:text-9xl font-light leading-[0.85] tracking-tight">
+            Partagez<br>
+            votre<br>
+            <span class="font-normal">projet</span>
+          </h1>
 
-              <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
-                class="group inline-flex items-center gap-1 hover:text-accent">
-                LinkedIn
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                  stroke="currentColor"
-                  class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-                </svg>
-              </a>
-
-              <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank" rel="noopener noreferrer"
-                class="group inline-flex items-center gap-1 hover:text-accent">
-                Instagram
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                  stroke="currentColor"
-                  class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-                </svg>
-              </a>
-
-              <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
-                class="group inline-flex items-center gap-1 hover:text-accent">
-                GitHub
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                  stroke="currentColor"
-                  class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-                </svg>
-              </a>
-
-            </div>
-          </div>
           <!-- Colonne gauche  -->
-          <!-- Colonne formulaire -->
-          <div class="col-span-12 lg:col-span-7 fade">
+          <div class="hidden lg:pl-24 lg:pt-12 lg:flex lg:flex-col gap-3 text-base font-mono uppercase">
 
-            <!-- Bizarrement si je mets des guillemets le prettier met espace devant la classe o_O-->
-            <form id='contactForm' action='#' method=" get" novalidate class="p-0 py-12 lg:p-24">
+            <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1 hover:text-accent">
+              LinkedIn
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" aria-hidden="true"
+                class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
 
-              <!-- Champ Nom -->
-              <div class="input__control mb-6 flex flex-col">
-                <label for="fullName" class="block mb-1 text-base font-medium">nom et prénom*</label>
-                <input type="text" name="fullName" id="fullName"
-                  class="w-full h-[36px] bg-transparent border-b-2 border-black focus:outline-none focus:border-accent">
-                <div class="message__error "></div>
-              </div>
+            <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank" rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1 hover:text-accent">
+              Instagram
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" aria-hidden="true"
+                class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
 
-              <!-- Champ Email -->
-              <div class="input__control mb-12 flex flex-col">
-                <label for="email" class="block mb-1 text-base font-medium">courriel (nom@domaine.com)*</label>
-                <input type="email" name="email" id="email" required
-                  class="w-full h-[36px] bg-transparent border-b-2 border-black focus:outline-none focus:border-accent">
-                <div class="message__error "></div>
-              </div>
+            <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1 hover:text-accent">
+              GitHub
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" aria-hidden="true"
+                class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
 
-              <!-- Champ Téléphone -->
-              <div class="input__control mb-12 flex flex-col">
-                <label for="phone" class="block mb-1 text-base font-medium">téléphone (12345678)</label>
-                <input type="tel" name="phone" id="phone" required
-                  class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-accent">
-                <div class="message__error "></div>
-              </div>
-
-              <!--Entreprise facultatif-->
-              <div class="inpuControl mb-12 flex flex-col">
-                <label for="company" class="block mb-1 text-base font-medium">organisation/compagnie</label>
-                <input type="text" name="company" id="company"
-                  class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-accent">
-                <div class="message__error "></div>
-              </div>
-
-              <!-- Sujet -->
-              <div class="input__control mb-12 flex flex-col">
-                <label for="subject" class="block mb-1 text-base font-medium">type de projet*</label>
-                <select name="subject" id="subject" required
-                  class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-accent">
-                  <option value="">Choisissez</option>
-                  <option value="Integration">Site web</option>
-                  <option value="Prototypage UX">UX-UI</option>
-                  <option value="Prototypage UI">Refonte</option>
-                  <option value="Graphisme">Graphisme</option>
-                </select>
-                <div class="message__error "></div>
-              </div>
-              <!-- Budget -->
-              <div class="input__control mb-12 flex flex-col">
-                <label for="budget" class="block mb-1 text-base font-medium">quel est votre budget ?*</label>
-                <select name="budget" id="budget" required
-                  class="w-full h-[36px] bg-transparent border-b-2 border-black  focus:outline-none focus:border-accent">
-                  <option value="">Choisissez</option>
-                  <option value="3000-5000">3000-5000</option>
-                  <option value="5000-10000">5000-10000</option>
-                  <option value="10000-15000">10000-15000</option>
-                  <option value="10000+">10000+</option>
-                </select>
-                <div class="message__error "></div>
-              </div>
-
-              <!--Échéance-->
-              <div class="input__control mb-12 flex flex-col" role="radiogroup" aria-labelledby="deadline-label"
-                aria-describedby="deadline-error">
-                <span id="deadline-label">échéance*</span>
-                <div>
-                  <input type="radio" id="size1" name="deadline" value="1" required>
-                  <label for="size1">ASAP</label>
-                </div>
-                <div>
-                  <input type="radio" id="size2_10" name="deadline" value="2-10">
-                  <label for="size2_10">1-3 mois</label>
-                </div>
-                <div>
-                  <input type="radio" id="size11_50" name="deadline" value="11-50">
-                  <label for="size11_50">3-6mois</label>
-                </div>
-                <div>
-                  <input type="radio" id="size51" name="deadline" value="51+">
-                  <label for="size51">flexible</label>
-                </div>
-                <div class="message__error "></div>
-              </div>
-              <!-- Champ Message -->
-              <div class="input__control mb-12 flex flex-col">
-                <label for="message" required class="block mb-1 text-base font-medium">décrivez votre projet*</label>
-
-                <textarea name="message" id="message" rows="4"
-                  class="w-full bg-transparent  border-b-2 border-black  focus:outline-none focus:border-accent resize-none"></textarea>
-                <div class="message__error "></div>
-              </div>
-              <p id="confirmation"></p>
-              <button type="submit"
-                class="group inline-flex items-center gap-2 bg-black text-white hover:bg-accent transition-colors duration-200 ease-in-out px-6 py-3 cursor-pointer">
-                <span>envoyer le message</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                  stroke="currentColor"
-                  class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-                </svg>
-
-              </button>
-            </form>
           </div>
-
         </div>
+        <!-- Colonne gauche  -->
+        <!-- Colonne formulaire -->
+        <div class="col-span-12 lg:col-span-7 fade">
+
+          <form id="contactForm" action="#" method="get" novalidate class="p-0 lg:p-24">
+
+            <!-- Champ Nom -->
+            <div class="input__control mb-6 flex flex-col">
+              <label for="fullName" class="block mb-1 text-base font-medium">Nom et prénom*</label>
+              <input type="text" name="fullName" id="fullName" required
+                class="w-full h-[36px] bg-transparent border-b-2 border-black focus:outline-none focus:border-accent">
+              <div class="message__error"></div>
+            </div>
+
+            <!-- Champ Email -->
+            <div class="input__control mb-12 flex flex-col">
+              <label for="email" class="block mb-1 text-base font-medium">Courriel (nom@domaine.com)*</label>
+              <input type="email" name="email" id="email" required
+                class="w-full h-[36px] bg-transparent border-b-2 border-black focus:outline-none focus:border-accent">
+              <div class="message__error"></div>
+            </div>
+
+            <!-- Champ Téléphone -->
+            <div class="input__control mb-12 flex flex-col">
+              <label for="phone" class="block mb-1 text-base font-medium">Téléphone (12345678)</label>
+              <input type="tel" name="phone" id="phone"
+                class="w-full h-[36px] bg-transparent border-b-2 border-black focus:outline-none focus:border-accent">
+              <div class="message__error"></div>
+            </div>
+
+            <!--Entreprise facultatif-->
+            <div class="input__control mb-12 flex flex-col">
+              <label for="company" class="block mb-1 text-base font-medium">Organisation/compagnie</label>
+              <input type="text" name="company" id="company"
+                class="w-full h-[36px] bg-transparent border-b-2 border-black focus:outline-none focus:border-accent">
+              <div class="message__error"></div>
+            </div>
+
+            <!-- Sujet -->
+            <div class="input__control mb-12 flex flex-col">
+              <label for="subject" class="block mb-1 text-base font-medium">Type de projet*</label>
+              <select name="subject" id="subject" required
+                class="w-full h-[36px] bg-transparent border-b-2 border-black focus:outline-none focus:border-accent">
+                <option value="">Choisissez</option>
+                <option value="Integration">Site web</option>
+                <option value="Prototypage UX">UX-UI</option>
+                <option value="Prototypage UI">Refonte</option>
+                <option value="Graphisme">Graphisme</option>
+              </select>
+              <div class="message__error"></div>
+            </div>
+
+            <!-- Budget -->
+            <div class="input__control mb-12 flex flex-col">
+              <label for="budget" class="block mb-1 text-base font-medium">Quel est votre budget ?*</label>
+              <select name="budget" id="budget" required
+                class="w-full h-[36px] bg-transparent border-b-2 border-black focus:outline-none focus:border-accent">
+                <option value="">Choisissez</option>
+                <option value="3000-5000">3000-5000</option>
+                <option value="5000-10000">5000-10000</option>
+                <option value="10000-15000">10000-15000</option>
+                <option value="10000+">10000+</option>
+              </select>
+              <div class="message__error"></div>
+            </div>
+
+            <!--Échéance-->
+            <fieldset class="input__control mb-12 flex flex-col border-0 p-0 m-0" aria-describedby="deadline-error">
+              <legend class="mb-1 text-base font-medium">Échéance*</legend>
+              <div>
+                <input type="radio" id="deadline-asap" name="deadline" value="asap" required>
+                <label for="deadline-asap">ASAP</label>
+              </div>
+              <div>
+                <input type="radio" id="deadline-1-3" name="deadline" value="1-3-mois">
+                <label for="deadline-1-3">1-3 mois</label>
+              </div>
+              <div>
+                <input type="radio" id="deadline-3-6" name="deadline" value="3-6-mois">
+                <label for="deadline-3-6">3-6 mois</label>
+              </div>
+              <div>
+                <input type="radio" id="deadline-flexible" name="deadline" value="flexible">
+                <label for="deadline-flexible">Flexible</label>
+              </div>
+              <div id="deadline-error" class="message__error"></div>
+            </fieldset>
+
+            <!-- Champ Message -->
+            <div class="input__control mb-12 flex flex-col">
+              <label for="message" class="block mb-1 text-base font-medium">Décrivez votre projet*</label>
+              <textarea name="message" id="message" rows="4" required
+                class="w-full bg-transparent border-b-2 border-black focus:outline-none focus:border-accent resize-none"></textarea>
+              <div class="message__error"></div>
+            </div>
+
+            <p id="confirmation" role="status"></p>
+
+            <button type="submit"
+              class="group inline-flex items-center gap-2 bg-black text-white hover:bg-accent transition-colors duration-200 ease-in-out px-6 py-3 cursor-pointer">
+              <span>Envoyer le message</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor" aria-hidden="true"
+                class="w-4 h-4 transition-transform duration-200 ease-in-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </button>
+          </form>
+        </div>
+
       </div>
+
     </section>
   </main>
   <!--Footer-->
-  <footer id="footer" class="pt-16 relative" data-fade-group>
-    <div class="px-6 mx-auto grid grid-cols-12 gap-12">
+  <footer id="footer" class="m-0 p-0 pt-16 relative" data-fade-group>
 
+    <div class="grid grid-cols-12 gap-6 md:gap-12">
 
-      <div class="col-span-12 lg:col-span-3 lg:col-start-4 md:col-span-6 text-xl fade">
+      <div class="w-full col-span-12 lg:col-span-3 lg:col-start-4 p-6 lg:p-12 py-4">
         <ul class="flex flex-col gap-1">
           <li><a href="index.html" class="hover:text-accent">Index</a></li>
           <li><a href="projets.html" class="hover:text-accent">Projets</a></li>
           <li><a href="a-propos.html" class="hover:text-accent">À propos</a></li>
           <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
-
         </ul>
       </div>
 
-      <div class="col-span-12 lg:col-span-3 md:col-span-6 text-xl fade">
+      <div class="w-full col-span-12 lg:col-span-3 p-6 lg:p-12 py-4">
         <div class="flex flex-col gap-1 font-mono uppercase">
-
           <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
             class="group inline-flex items-center gap-1 hover:text-accent">
             LinkedIn
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
               class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25">
             </svg>
           </a>
 
@@ -282,7 +278,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
               class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25">
             </svg>
           </a>
 
@@ -292,43 +288,50 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
               class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25">
             </svg>
           </a>
-
         </div>
-      </div>
-
-      <div class="col-span-12 lg:col-span-3 fade">
-
-        <a href="contact.html" class="btn__contact">
-          <svg id="rotatingText" viewBox="0 0 140 140">
-            <defs>
-              <path id="circle-path" d="M70,70 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
-            </defs>
-            <text>
-              <textPath href="#circle-path">MERCI DE VOTRE VISITE ET À BIENTÔT **</textPath>
-            </text>
-          </svg>
-          <div class="dot">
-            <img src="assets/img/illustrations_merci.png" />
-            </svg>
+        <div class="w-full col-span-12 lg:col-span-3 py-4">
+          <!--BTN Contact-->
+          <div class="absolute top-10 right-15 z-10 fade">
+            <a href="index.html" class="btn__contact block w-24 h-24 sm:w-28 sm:h-28"
+              aria-label="Merci, retour à l'accueil">
+              <svg id="rotatingText" viewBox="0 0 140 140" class="w-full h-full" aria-hidden="true">
+                <defs>
+                  <path id="circle-path" d="M70,70 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
+                </defs>
+                <text>
+                  <textPath href="#circle-path">MERCI À BIENTÔT ** MERCI À BIENTÔT **</textPath>
+                </text>
+                <image href="assets/img/illustrations_merci.svg"
+                  class="pl-2 flex justify-center items-center w-[100px] mx-auto" x="20" y="20" width="100"
+                  height="100" />
+              </svg>
+            </a>
           </div>
-        </a>
+          <!--BTN Contact-->
+        </div>
+
       </div>
+
     </div>
+    <!-- Section du bas -->
+    <div class="m-0 p-0 grid grid-cols-12 gap-4 lg:gap-12 items-end mt-12">
 
-    <div class="px-6 grid grid-cols-12 gap-12 items-end">
-      <div class="col-span-12 lg:col-span-3 md:col-span-6  p-0 m-0">
-        <span class="text-[66px] font-bold tracking-tight">©<span id="year"></span></span>
+      <div class="col-span-2 lg:col-span-3 lg:p-0 m-0">
+        <span class="text-xs lg:text-[66px] font-bold tracking-tight">©<span id="year"></span></span>
       </div>
 
-      <div class="col-span-12 lg:col-span-3 lg:col-start-7 md:col-span-6  pb-5">
-        <span>Codé avec ♡ par Nathalie Depierre</span>
+      <div class="col-span-10 lg:col-span-3 lg:col-start-7 lg:pb-5">
+        <span class="text-xs lg:text-base">Codé avec ♡ par Nathalie Depierre</span>
       </div>
-      <div class=" pb-5 col-span-12 justify-center xs:bg-accent xs:text-white lg:col-span-3 flex md:justify-end ">
+
+      <div
+        class="m-0 py-4 lg:p-5 col-span-12 bg-accent text-white lg:text-ink lg:bg-transparent lg:col-span-3 flex justify-center lg:justify-end">
         <span><a href="#top">retour en haut</a></span>
       </div>
+
     </div>
   </footer>
   <!--Footer-->

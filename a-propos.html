@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+<!--Head-->
 
 <head>
   <meta charset="UTF-8">
@@ -8,16 +9,21 @@
   <meta name="description"
     content="Designer multidisciplinaire, ux/ui design et intégratrice. Architecture, expérience utilisateur, prototypage, design visuel, Montréal ou à distance.">
   <!--Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/icons/d-final_favicon.png">
-  <!--Tailwind-->
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="icon" type="image/png" href="assets/icons/d-final_favicon.png">
+  <!--Manifest-->
+  <link rel="manifest" href="manifest.json">
   <!--Styles-->
   <!-- <link rel="stylesheet" href="assets/css/normalize.css"> -->
+  <link rel="stylesheet" href="assets/css/normalize.css">
   <link rel="stylesheet" href="assets/css/styles.css">
   <!--GSAP-->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
   <script src="assets/js/gsap.js" defer></script>
+  <!--JS-->
+  <script src="assets/js/script.js" defer></script>
+  <!--Tailwind-->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
     @theme {
    --color-ink: #0a0a0a;
@@ -25,84 +31,69 @@
      --color-accent: blue;
 
       --font-mono: "Inter Tight", sans-serif;
-      --font-display: "Inter", sans-serif;
       --font-sans: 'Neue Haas Display', sans-serif;
-      --font-script: 'Oooh Baby', cursive;
     }
-     @layer components {
+    @layer components {
       .title__work{
-        @apply my-4 uppercase  flex justify-between;
+        @apply my-4 uppercase text-xl flex justify-between;
       }
     .title__work--tags {
-      @apply bg-ink text-white text-xl w-fit px-2 py-1 inline-block;
+      @apply bg-ink text-white text-xs w-fit px-2 py-1 inline-block;
     }
   }
-
   </style>
-
-  <!--JS-->
-  <script src="assets/js/script.js" defer></script>
+  <!--Tailwind-->
 </head>
+<!--Head-->
 <!--Body-->
 
 <body class="text-ink w-full font-sans">
-  <!--Ancre retour-->
-  <div id="top"></div>
-  <!--Ancre retour-->
   <!--Header-->
-  <header class="relative w-full">
-
+  <header class="relative w-full top">
     <!--Accessibilité-->
     <a href="#content" class="sr-only">Aller au contenu principal</a>
     <!--Accessibilité-->
-    <nav class="relative w-full min-h-[50px] p-6">
-      <h1 class="absolute text-2xl hover:text-accent">
+    <nav class="absolute z-50 w-full p-6">
+      <h1 class="absolute z-50 text-2xl hover:text-accent">
         <a href="index.html">Nathalie Depierre</a>
       </h1>
-      <button id="menuToggle"
-        class="absolute top-6 right-6 z-50 lg:hidden bg-accent p-2 text-body text-white hover:bg-neutral-secondary-soft cursor-pointer"
-        aria-label="Ouvrir le menu">
-        MENU
+
+      <button id="menuToggle" class="absolute top-6 right-6 z-50 lg:hidden bg-accent p-2 text-white cursor-pointer"
+        aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="menu__text">MENU</span>
+        <span class="menu__text--close hidden">FERMER</span>
       </button>
-
       <div id="navMenu"
-        class="h-[100vh] p-6 lg:p-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out absolute top-0 left-0 w-full lg:h-[50px] bg-white z-40 lg:max-h-none lg:opacity-100 lg:overflow-visible lg:static lg:grid lg:w-full grid-cols-12 content-center lg:content-stretch items-center justify-items-stretch"
-        data-fade-group>
-
-        <div class="col-span-12 lg:col-span-2 lg:col-start-5 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+        class="hidden opacity-0 transition-opacity duration-300 ease-in-out fixed inset-0 w-full h-screen bg-white z-40 p-6 pt-24 flex flex-col justify-center space-y-6 lg:static lg:h-auto lg:p-0 lg:pt-0 lg:opacity-100 lg:grid lg:w-full grid-cols-12 content-center">
+        <div class="lg:col-span-2 lg:col-start-5 lg:text-right text-4xl sm:text-5xl lg:text-2xl hover:text-accent">
           <a href="index.html">Index</a>
         </div>
-        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+        <div class="lg:col-span-2 lg:text-right text-4xl sm:text-5xl lg:text-2xl hover:text-accent">
           <a href="projets.html">Projets</a>
         </div>
-        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+        <div class="lg:col-span-2 lg:text-right text-4xl sm:text-5xl lg:text-2xl text-accent hover:text-accent">
           <a href="a-propos.html">À propos</a>
         </div>
-        <div class="col-span-12 lg:col-span-2 lg:text-right text-[5rem] lg:text-2xl hover:text-accent">
+        <div class="lg:col-span-2 lg:text-right text-4xl sm:text-5xl lg:text-2xl hover:text-accent">
           <a href="contact.html">Contact</a>
         </div>
       </div>
-
     </nav>
   </header>
   <!--Header-->
   <!--Main-->
-  <main>
+  <main id="content">
 
-    <section id="about" data-fade-group="">
-      <div class="w-full grid grid-cols-12 gap-4 px-6 pt-24">
+    <section id="about" data-fade-group>
+      <div class="w-full  grid grid-cols-12 gap-4 px-6 pt-66">
         <!-- Métadonnées à gauche -->
         <div class="col-span-12 lg:col-span-2 flex flex-col font-mono fade">
-          <p class="uppercase text-base tracking-wide mb-3">— À propos</p>
-
+          <p class="uppercase tracking-wide mb-3">— À propos</p>
         </div>
 
-
         <div class="col-span-12 lg:col-span-10 fade">
-
           <h1 class="text-6xl sm:text-7xl lg:text-9xl font-light leading-[0.85] tracking-tight">
             Design<br>
-
             multimedia<br>
             <span class="font-normal">intégration</span>
           </h1>
@@ -110,8 +101,7 @@
       </div>
       <div class="w-full grid grid-cols-12 gap-4 px-6 py-8">
         <div class="col-span-12 lg:col-span-2 flex flex-col font-mono">
-          <p class="uppercase text-base tracking-wide mb-3">— EXP 20+</p>
-
+          <p class="uppercase tracking-wide mb-3">— EXP 20+</p>
         </div>
         <!-- Bio -->
         <div class="col-span-12 lg:col-span-4 space-y-8 fade">
@@ -119,28 +109,24 @@
           <div>
             <p>
               Designer multidisciplinaire, intégratrice web et conceptrice numérique, j'allie créativité, stratégie
-              et
-              fonctionnalité pour donner vie à des expériences claires, cohérentes et engageantes. Mes
-              collaborations
-              dans les secteurs du sport, de la santé et du corporatif m'ont permis de développer une approche
-              solide,
-              centrée sur l'utilisateur et les objectifs d'affaires.
+              et fonctionnalité pour donner vie à des expériences claires, cohérentes et engageantes. Mes
+              collaborations dans les secteurs du sport, de la santé et du corporatif m'ont permis de développer une
+              approche solide, centrée sur l'utilisateur et les objectifs d'affaires.
             </p>
             <p>
               Polyvalente et à l'écoute, je transforme des enjeux complexes en expériences visuelles cohérentes et
-              engageantes, tout en respectant l'identité de l'organisation, les budgets et les échéanciers.
-              Flexible,
+              engageantes, tout en respectant l'identité de l'organisation, les budgets et les échéanciers. Flexible,
               attentive et respectueuse, je m'intègre aisément aux équipes et aux environnements de travail.
             </p>
           </div>
 
-          <div class="flex gap-6 text-base font-mono uppercase pt-4 fade">
+          <div class="flex gap-6 font-mono uppercase pt-4 fade">
 
             <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
               class="group inline-flex items-center gap-1 hover:text-accent">
               LinkedIn
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                stroke="currentColor"
+                stroke="currentColor" aria-hidden="true"
                 class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
               </svg>
@@ -150,7 +136,7 @@
               class="group inline-flex items-center gap-1 hover:text-accent">
               Instagram
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                stroke="currentColor"
+                stroke="currentColor" aria-hidden="true"
                 class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
               </svg>
@@ -160,17 +146,13 @@
               class="group inline-flex items-center gap-1 hover:text-accent">
               GitHub
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                stroke="currentColor"
+                stroke="currentColor" aria-hidden="true"
                 class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
               </svg>
             </a>
-            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-            </svg>
-            </a>
           </div>
         </div>
-
 
         <!-- Portrait -->
         <div class="col-span-12 lg:col-span-4 flex justify-center lg:justify-end mt-8 lg:mt-0 m-0 p-12">
@@ -182,8 +164,6 @@
       </div>
     </section>
 
-
-
     <section id="motto" class="relative">
       <div
         class="sticky top-0 z-10 min-h-[80vh] flex items-center justify-center bg-accent bg-[url(assets/img/illustrations_1.png)] bg-cover bg-right">
@@ -191,7 +171,6 @@
           class="font-sans font-bold leading-[0.95] text-white text-[clamp(4.5rem,2.894rem+8.85vw,9.0625rem)] tracking-wide">
           Explorer
         </h2>
-
       </div>
       <div
         class="sticky top-0 z-20 min-h-[80vh] flex items-center justify-center bg-gray-200 bg-[url(assets/img/illustrations_2.png)] bg-cover">
@@ -208,7 +187,7 @@
         </h2>
       </div>
     </section>
-    </section>
+
     <section id="services" class="py-32" data-fade-group>
       <div class="grid-row px-6 mx-auto grid grid-cols-12 gap-12">
 
@@ -216,162 +195,164 @@
         <div class="row-span-1 col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-4 text-xl fade">
           <img src="assets/img/illustrations_research.png" class="p-3 w-[200px]" alt="Exploration UX">
           <h3 class="py-3 font-mono uppercase">— Exploration UX</h3>
-          <p>Comprendre les objectifs, les utilisateurs et les défis grâce à la recherche et à la
-            discussion afin de définir une orientation claire dès le départ.</p>
+          <p>Compréhension des objectifs, des utilisateurs et des contraintes grâce à la recherche, l'analyse et la
+            discussion. Cette phase permet de définir une orientation stratégique solide et d'aligner les besoins
+            business et les attentes des utilisateurs.</p>
         </div>
 
         <!-- Ligne 1 - Encart 2 : Démarre à la col 8 -->
         <div class="row-span-1 col-span-12 md:col-span-6 lg:col-span-3 text-xl fade">
           <img src="assets/img/illustrations_iteration.png" class="p-3 w-[200px]" alt="UX/UI Design">
           <h3 class="py-3 font-mono uppercase">— Prototypage</h3>
-          <p>Peaufinage des détails, tests d'ergonomie et vérification de la cohérence, de
-            l'efficacité
-            et de la préparation au lancement de l'ensemble.</p>
+          <p>Conception et optimisation des interfaces en portant attention aux détails, à l'ergonomie et à la
+            cohérence visuelle. Validation de l'efficacité des parcours et préparation des interfaces pour un
+            déploiement fluide et performant.</p>
         </div>
 
         <!-- Ligne 2 - Encart 3 : Démarre à la col 4 -->
         <div class="row-span-2 col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-7 text-xl fade">
           <img src="assets/img/illustrations_creation.png" class="p-3 w-[200px]" alt="Prototypage">
           <h3 class="py-3 font-mono uppercase">— Création</h3>
-          <p>Transformer des idées en interfaces intuitives, en visuels percutants et en expériences
-            numériques fonctionnelles grâce à la conception et au développement.</p>
+          <p>Transformation des idées en expériences concrètes : prototypes interactifs, maquettes haute fidélité et
+            visuels percutants. Création d'interfaces intuitives permettant de tester, démontrer et affiner les
+            solutions avant développement.</p>
         </div>
 
         <!-- Ligne 2 - Encart 4 : Démarre à la col 8 -->
         <div class="row-span-2 col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-10 text-xl fade">
           <img src="assets/img/illustrations_code.png" class="p-3 w-[200px]" alt="Intégration">
           <h3 class="py-3 font-mono uppercase">— integration web</h3>
-          <p>HTML/CSS & JS libraries. </br>Expert-level </br>No-code delivery via SiteCore and WordPress.</p>
+          <p>Intégration HTML/CSS et utilisation de librairies JavaScript, React.
+            Livraison experte en no-code/low-code via Sitecore et WordPress, pour des solutions performantes, propres
+            et prêtes à déployer.</p>
         </div>
 
       </div>
     </section>
 
-    <section id="logos-clients" class="bg-ink py-32" data-fade-group=">
-      <div class=" container mx-auto px-6">
-      <div class="mb-12 text-[#b0b0b0]">
-        <h2 class="text-2xl lg:text-4xl font-bold tracking-wide text-center">
-          J'ai eu la chance de collaborer avec
-        </h2>
-      </div>
-
-      <!-- Alignement et centrage fluide des colonnes -->
-      <div class="grid grid-cols-12 gap-6 items-center">
-
-        <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-          <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
-            <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Aurory.png" alt="Aurory"
-              class="max-h-full max-w-full object-contain">
-          </div>
+    <section id="logos-clients" class="bg-ink py-32" data-fade-group>
+      <div class="container mx-auto px-6">
+        <div class="mb-12 text-[#b0b0b0]">
+          <h2 class="text-2xl lg:text-4xl font-bold tracking-wide text-center">
+            J'ai eu la chance de collaborer avec
+          </h2>
         </div>
 
-        <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-          <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
-            <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Tink.png" alt="Tink"
-              class="max-h-full max-w-full object-contain">
-          </div>
-        </div>
+        <!-- Alignement et centrage fluide des colonnes -->
+        <div class="grid grid-cols-12 gap-6 items-center">
 
-        <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-          <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
-            <img src="assets/img/LogosClientsOpt/LogosClientsGrey_NoBrainer.png" alt="NoBrainer"
-              class="max-h-full max-w-full object-contain">
+          <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
+            <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
+              <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Aurory.png" alt="Aurory"
+                class="max-h-full max-w-full object-contain">
+            </div>
           </div>
-        </div>
 
-        <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-          <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
-            <img src="assets/img/LogosClientsOpt/LogosClientsGrey_ Ugroumedia.png" alt="Ugroumedia"
-              class="max-h-full max-w-full object-contain">
+          <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
+            <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
+              <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Tink.png" alt="Tink"
+                class="max-h-full max-w-full object-contain">
+            </div>
           </div>
-        </div>
 
-        <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-          <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
-            <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Fondation-rivieres.png" alt="Fondation Rivières"
-              class="max-h-full max-w-full object-contain">
+          <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
+            <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
+              <img src="assets/img/LogosClientsOpt/LogosClientsGrey_NoBrainer.png" alt="NoBrainer"
+                class="max-h-full max-w-full object-contain">
+            </div>
           </div>
-        </div>
 
-        <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-          <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
-            <img src="assets/img/LogosClientsOpt/LogosClientsGrey_UQO.png" alt="UQO"
-              class="max-h-full max-w-full object-contain">
+          <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
+            <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
+              <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Ugroumedia.png" alt="Ugroumedia"
+                class="max-h-full max-w-full object-contain">
+            </div>
           </div>
-        </div>
 
-        <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-          <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
-            <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Ceci.png" alt="CECI"
-              class="max-h-full max-w-full object-contain">
+          <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
+            <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
+              <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Fondation-rivieres.png" alt="Fondation Rivières"
+                class="max-h-full max-w-full object-contain">
+            </div>
           </div>
-        </div>
 
-        <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-          <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
-            <img src="assets/img/LogosClientsOpt/LogosClientsGrey_ESG-UQAM.png" alt="ESG UQAM"
-              class="max-h-full max-w-full object-contain">
+          <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
+            <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
+              <img src="assets/img/LogosClientsOpt/LogosClientsGrey_UQO.png" alt="UQO"
+                class="max-h-full max-w-full object-contain">
+            </div>
           </div>
-        </div>
 
-        <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-          <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
-            <img src="assets/img/LogosClientsOpt/LogosClientsGrey_EEQ.png" alt="EEQ"
-              class="max-h-full max-w-full object-contain">
+          <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
+            <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
+              <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Ceci.png" alt="CECI"
+                class="max-h-full max-w-full object-contain">
+            </div>
           </div>
-        </div>
 
-        <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-          <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
-            <img src="assets/img/LogosClientsOpt/LogosClientsGrey_CPA.png" alt="CPA"
-              class="max-h-full max-w-full object-contain">
+          <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
+            <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
+              <img src="assets/img/LogosClientsOpt/LogosClientsGrey_ESG-UQAM.png" alt="ESG UQAM"
+                class="max-h-full max-w-full object-contain">
+            </div>
           </div>
-        </div>
 
-        <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-          <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
-            <img src="assets/img/LogosClientsOpt/LogosClientsGrey_PertinenceMedia.png" alt="Pertinence Media"
-              class="max-h-full max-w-full object-contain">
+          <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
+            <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
+              <img src="assets/img/LogosClientsOpt/LogosClientsGrey_EEQ.png" alt="EEQ"
+                class="max-h-full max-w-full object-contain">
+            </div>
           </div>
-        </div>
 
-        <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-          <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
-            <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Ruisss.png" alt="RUISSS"
-              class="max-h-full max-w-full object-contain">
+          <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
+            <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
+              <img src="assets/img/LogosClientsOpt/LogosClientsGrey_CPA.png" alt="CPA"
+                class="max-h-full max-w-full object-contain">
+            </div>
           </div>
-        </div>
 
-      </div>
+          <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
+            <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
+              <img src="assets/img/LogosClientsOpt/LogosClientsGrey_PertinenceMedia.png" alt="Pertinence Media"
+                class="max-h-full max-w-full object-contain">
+            </div>
+          </div>
+
+          <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
+            <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
+              <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Ruisss.png" alt="RUISSS"
+                class="max-h-full max-w-full object-contain">
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   </main>
   <!--Main-->
   <!--Footer-->
-  <footer id="footer" class="pt-16 relative" data-fade-group>
-    <div class="px-6 mx-auto grid grid-cols-12 gap-12">
+  <footer id="footer" class="m-0 p-0 pt-16 relative" data-fade-group>
 
+    <div class="grid grid-cols-12 gap-6 md:gap-12">
 
-      <div class="col-span-12 lg:col-span-3 lg:col-start-4 text-xl fade">
+      <div class="w-full col-span-12 lg:col-span-3 lg:col-start-4 p-6 lg:p-12 py-4">
         <ul class="flex flex-col gap-1">
           <li><a href="index.html" class="hover:text-accent">Index</a></li>
           <li><a href="projets.html" class="hover:text-accent">Projets</a></li>
           <li><a href="a-propos.html" class="hover:text-accent">À propos</a></li>
           <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
-
         </ul>
       </div>
 
-      <div class="col-span-12 lg:col-span-3 text-xl fade">
+      <div class="w-full col-span-12 lg:col-span-3 p-6 lg:p-12 py-4">
         <div class="flex flex-col gap-1 font-mono uppercase">
-
           <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
             class="group inline-flex items-center gap-1 hover:text-accent">
             LinkedIn
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
               class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25">
             </svg>
           </a>
 
@@ -381,7 +362,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
               class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25">
             </svg>
           </a>
 
@@ -391,46 +372,46 @@
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
               stroke="currentColor"
               class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25">
             </svg>
           </a>
-
         </div>
-      </div>
-
-      <div class="col-span-12 lg:col-span-3 fade">
-
-        <a href="contact.html" class="btn__contact">
-          <svg id="rotatingText" viewBox="0 0 140 140">
-            <defs>
-              <path id="circle-path" d="M70,70 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
-            </defs>
-            <text>
-              <textPath href="#circle-path">CONTACTEZ-MOI * CONTACTEZ-MOI *</textPath>
-            </text>
-          </svg>
-          <div class="dot">
-            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
-              <path
-                d="M400,600c-50.5,0-89.1-25.2-113.35-47.25-10.29-9.38-19.72-19.65-28.2-30.7-3.82-4.88-7.35-9.97-10.6-15.25-10.38-17.92-4.27-40.86,13.65-51.25,17.47-10.12,39.81-4.6,50.55,12.5,7.14,10.7,15.53,20.5,25,29.2,17.05,15.5,38.45,27.75,62.95,27.75s45.9-12.3,62.9-27.75c9.47-8.7,17.86-18.5,25-29.2,10.7-17.74,33.76-23.45,51.5-12.75s23.45,33.76,12.75,51.5h0l-10.6,15.25c-6.4,8.35-15.85,19.5-28.2,30.7-24.25,22-62.85,47.25-113.35,47.25ZM250,300c0-27.61,22.39-50,50-50h.35c27.61,0,50,22.39,50,50s-22.39,50-50,50h-.35c-27.61,0-50-22.39-50-50ZM500,250c-27.61,0-50,22.39-50,50s22.39,50,50,50h.35c27.61,0,50-22.39,50-50s-22.39-50-50-50h-.35Z" />
-              <path
-                d="M400,0C179.09,0,0,179.09,0,400s179.09,400,400,400,400-179.09,400-400S620.91,0,400,0ZM75,400c0-179.49,145.51-325,325-325s325,145.51,325,325-145.51,325-325,325S75,579.49,75,400Z"
-                style="fill-rule: evenodd;" />
-            </svg>
+        <div class="w-full col-span-12 lg:col-span-3 py-4">
+          <!--BTN Contact-->
+          <div class="absolute top-10 right-15 z-10 fade">
+            <a href="contact.html" class="btn__contact block w-24 h-24 sm:w-28 sm:h-28" aria-label="Contactez-moi">
+              <svg id="rotatingText" viewBox="0 0 140 140" class="w-full h-full" aria-hidden="true">
+                <defs>
+                  <path id="circle-path" d="M70,70 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
+                </defs>
+                <text>
+                  <textPath href="#circle-path">CONTACTEZ-MOI ** CONTACTEZ-MOI **</textPath>
+                </text>
+                <image href="assets/img/illustrations_contact.svg"
+                  class="pl-2 flex justify-center items-center w-[100px] mx-auto" x="20" y="20" width="100"
+                  height="100" />
+              </svg>
+            </a>
           </div>
-        </a>
+          <!--BTN Contact-->
+        </div>
+
       </div>
+
     </div>
+    <!-- Section du bas -->
+    <div class="m-0 p-0 grid grid-cols-12 gap-4 lg:gap-12 items-end mt-12">
 
-    <div class="px-6 mx-auto grid grid-cols-12 gap-12 items-end">
-      <div class="col-span-12 lg:col-span-3 p-0 m-0">
-        <span class="text-[66px] font-bold tracking-tight">©<span id="year"></span></span>
+      <div class="col-span-2 lg:col-span-3 lg:p-0 m-0">
+        <span class="text-xs lg:text-[66px] font-bold tracking-tight">©<span id="year"></span></span>
       </div>
 
-      <div class="col-span-12 lg:col-span-3 lg:col-start-7 pb-5">
-        <span>Codé avec ♡ par Nathalie Depierre</span>
+      <div class="col-span-10 lg:col-span-3 lg:col-start-7 lg:pb-5">
+        <span class="text-xs lg:text-base">Codé avec ♡ par Nathalie Depierre</span>
       </div>
-      <div class="col-span-12 lg:col-span-3 flex justify-end pb-5">
+
+      <div
+        class="m-0 py-4 lg:p-5 col-span-12 bg-accent text-white lg:text-ink lg:bg-transparent lg:col-span-3 flex justify-center lg:justify-end">
         <span><a href="#top">retour en haut</a></span>
       </div>
     </div>

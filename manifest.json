@@ -1,0 +1,35 @@
+{
+  "name": "Nathalie Depierre Portfolio 2026",
+  "short_name": "DBCApp",
+  "description": "Designer multidisciplinaire, ux/ui design et intégratrice. Architecture, expérience utilisateur, prototypage, design visuel, Montréal ou à distance.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#000",
+"icons": [
+  {
+    "src": "assets/icons/d-final_icon-192.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  },
+  {
+    "src": "assets/icons/d-final_icon-512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }
+],
+
+"screenshots": [
+    {
+      "src": "assets/img/screenshot-desktop.png",
+      "sizes": "1920x963",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "assets/img/screenshot-mobile.png",
+      "sizes": "629x963",
+      "type": "image/png"
+    }
+  ]
+}

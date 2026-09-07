@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!--Head-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nathalie Depierre, designer multimedia - intégration, Montréal ou à distance.</title>
+  <meta name="description"
+    content="Designer multidisciplinaire, ux/ui design et intégratrice. Architecture, expérience utilisateur, prototypage, design visuel, Montréal ou à distance.">
+  <!--Favicon-->
+  <link rel="icon" type="image/png" href="assets/icons/d-final_favicon.png">
+  <!--Manifest-->
+  <link rel="manifest" href="manifest.json">
+  <!--Styles-->
+  <!-- <link rel="stylesheet" href="assets/css/normalize.css"> -->
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!--GSAP-->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script src="assets/js/gsap.js" defer></script>
+  <!--JS-->
+  <script src="assets/js/script.js" defer></script>
+  <!--Tailwind-->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+   --color-ink: #0a0a0a;
+     --color-paper: #deded7;
+     --color-accent: blue;
+
+      --font-mono: "Inter Tight", sans-serif;
+      --font-sans: 'Neue Haas Display', sans-serif;
+    }
+    @layer components {
+      .title__work{
+        @apply my-4 uppercase text-xl flex justify-between;
+      }
+    .title__work--tags {
+      @apply bg-ink text-white text-xs w-fit px-2 py-1 inline-block;
+    }
+  }
+  </style>
+  <!--Tailwind-->
+</head>
+<!--Head-->
+<!--Body-->
+
+<body class="text-ink w-full font-sans">
+  <!--Header-->
+  <header class="relative w-full top">
+    <!--Accessibilité-->
+    <a href="#content" class="sr-only">Aller au contenu principal</a>
+    <!--Accessibilité-->
+    <nav class="absolute z-50 w-full p-6">
+      <h1 class="absolute z-50 text-2xl hover:text-accent">
+        <a href="index.html">Nathalie Depierre</a>
+      </h1>
+
+      <button id="menuToggle" class="absolute top-6 right-6 z-50 lg:hidden bg-accent p-2 text-white cursor-pointer"
+        aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
+        <span class="menu__text">MENU</span>
+        <span class="menu__text--close hidden">FERMER</span>
+      </button>
+      <div id="navMenu"
+        class="hidden opacity-0 transition-opacity duration-300 ease-in-out fixed inset-0 w-full h-screen bg-white z-40 p-6 pt-24 flex flex-col justify-center space-y-6 lg:static lg:h-auto lg:p-0 lg:pt-0 lg:opacity-100 lg:grid lg:w-full grid-cols-12 content-center">
+        <div class="lg:col-span-2 lg:col-start-5 lg:text-right text-4xl sm:text-5xl lg:text-2xl hover:text-accent">
+          <a href="index.html">Index</a>
+        </div>
+        <div class="lg:col-span-2 lg:text-right text-4xl sm:text-5xl lg:text-2xl text-accent hover:text-accent">
+          <a href="projets.html">Projets</a>
+        </div>
+        <div class="lg:col-span-2 lg:text-right text-4xl sm:text-5xl lg:text-2xl hover:text-accent">
+          <a href="a-propos.html">À propos</a>
+        </div>
+        <div class="lg:col-span-2 lg:text-right text-4xl sm:text-5xl lg:text-2xl hover:text-accent">
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!--Header-->
+  <!--Main-->
+  <main id="content">
+    <!-- HERO -->
+    <section class="h-full" data-fade-group>
+      <div class="h-[50vh] grid grid-cols-12 content-end gap-4 px-6 pt-24">
+
+        <div class="col-span-12 lg:col-span-2 flex flex-col font-mono fade">
+          <p class="uppercase text-base tracking-wide mb-3">— UX-UI</p>
+        </div>
+
+        <div class="col-span-12 lg:col-span-10 fade">
+          <h1 class="text-6xl sm:text-7xl lg:text-9xl font-light leading-[0.85] tracking-tight">
+            Application<br>
+            Stream NUX<br>
+          </h1>
+        </div>
+      </div>
+
+      </div>
+    </section>
+
+    <!-- INFO -->
+    <section data-fade-group>
+      <div class="grid grid-cols-12 gap-12 px-6 py-32 fade">
+        <div class="col-span-8 lg:col-span-4 lg:col-start-3">
+          <ul class="flex justify-start">
+            <li class="font-bold pb-4">
+              Projet réalisé dans le cadre d'une certificatification HEC Montréal — démarche UX complète appliquée à un
+              produit numérique.
+          </ul>
+
+          <p>
+            NUX est un service mobile‑only qui propose du contenu multimédia thématique (films, séries, jeux, cours,
+            documentaires). Sa force : relier les contenus par thèmes narratifs pour créer des parcours courts,
+            intelligents et personnalisés.
+            Grâce à ses partenariats et à un catalogue d’environ 9900 contenus, NUX mise sur une expérience fluide,
+            intuitive et exploratoire, pensée pour les voyageurs, les jeunes et les utilisateurs en mouvement.
+          </p>
+          <p>
+            NUX doit transformer un catalogue vaste et hétérogène en une expérience mobile simple et intuitive.
+            L’enjeu principal : organiser et relier des contenus très différents (films, séries, jeux, cours,
+            documentaires) autour de thèmes narratifs sans créer de surcharge cognitive.
+          </p>
+
+
+        </div>
+
+        <div class="col-span-12 lg:col-span-4 p-12 bg-slate-200 fade">
+
+
+
+          <p>Défis:</p>
+          <ul>
+            <li>- Unifier des médias variés dans une navigation cohérente sur mobile.</li>
+            <li>- Rendre les parcours thématiques lisibles malgré la richesse des ramifications.</li>
+            <li>- Adapter l’expérience aux usages en mouvement : sessions courtes, attention limitée.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- GALLERY HORIZONTALE -->
+    <section class="bg-ink p-12 overflow-hidden" data-fade-group>
+      <div class="flex flex-nowrap gap-6 py-12 slider w-max">
+        <div class="w-xl flex items-start justify-center fade">
+          <img src="assets/img/portfolio/nux/Login/1-1-Login.png" alt="NUX - prototype UX"
+            class="w-full h-full object-contain">
+        </div>
+        <div class="w-xl  flex items-center justify-center fade">
+          <img src="assets/img/portfolio/nux/Login/2-1-Sign up.png" alt="NUX - prototype UX"
+            class="w-full h-full object-contain">
+        </div>
+        <div class="w-xl flex items-center justify-center fade">
+          <img src="assets/img/portfolio/nux/Login/2-2-Finish login creation.png" alt="NUX - prototype UX"
+            class="w-full h-full object-contain">
+        </div>
+        <div class="w-xl  flex items-center justify-center fade">
+          <img src="assets/img/portfolio/nux/Login/2-3-Choose subscription.png" alt="NUX - prototype UX"
+            class="w-full h-full object-contain">
+        </div>
+        <div class="w-xl  flex items-center justify-center fade">
+          <img src="assets/img/portfolio/nux/2-4-Onboarding - Complete interests.png" alt="NUX - prototype UX"
+            class="w-full h-full object-contain">
+        </div>
+        <div class="w-xl  flex items-center justify-center fade">
+          <img src="assets/img/portfolio/nux/2-5-Onboarding - Complete interests 2.png" alt="NUX - prototype UX"
+            class="w-full h-full object-contain">
+        </div>
+        <div class="w-xl  flex items-center justify-center fade">
+          <img src="assets/img/portfolio/nux/2-6-Onboarding - Complete interest 3.png" alt="NUX - prototype UX"
+            class="w-full h-full object-contain">
+        </div>
+        <div class="w-xl h-auto flex items-center justify-center fade">
+          <img src="assets/img/portfolio/nux/3-1-Landing - First time.png" alt="NUX - prototype UX"
+            class="w-full h-full object-contain">
+        </div>
+        <div class="w-xl h-auto flex items-center justify-center fade">
+          <img src="assets/img/portfolio/nux/3-2-Landing - 4 weeks later.png" alt="NUX - prototype UX"
+            class="w-full h-full object-contain">
+        </div>
+        <div class="w-xl h-auto flex items-center justify-center mr-12 fade">
+          <img src="assets/img/portfolio/nux/4-Streaming view.png" alt="NUX - prototype UX"
+            class="w-full h-full object-contain">
+        </div>
+        <div class="w-xl h-auto flex items-center justify-center mr-12 fade">
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- TEXT SECTION -->
+    <section class="py-24" data-fade-group>
+      <div class="container mx-auto grid grid-cols-12 gap-12 px-6 md:px-10">
+
+        <div class="col-span-12 md:col-span-4 fade">
+          <p class="uppercase tracking-wide mb-3">— Analyse comparative</p>
+          <p class="mb-12">Une analyse comparative des plateformes de streaming et d’applications mobiles a permis
+            d’identifier les bonnes pratiques en matière de navigation, de recommandations et de hiérarchie visuelle.
+            Ce benchmark a révélé les limites des approches actuelles pour gérer des contenus variés et a mis en lumière
+            les opportunités pour NUX : simplifier l’accès aux thèmes, clarifier les liens entre médias et renforcer la
+            cohérence mobile.
+            Ces constats ont servi de base stratégique pour définir les besoins et orienter la refonte des parcours
+            thématiques.</p>
+        </div>
+        <div class="col-span-12 md:col-span-4 fade">
+          <p class="uppercase tracking-wide mb-3">— Design des prototypes</p>
+          <p class="mb-12">Des prototypes fonctionnels ont été développés pour matérialiser les nouveaux parcours et
+            tester la fluidité de l’expérience mobile.
+            Les maquettes ont permis d’évaluer la lisibilité des thèmes, la pertinence des recommandations et la
+            cohérence entre les différents types de contenus.
+            Elles ont servi de support aux ajustements UX, garantissant une navigation plus intuitive et une exploration
+            thématique plus engageante.</p>
+        </div>
+        <div class="col-span-12 md:col-span-4 fade">
+          <p class="uppercase   tracking-wide mb-3">— Test utilisateurs</p>
+          <p class="mb-12">Des tests utilisateurs ont été menés pour évaluer la compréhension des thèmes, la facilité de
+            navigation et la pertinence des recommandations.
+            Les retours ont permis d’identifier les zones de confusion, d’améliorer la fluidité des parcours et
+            d’affiner les interactions.
+            Cette validation terrain a assuré une expérience mobile intuitive, engageante et adaptée aux usages rapides
+            des voyageurs et des utilisateurs en mouvement.</p>
+        </div>
+      </div>
+
+      </div>
+    </section>
+
+    <section class="relative h-screen w-full overflow-hidden flex items-center justify-center">
+
+      <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover -z-10">
+        <source src="assets/Video/12662082_640_360_30fps.mp4" type="video/mp4" />
+        Votre navigateur ne supporte pas la lecture de vidéos.
+      </video>
+
+
+      <div class="absolute inset-0 bg-black/40 -z-10"></div>
+
+      <div class="relative z-10 text-center text-white w-72">
+        <img src="assets/img/portfolio/nux/nux-logo-v2_white.png" alt="Logo NUX">
+      </div>
+    </section>
+    <!-- INFO -->
+    <section class="bg-gray-200" data-fade-group>
+      <div class="grid grid-cols-12 gap-12 px-6 py-32 fade">
+        <div class="col-span-8 lg:col-span-6 lg:col-start-3">
+          <p class="uppercase   tracking-wide mb-3">— Design UI</p>
+
+          <p>
+            Le défi de NUX était de traduire visuellement une idée forte : chaque contenu est une porte
+            vers un autre, chaque choix déclenche une ramification narrative. L’interface devait donc refléter cette
+            dynamique d’exploration, tout en restant parfaitement lisible sur mobile.</p>
+          <p>
+            Le design UI s’appuie sur une identité visuelle construite autour de Space Grotesk, une typographie précise
+            et technique, évoquant les systèmes de navigation et le mouvement — un écho direct à l’expérience proposée
+            par NUX.
+            Autour de cette structure typographique, des formes organiques et fluides illustrent les connexions
+            invisibles entre les contenus : des thèmes qui se croisent, des idées qui se prolongent, des histoires qui
+            se déploient.
+            Une palette vibrante renforce cette sensation de découverte continue, reflétant la diversité du catalogue et
+            l’émotion propre à chaque parcours.
+          </p>
+
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- GALLERY 3 COLS -->
+    <section data-fade-group>
+      <div class="grid grid-cols-12 gap-0 px-0">
+
+        <div class="col-span-12 md:col-span-6 md:col-start-6 flex items-center justify-center fade">
+
+          <img src="assets/img/portfolio/nux/UI-Landing page.png" alt="NUX - UI Design"
+            class="w-full h-full object-contain overflow-hidden">
+
+        </div>
+        <div class="col-span-12 md:col-span-6  flex items-center justify-center fade">
+
+          <img src="assets/img/portfolio/nux/UI-Landing page.png" alt="NUX - UI Design"
+            class="w-full h-full object-contain overflow-hidden">
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NEXT ITEM -->
+    <section class="grid grid-cols-12 text-center py-16">
+      <div class="col-span-12">
+        <h4 class="text-2xl font-semibold mb-2">Prochain cas d'étude</h4>
+        <a href="application-landwiz.html" class="text-neutral-500 hover:text-accent">Landwiz →</a>
+      </div>
+    </section>
+
+
+    <!--Footer-->
+    <footer id="footer" class="m-0 p-0 pt-16 relative" data-fade-group>
+
+      <div class="grid grid-cols-12 gap-6 md:gap-12">
+
+        <div class="w-full col-span-12 lg:col-span-3 lg:col-start-4 p-6 lg:p-12 py-4">
+          <ul class="flex flex-col gap-1">
+            <li><a href="index.html" class="hover:text-accent">Index</a></li>
+            <li><a href="projets.html" class="hover:text-accent">Projets</a></li>
+            <li><a href="a-propos.html" class="hover:text-accent">À propos</a></li>
+            <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="w-full col-span-12 lg:col-span-3 p-6 lg:p-12 py-4">
+          <div class="flex flex-col gap-1 font-mono uppercase">
+            <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1 hover:text-accent">
+              LinkedIn
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor"
+                class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25">
+              </svg>
+            </a>
+
+            <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank" rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1 hover:text-accent">
+              Instagram
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor"
+                class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25">
+              </svg>
+            </a>
+
+            <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1 hover:text-accent">
+              GitHub
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                stroke="currentColor"
+                class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25">
+              </svg>
+            </a>
+          </div>
+          <div class="w-full col-span-12 lg:col-span-3 py-4">
+            <!--BTN Contact-->
+            <div class="absolute top-10 right-15 z-10 fade">
+              <a href="contact.html" class="btn__contact block w-24 h-24 sm:w-28 sm:h-28" aria-label="Contactez-moi">
+                <svg id="rotatingText" viewBox="0 0 140 140" class="w-full h-full" aria-hidden="true">
+                  <defs>
+                    <path id="circle-path" d="M70,70 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" />
+                  </defs>
+                  <text>
+                    <textPath href="#circle-path">CONTACTEZ-MOI ** CONTACTEZ-MOI **</textPath>
+                  </text>
+                  <image href="assets/img/illustrations_contact.svg"
+                    class="pl-2 flex justify-center items-center w-[100px] mx-auto" x="20" y="20" width="100"
+                    height="100" />
+                </svg>
+              </a>
+            </div>
+            <!--BTN Contact-->
+          </div>
+
+        </div>
+
+      </div>
+      <!-- Section du bas -->
+      <div class="m-0 p-0 grid grid-cols-12 gap-4 lg:gap-12 items-end mt-12">
+
+        <div class="col-span-2 lg:col-span-3 lg:p-0 m-0">
+          <span class="text-xs lg:text-[66px] font-bold tracking-tight">©<span id="year"></span></span>
+        </div>
+
+        <div class="col-span-10 lg:col-span-3 lg:col-start-7 lg:pb-5">
+          <span class="text-xs lg:text-base">Codé avec ♡ par Nathalie Depierre</span>
+        </div>
+        <div
+          class="m-0 py-4 lg:p-5 col-span-12 bg-accent text-white lg:text-ink lg:bg-transparent lg:col-span-3 flex justify-center lg:justify-end">
+          <span><a href="#top">retour en haut</a></span>
+        </div>
+
+      </div>
+    </footer>
+    <!--Footer-->
+</body>
+
+</html>

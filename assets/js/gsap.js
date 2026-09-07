@@ -40,7 +40,7 @@ gsap.fromTo(".scroll",
         ease: "power2.out",
         scrollTrigger: {
             trigger: ".scroll",
-            start: "top 50%",
+            start: "top 40%",
             toggleActions: "play none none reverse"
         }
     }
