@@ -6,10 +6,10 @@
 
 ### https://ndmtl.github.io/portfolio/
 
-| Animations JS et GSAP                                        | Animations CSS                              | Composants Tailwind                                                                     |
-| :----------------------------------------------------------- | :------------------------------------------ | :-------------------------------------------------------------------------------------- |
-| Déplacement des titres (marquee)                             | Déplacement "smooth" au "scroll"            | Composant STAT https://tailwindcss.com/plus/ui-blocks/marketing/sections/stats-sections |
-| Apparition au scroll (fade in et position sur le viewport)   | Animations sur photo (transition, rotation) | Composant Carousel GFlowbite https://flowbite.com/docs/components/carousel/             |
-| Apparition des éléments au scroll (fade In)                  | Animation rotation sur texte                |
-| Galerie avec scroll horizontal (présentation des prototypes) |                                             |
-| Création d'un filtre par classes                             |                                             |
+| Animations JS et GSAP                                        | Animations CSS                                                                                        | Composants Tailwind                                                                     |
+| :----------------------------------------------------------- | :---------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------- |
+| Déplacement des titres (marquee)                             | Déplacement "smooth" au "scroll" https://www.w3schools.com/howto/howto_css_smooth_scroll.asp#section2 | Composant STAT https://tailwindcss.com/plus/ui-blocks/marketing/sections/stats-sections |
+| Apparition au scroll (fade in et position sur le viewport)   | Animations sur photo (transition, rotation)                                                           | Composant Carousel GFlowbite https://flowbite.com/docs/components/carousel/             |
+| Apparition des éléments au scroll (fade In)                  | Animation rotation sur texte                                                                          |
+| Galerie avec scroll horizontal (présentation des prototypes) |                                                                                                       |
+| Création d'un filtre par classes (W3)                        |                                                                                                       |
