@@ -22,8 +22,10 @@
   <script src="assets/js/gsap.js" defer></script>
   <!--JS-->
   <script src="assets/js/script.js" defer></script>
+
   <!--Tailwind-->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/flowbite@latest/dist/flowbite.js"></script>
   <style type="text/tailwindcss">
     @theme {
    --color-ink: #0a0a0a;
@@ -32,14 +34,6 @@
 
       --font-mono: "Inter Tight", sans-serif;
       --font-sans: 'Neue Haas Display', sans-serif;
-    }
-    @layer components {
-      .title__work{
-        @apply my-4 uppercase text-xl flex justify-between;
-      }
-    .title__work--tags {
-      @apply bg-ink text-white text-xs w-fit px-2 py-1 inline-block;
-    }
   }
   </style>
   <!--Tailwind-->
@@ -163,73 +157,75 @@
         </div>
       </div>
     </section>
-
+    <!--Motto-->
     <section id="motto" class="relative">
       <div
         class="sticky top-0 z-10 min-h-[80vh] flex items-center justify-center bg-accent bg-[url(assets/img/illustrations_1.png)] bg-cover bg-right">
-        <h2
-          class="font-sans font-bold leading-[0.95] text-white text-[clamp(4.5rem,2.894rem+8.85vw,9.0625rem)] tracking-widest">
+        <h2 class="font-sans font-bold leading-[0.95] text-white text-[clamp(3.75rem,5vw+1rem,7rem)] tracking-widest">
           Explorer
         </h2>
       </div>
       <div
         class="sticky top-0 z-20 min-h-[80vh] flex items-center justify-center bg-gray-200 bg-[url(assets/img/illustrations_2.png)] bg-cover">
-        <h2
-          class="font-sans font-bold leading-[0.95] text-white text-[clamp(4.5rem,2.894rem+8.85vw,9.0625rem)] tracking-widest">
+        <h2 class="font-sans font-bold leading-[0.95] text-white text-[clamp(3.75rem,5vw+1rem,7rem)] tracking-widest">
           Collaborer
         </h2>
       </div>
       <div
         class="sticky top-0 z-30 min-h-[80vh] flex items-center justify-center bg-ink bg-[url(assets/img/illustrations_3.png)] bg-cover">
-        <h2
-          class="font-sans font-bold leading-[0.95] text-white text-[clamp(4.5rem,2.894rem+8.85vw,9.0625rem)] tracking-widest">
+        <h2 class="font-sans font-bold leading-[0.95] text-white text-[clamp(3.75rem,5vw+1rem,7rem)] tracking-widest">
           Créer
         </h2>
       </div>
     </section>
+    <!--Motto-->
+    <!--Services-->
+    <section id="services" class="py-32 overflow-hidden" data-fade-group>
+      <div class="mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
 
-    <section id="services" class="py-32" data-fade-group>
-      <div class="grid-row px-6 mx-auto grid grid-cols-12 gap-12">
-
-        <!-- Ligne 1 - Encart 1 : Démarre à la col 4 -->
-        <div class="row-span-1 col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-4 text-xl fade">
-          <img src="assets/img/illustrations_research.png" class="p-3 w-[200px]" alt="Exploration UX">
+        <!-- Ligne 1 : Encart 1 -->
+        <div class="lg:col-span-3 lg:col-start-4 text-xl fade min-w-0">
+          <img src="assets/img/illustrations_research.png" class="p-3 max-w-[200px]" alt="Exploration UX">
           <h3 class="py-3 font-mono uppercase">— Exploration UX</h3>
-          <p>Compréhension des objectifs, des utilisateurs et des contraintes grâce à la recherche, l'analyse et la
+          <p class="break-words">Compréhension des objectifs, des utilisateurs et des contraintes grâce à la recherche,
+            l'analyse et la
             discussion. Cette phase permet de définir une orientation stratégique solide et d'aligner les besoins
             business et les attentes des utilisateurs.</p>
         </div>
 
-        <!-- Ligne 1 - Encart 2 : Démarre à la col 8 -->
-        <div class="row-span-1 col-span-12 md:col-span-6 lg:col-span-3 text-xl fade">
-          <img src="assets/img/illustrations_iteration.png" class="p-3 w-[200px]" alt="UX/UI Design">
+        <!-- Ligne 1 : Encart 2 -->
+        <div class="lg:col-span-3 lg:col-start-7 text-xl fade min-w-0">
+          <img src="assets/img/illustrations_iteration.png" class="py-3 max-w-[200px]" alt="UX/UI Design">
           <h3 class="py-3 font-mono uppercase">— Prototypage</h3>
-          <p>Conception et optimisation des interfaces en portant attention aux détails, à l'ergonomie et à la
+          <p class="break-words">Conception et optimisation des interfaces en portant attention aux détails, à
+            l'ergonomie et à la
             cohérence visuelle. Validation de l'efficacité des parcours et préparation des interfaces pour un
             déploiement fluide et performant.</p>
         </div>
 
-        <!-- Ligne 2 - Encart 3 : Démarre à la col 4 -->
-        <div class="row-span-2 col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-7 text-xl fade">
-          <img src="assets/img/illustrations_creation.png" class="p-3 w-[200px]" alt="Prototypage">
+        <!-- Ligne 2 : Encart 3 -->
+        <div class="lg:col-span-3 lg:col-start-4 text-xl fade min-w-0">
+          <img src="assets/img/illustrations_creation.png" class="py-3 max-w-[200px]" alt="Prototypage">
           <h3 class="py-3 font-mono uppercase">— Création</h3>
-          <p>Transformation des idées en expériences concrètes : prototypes interactifs, maquettes haute fidélité et
+          <p class="break-words">Transformation des idées en expériences concrètes : prototypes interactifs, maquettes
+            haute fidélité et
             visuels percutants. Création d'interfaces intuitives permettant de tester, démontrer et affiner les
             solutions avant développement.</p>
         </div>
 
-        <!-- Ligne 2 - Encart 4 : Démarre à la col 8 -->
-        <div class="row-span-2 col-span-12 md:col-span-6 lg:col-span-3 lg:col-start-10 text-xl fade">
-          <img src="assets/img/illustrations_code.png" class="p-3 w-[200px]" alt="Intégration">
+        <!-- Ligne 2 : Encart 4 -->
+        <div class="lg:col-span-3 lg:col-start-7 text-xl fade min-w-0">
+          <img src="assets/img/illustrations_code.png" class="py-3 max-w-[200px]" alt="Intégration">
           <h3 class="py-3 font-mono uppercase">— integration web</h3>
-          <p>Intégration HTML/CSS et utilisation de librairies JavaScript, React.
+          <p class="break-words">Intégration HTML/CSS et utilisation de librairies JavaScript, React.
             Livraison experte en no-code/low-code via Sitecore et WordPress, pour des solutions performantes, propres
             et prêtes à déployer.</p>
         </div>
 
       </div>
     </section>
-
+    <!--Services-->
+    <!--Logos clients-->
     <section id="logos-clients" class="bg-ink py-32" data-fade-group>
       <div class="container mx-auto px-6">
         <div class="mb-12 text-[#b0b0b0]">
@@ -350,6 +346,93 @@
         </div>
       </div>
     </section>
+    <!--Carousel temoignages-->
+    <section id="temoignages" class="h-screen md:h-[60vh] bg-accent flex flex-col justify-center items-center">
+      <div class="mb-12 text-white">
+        <h2 class="text-2xl lg:text-4xl font-bold tracking-wide text-center">
+          Ce qu'ils en disent
+        </h2>
+      </div>
+      <div id="testimonial-carousel" class="relative w-full max-w-2xl mx-auto" data-carousel="slide">
+        <div class="relative h-84  overflow-hidden rounded-lg">
+          <!-- Item 1 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
+              <div class="w-32 h-32 rounded-full mb-4 border-2 border-white overflow-hidden">
+                <img src="https://randomuser.me/api/portraits/men/76.jpg" class="object-cover w-full h-full"
+                  alt="Jean Patou">
+              </div>
+              <p class="mb-3 text-white font-medium text-2xl">"Bon travail et service rapide"</p>
+              <span class="mb-3 text-white font-bold text-xl">Jean Patou, Patou & Cie</span>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
+              <div class="w-32 h-32 rounded-full mb-4 border-2 border-white overflow-hidden">
+                <img src="https://randomuser.me/api/portraits/women/19.jpg" class="object-cover w-full h-full"
+                  alt="Courtney Saunders">
+              </div>
+              <p class="mb-3 text-white font-medium text-2xl">"Travail rapide, service courtois et force de
+                proposition."</p>
+              <span class="mb-3 text-white font-bold text-xl">Courtney Sanders, CEO - WiteSokes</span>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
+              <div class="w-32 h-32 rounded-full mb-4 border-2 border-white overflow-hidden">
+                <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-32 h-32 rounded-full mb-4"
+                  alt="Pétula Lalande">
+              </div>
+              <p class="mb-3 text-white font-medium text-2xl">"Elle est partie de rien pour arriver nulle-part ! C'est
+                impressionnant."</p>
+              <span class="mb-3 text-white font-bold text-xl">Pétula Lalande, CEO - Lalande & Cie</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indicateurs -->
+        <div class="absolute z-30 flex -translate-x-1/2 bottom-0 left-1/2 space-x-3">
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+            data-carousel-slide-to="0"></button>
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+            data-carousel-slide-to="1"></button>
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+            data-carousel-slide-to="2"></button>
+        </div>
+
+        <!-- Slider controls -->
+        <button type="button"
+          class="hidden absolute top-0 l-0 z-30 lg:flex items-center justify-center h-full px-12 cursor-pointer group focus:outline-none"
+          data-carousel-prev>
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-5 h-5 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m15 19-7-7 7-7" />
+            </svg>
+            <span class="sr-only">Précédente</span>
+          </span>
+        </button>
+        <button type="button"
+          class="hidden absolute top-0 end-0 z-30 lg:flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+          data-carousel-next>
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-5 h-5 text-white rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+              width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m9 5 7 7-7 7" />
+            </svg>
+            <span class="sr-only">Suivant</span>
+          </span>
+        </button>
+      </div>
+    </section>
+    <!--Carousel temoignages-->
   </main>
   <!--Main-->
   <!--Footer-->

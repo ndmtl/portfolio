@@ -33,14 +33,7 @@
       --font-mono: "Inter Tight", sans-serif;
       --font-sans: 'Neue Haas Display', sans-serif;
     }
-    @layer components {
-      .title__work{
-        @apply my-4 uppercase text-xl flex justify-between;
-      }
-    .title__work--tags {
-      @apply bg-ink text-white text-xs w-fit px-2 py-1 inline-block;
-    }
-  }
+
   </style>
   <!--Tailwind-->
 </head>
@@ -103,90 +96,91 @@
     </section>
 
     <!-- INFO -->
-    <section data-fade-group>
-      <div class="grid grid-cols-12 gap-12 px-6 py-32 fade">
-        <div class="col-span-8 lg:col-span-4 lg:col-start-3">
-          <ul class="flex justify-start">
-            <li class="font-bold pb-4">
-              Projet réalisé dans le cadre d'une certificatification HEC Montréal — démarche UX complète appliquée à un
+    <section data-fade-group class="overflow-hidden">
+      <div class="mx-auto grid grid-cols-12 gap-6 lg:gap-12 px-6 py-16 md:py-32 fade">
+
+        <!-- Correction : col-span-12 au lieu de col-span-8 -->
+        <div class="col-span-12 lg:col-span-3 lg:col-start-3 min-w-0">
+          <ul class="flex justify-start mb-4">
+            <li class="font-bold text-ink">
+              Projet réalisé dans le cadre d'une certification HEC Montréal — démarche UX complète appliquée à un
               produit numérique.
+            </li>
           </ul>
 
-          <p>
+          <p class="py-4 break-words">
             NUX est un service mobile‑only qui propose du contenu multimédia thématique (films, séries, jeux, cours,
             documentaires). Sa force : relier les contenus par thèmes narratifs pour créer des parcours courts,
             intelligents et personnalisés.
             Grâce à ses partenariats et à un catalogue d’environ 9900 contenus, NUX mise sur une expérience fluide,
             intuitive et exploratoire, pensée pour les voyageurs, les jeunes et les utilisateurs en mouvement.
           </p>
-          <p>
+        </div>
+
+        <!-- Encart gris : p-6 sur mobile, p-12 sur ordinateur -->
+        <div class="col-span-12 lg:col-span-5 p-6 lg:p-12 bg-slate-200 fade min-w-0 h-fit">
+          <p class="font-bold mb-2">Défis :</p>
+          <p class="mb-4 break-words">
             NUX doit transformer un catalogue vaste et hétérogène en une expérience mobile simple et intuitive.
             L’enjeu principal : organiser et relier des contenus très différents (films, séries, jeux, cours,
             documentaires) autour de thèmes narratifs sans créer de surcharge cognitive.
           </p>
 
-
-        </div>
-
-        <div class="col-span-12 lg:col-span-4 p-12 bg-slate-200 fade">
-
-
-
-          <p>Défis:</p>
-          <ul>
+          <ul class="space-y-2 break-words">
             <li>- Unifier des médias variés dans une navigation cohérente sur mobile.</li>
             <li>- Rendre les parcours thématiques lisibles malgré la richesse des ramifications.</li>
             <li>- Adapter l’expérience aux usages en mouvement : sessions courtes, attention limitée.</li>
           </ul>
         </div>
+
       </div>
     </section>
+    <!-- INFO -->
     <!-- GALLERY HORIZONTALE -->
     <section class="bg-ink p-12 overflow-hidden" data-fade-group>
-      <div class="flex flex-nowrap gap-6 py-12 slider w-max">
-        <div class="w-xl flex items-start justify-center fade">
-          <img src="assets/img/portfolio/nux/Login/1-1-Login.png" alt="NUX - prototype UX"
-            class="w-full h-full object-contain">
-        </div>
-        <div class="w-xl  flex items-center justify-center fade">
-          <img src="assets/img/portfolio/nux/Login/2-1-Sign up.png" alt="NUX - prototype UX"
-            class="w-full h-full object-contain">
-        </div>
-        <div class="w-xl flex items-center justify-center fade">
-          <img src="assets/img/portfolio/nux/Login/2-2-Finish login creation.png" alt="NUX - prototype UX"
-            class="w-full h-full object-contain">
-        </div>
-        <div class="w-xl  flex items-center justify-center fade">
-          <img src="assets/img/portfolio/nux/Login/2-3-Choose subscription.png" alt="NUX - prototype UX"
-            class="w-full h-full object-contain">
-        </div>
-        <div class="w-xl  flex items-center justify-center fade">
-          <img src="assets/img/portfolio/nux/2-4-Onboarding - Complete interests.png" alt="NUX - prototype UX"
-            class="w-full h-full object-contain">
-        </div>
-        <div class="w-xl  flex items-center justify-center fade">
-          <img src="assets/img/portfolio/nux/2-5-Onboarding - Complete interests 2.png" alt="NUX - prototype UX"
-            class="w-full h-full object-contain">
-        </div>
-        <div class="w-xl  flex items-center justify-center fade">
-          <img src="assets/img/portfolio/nux/2-6-Onboarding - Complete interest 3.png" alt="NUX - prototype UX"
-            class="w-full h-full object-contain">
-        </div>
-        <div class="w-xl h-auto flex items-center justify-center fade">
-          <img src="assets/img/portfolio/nux/3-1-Landing - First time.png" alt="NUX - prototype UX"
-            class="w-full h-full object-contain">
-        </div>
-        <div class="w-xl h-auto flex items-center justify-center fade">
-          <img src="assets/img/portfolio/nux/3-2-Landing - 4 weeks later.png" alt="NUX - prototype UX"
-            class="w-full h-full object-contain">
-        </div>
-        <div class="w-xl h-auto flex items-center justify-center mr-12 fade">
-          <img src="assets/img/portfolio/nux/4-Streaming view.png" alt="NUX - prototype UX"
-            class="w-full h-full object-contain">
-        </div>
-        <div class="w-xl h-auto flex items-center justify-center mr-12 fade">
+      <div class="flex flex-nowrap items-start justify-start gap-6 py-12 slider w-max">
 
+        <div class="w-xl h-auto flex items-start justify-start fade">
+          <div class="flex flex-col justify-center gap-6">
+            <img src="assets/img/portfolio/nux/Login/1-1-Login.png" alt="NUX - prototype UX"
+              class="w-full h-full object-contain">
+            <img src="assets/img/portfolio/nux/Login/2-1-Sign-up.png" alt="NUX - prototype UX"
+              class="w-full h-full object-contain">
+            <img src="assets/img/portfolio/nux/Login/2-2-Finish-login-creation.png" alt="NUX - prototype UX"
+              class="w-full h-full object-contain">
+          </div>
         </div>
+        <div class="w-xl h-auto flex">
+          <div class="flex flex-col justify-center gap-6">
+            <img src="assets/img/portfolio/nux/Login/2-3-Choose-subscription.png" alt="NUX - prototype UX"
+              class="w-full h-full object-contain">
+            <img src="assets/img/portfolio/nux/2-4-Onboarding-Complete-interests.png" alt="NUX - prototype UX"
+              class="w-full h-full object-contain">
+            <img src="assets/img/portfolio/nux/2-5-Onboarding-Complete-interests-2.png" alt="NUX - prototype UX"
+              class="w-full h-full object-contain">
+            <img src="assets/img/portfolio/nux/2-6-Onboarding-Complete-interests-3.png" alt="NUX - prototype UX"
+              class="w-full h-full object-contain">
+          </div>
+        </div>
+
+
+        <div class="w-xl h-auto flex items-start justify-start fade">
+          <img src="assets/img/portfolio/nux/3-1-Landing-First-time.png" alt="NUX - prototype UX"
+            class="w-full h-full object-contain">
+        </div>
+        <div class="w-xl h-auto flex items-start justify-start fade">
+          <img src="assets/img/portfolio/nux/3-2-Landing-4-weeks-later.png" alt="NUX - prototype UX"
+            class="w-full h-full object-contain">
+        </div>
+        <div class="w-xl h-auto flex items-start justify-start fade">
+          <img src="assets/img/portfolio/nux/3-Details-element.png" alt="NUX - prototype UX"
+            class="w-full h-full object-contain">
+        </div>
+        <div class="w-xl h-auto flex items-start justify-start fade mr-24">
+          <img src="assets/img/portfolio/nux/4-Streaming-view.png" alt="NUX - prototype UX"
+            class="w-full h-full object-contain">
+        </div>
+
       </div>
     </section>
 
@@ -271,12 +265,12 @@
 
 
     <!-- GALLERY 3 COLS -->
-    <section data-fade-group>
-      <div class="grid grid-cols-12 gap-0 px-0">
+    <section>
+      <div class="grid grid-cols-12 gap-0 px-0" data-fade-group>
 
         <div class="col-span-12 md:col-span-6 md:col-start-6 flex items-center justify-center fade">
 
-          <img src="assets/img/portfolio/nux/UI-Landing page.png" alt="NUX - UI Design"
+          <img src="assets/img/portfolio/nux/UI-start.png" alt="NUX - UI Design"
             class="w-full h-full object-contain overflow-hidden">
 
         </div>

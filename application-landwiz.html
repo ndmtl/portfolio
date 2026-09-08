@@ -32,14 +32,6 @@
 
       --font-mono: "Inter Tight", sans-serif;
       --font-sans: 'Neue Haas Display', sans-serif;
-    }
-    @layer components {
-      .title__work{
-        @apply my-4 uppercase text-xl flex justify-between;
-      }
-    .title__work--tags {
-      @apply bg-ink text-white text-xs w-fit px-2 py-1 inline-block;
-    }
   }
   </style>
   <!--Tailwind-->
@@ -103,18 +95,23 @@
     </section>
 
     <!-- INFO -->
-    <section data-fade-group>
-      <div class="grid grid-cols-12 gap-12 px-6 py-32 fade">
-        <div class="col-span-8 lg:col-span-5 lg:col-start-3">
-          <ul class="flex justify-start">
+    <section data-fade-group class="overflow-hidden">
+      <div class="mx-auto grid grid-cols-12 gap-6 lg:gap-12 px-6 py-16 md:py-32 fade">
+
+        <!-- Colonne texte -->
+        <div class="col-span-12 lg:col-span-5 lg:col-start-3 min-w-0">
+          <!-- Flex-wrap + gap pour que l'industrie passe en dessous si nécessaire -->
+          <ul class="flex flex-wrap items-center gap-x-6 gap-y-2">
             <li>
               <p class="font-semibold mb-1 text-gray-500">Client: <span class="text-ink">Landwiz</span></p>
             </li>
             <li>
-              <p class="font-semibold mb-1 text-gray-500 pl-4">Industrie: <span class="text-ink">Géomatique</span></p>
+              <p class="font-semibold mb-1 text-gray-500">Industrie: <span class="text-ink">Géomatique</span></p>
             </li>
           </ul>
-          <p class="py-6">Landwiz est une compagnie qui a pour but de mettre en contact des développeurs immobiliers et
+
+          <p class="py-6 break-words">Landwiz est une compagnie qui a pour but de mettre en contact des développeurs
+            immobiliers et
             des
             professionnels (arpenteurs, architectes, notaires, évaluateurs environnementaux, etc.) pour les soutenir
             dans
@@ -124,42 +121,42 @@
             pourront par la suite, sélectionner l'offre de service de leur choix et effectuer le paiement directement
             dans
             la plateforme.</p>
-
-
         </div>
 
-        <div class="col-span-12 lg:col-span-3 p-12 bg-slate-200 fade">
-
-
-          <p>
+        <!-- Encart gris : Padding fluide (p-6 sur mobile, p-12 sur ordinateur) -->
+        <div class="col-span-12 lg:col-span-3 p-6 lg:p-12 bg-slate-200 fade min-w-0 h-fit">
+          <p class="break-words">
             Le développement immobilier est freiné par des processus manuels lents :
             recherche de terrains,
             passif environnemental et sollicitation de devis par courriels éparpillés.
 
-            <strong>Landwiz centralise tout</strong> : de la localisation du terrain à la sélection du
+            <strong class="block mt-2">Landwiz centralise tout :</strong> de la localisation du terrain à la sélection
+            du
             professionnel, jusqu'au paiement final.
           </p>
         </div>
+
       </div>
     </section>
+    <!-- INFO -->
     <!-- GALLERY 3 COLS -->
     <section data-fade-group>
       <div class="grid grid-cols-12 gap-0 px-0">
         <div class="col-span-12 md:col-span-4 bg-[#0E0641] min-h-[550px] flex items-center justify-center fade">
 
-          <img src="../assets/img/portfolio/landwiz_1.png" alt="Landwiz"
+          <img src="assets/img/portfolio/landwiz_1.png" alt="Landwiz"
             class="w-full h-full object-cover overflow-hidden">
 
         </div>
         <div class="col-span-12 md:col-span-4 bg-[#0E0641] min-h-[550px] flex items-center justify-center fade ">
 
-          <img src="../assets/img/portfolio/landwiz_2.png" alt="Landwiz"
+          <img src="assets/img/portfolio/landwiz_2.png" alt="Landwiz"
             class="w-full h-full object-cover overflow-hidden">
 
         </div>
         <div class="col-span-12 md:col-span-4 bg-[#0E0641] min-h-[550p] flex items-center justify-center fade">
 
-          <img src="../assets/img/portfolio/landwiz_3.png" alt="Landwiz"
+          <img src="assets/img/portfolio/landwiz_3.png" alt="Landwiz"
             class="w-full h-full object-cover overflow-hidden">
 
         </div>
@@ -167,39 +164,38 @@
     </section>
 
     <!-- TEXT SECTION -->
-    <section data-fade-group>
-      <div class="grid grid-cols-12 items-strech gap-12 px-6 py-32 fade">
+    <section data-fade-group class="overflow-hidden">
+      <div class="mx-auto grid grid-cols-12 items-stretch gap-6 lg:gap-12 px-6 py-16 md:py-32 fade">
 
-
-        <div class="col-span-12 lg:col-span-4 lg:col-start-3">
-          <h2 class="text-2xl md:text-2xl font-semibold leading-snug fade">
+        <!-- Colonne Texte principal -->
+        <div class="col-span-12 lg:col-span-4 lg:col-start-3 min-w-0">
+          <h2 class="text-2xl font-semibold leading-snug fade break-words">
             Simplification du parcours utilisateurs
           </h2>
-          <p class="py-6">À partir des données de recherche, j’ai conçu des prototypes interactifs permettant de valider
-            les parcours.
-
+          <p class="py-6 break-words">
+            À partir des données de recherche, j’ai conçu des prototypes interactifs permettant de valider les parcours.
+            <br><br>
             Les tests utilisateurs ont confirmé que la centralisation des actions dans un seul flow réduit les frictions
             et augmente la confiance. Les développeurs peuvent enfin solliciter, recevoir et sélectionner des offres
-            sans quitter l’interface.</p>
+            sans quitter l’interface.
+          </p>
         </div>
-        <div class="col-span-12 lg:col-span-4 p-12 bg-slate-200 fade">
 
-          <p> <strong>Points forts</strong></p>
-          <ul>
+        <!-- Encart Points forts -->
+        <div class="col-span-12 lg:col-span-4 p-6 lg:p-12 bg-slate-200 fade min-w-0 h-fit">
+          <p class="mb-4"><strong>Points forts</strong></p>
+          <ul class="space-y-2 break-words">
             <li>— Géolocalisation du terrain.</li>
-
             <li>— Recherche automatique de professionnels à proximité.</li>
-
             <li>— Demande d’offres de services.</li>
-
             <li>— Comparaison des devis.</li>
-
             <li>— Sélection et paiement directement dans la plateforme.</li>
           </ul>
         </div>
+
       </div>
     </section>
-
+    <!-- TEXT SECTION -->
     <!-- COLOR SWATCHES -->
     <section>
       <div class="grid grid-cols-12 py-16 px-6 md:px-10 text-base" data-fade-group>
@@ -229,19 +225,19 @@
       <div class="grid grid-cols-12 gap-0 px-0">
         <div class="col-span-12 md:col-span-4 bg-[#0E0641] min-h-[550px] flex items-center justify-center fade">
 
-          <img src="../assets/img/portfolio/landwiz_1.png" alt="Landwiz"
+          <img src="assets/img/portfolio/landwiz_1.png" alt="Landwiz"
             class="w-full h-full object-cover overflow-hidden">
 
         </div>
         <div class="col-span-12 md:col-span-4 bg-[#0E0641] min-h-[550px] flex items-center justify-center fade ">
 
-          <img src="../assets/img/portfolio/landwiz_2.png" alt="Landwiz"
+          <img src="assets/img/portfolio/landwiz_2.png" alt="Landwiz"
             class="w-full h-full object-cover overflow-hidden">
 
         </div>
         <div class="col-span-12 md:col-span-4 bg-[#0E0641] min-h-[550p] flex items-center justify-center fade">
 
-          <img src="../assets/img/portfolio/landwiz_3.png" alt="Landwiz"
+          <img src="assets/img/portfolio/landwiz_3.png" alt="Landwiz"
             class="w-full h-full object-cover overflow-hidden">
 
         </div>

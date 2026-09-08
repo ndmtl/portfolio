@@ -32,14 +32,6 @@
 
       --font-mono: "Inter Tight", sans-serif;
       --font-sans: 'Neue Haas Display', sans-serif;
-    }
-    @layer components {
-      .title__work{
-        @apply my-4 uppercase text-xl flex justify-between;
-      }
-    .title__work--tags {
-      @apply bg-ink text-white text-xs w-fit px-2 py-1 inline-block;
-    }
   }
   </style>
   <!--Tailwind-->
@@ -106,55 +98,62 @@
 
       </div>
     </section>
+
     <!-- INFO -->
-    <!-- INFO -->
-    <section data-fade-group>
-      <div class="grid grid-cols-12 gap-12 px-6 py-32 fade">
-        <div class="col-span-8 lg:col-span-5 lg:col-start-3">
-          <ul class="flex justify-start">
+    <section data-fade-group class="overflow-hidden">
+      <div class="mx-auto grid grid-cols-12 gap-6 lg:gap-12 px-6 py-16 md:py-32 fade">
+
+        <!-- Changement clé : col-span-12 au lieu de col-span-8 sur mobile -->
+        <div class="col-span-12 lg:col-span-5 lg:col-start-3 min-w-0">
+
+          <!-- Liste d'en-tête responsive avec flex-wrap -->
+          <ul class="flex flex-wrap items-center gap-x-6 gap-y-2">
             <li>
               <p class="font-semibold mb-1 text-gray-500">Client: <span class="text-ink">Wwoof Canada</span></p>
             </li>
             <li>
-              <p class="font-semibold mb-1 text-gray-500 pl-4">Industrie: <span class="text-ink">Écotourisme</span></p>
+              <p class="font-semibold mb-1 text-gray-500">Industrie: <span class="text-ink">Écotourisme</span></p>
             </li>
           </ul>
-          <p class="py-6">Le wwoofing (Willing Workers on Organics Farms ou World Wild Oppotunities on
+
+          <p class="py-6 break-words">Le wwoofing (Willing Workers on Organics Farms ou World Wild Oppotunities on
             Organics farms)
             met
             en relation des fermes bio avec des volontaires. Bien que le concept soit fort, la plateforme actuelle
             souffrait d'un processus de réservation complexe et d'un manque de fluidité sur mobile.</p>
-          <p><strong>Objectif :</strong> Simplifier le tunnel de conversion et renforcer la confiance entre les membres
+
+          <p class="break-words"><strong>Objectif :</strong> Simplifier le tunnel de conversion et renforcer la
+            confiance entre les membres
             grâce à une
             interface intuitive.</p>
-
         </div>
-        <div class="col-span-12 lg:col-span-3 p-12 bg-slate-200 fade">
 
-          <p><strong>Problématiques clés</strong></p>
-          <ul>
+        <!-- Encart gris : Padding adapté (p-6 mobile, p-12 desktop) -->
+        <div class="col-span-12 lg:col-span-3 p-6 lg:p-12 bg-slate-200 fade min-w-0 h-fit">
+          <p class="mb-4"><strong>Problématiques clés</strong></p>
+          <ul class="space-y-2 break-words">
             <li>- Trop d'étapes pour contacter un hôte.</li>
             <li>- Interface confuse, désuète et non responsive.</li>
             <li>- Difficulté à filtrer les fermes par besoins spécifiques.</li>
           </ul>
         </div>
+
       </div>
     </section>
+    <!-- INFO -->
 
     <!-- GALLERY 3 COLS -->
     <section data-fade-group>
       <div class="grid grid-cols-12 gap-0 px-0">
         <div class="col-span-12 md:col-span-6 min-h-[550px] flex items-center justify-center fade">
 
-          <img src="assets/img/portfolio//AnalyseUX-2.png" alt="Landwiz"
+          <img src="assets/img/portfolio/AnalyseUX-2.png" alt="Analyse UX Wwoof Canada"
             class="w-full h-full object-cover overflow-hidden">
-
         </div>
         <div class="col-span-12 md:col-span-6 min-h-[550p flex items-center justify-center fade ">
 
-          <img src="assets/img/portfolio/AnalyseUX-1.png" alt="Landwiz"
+          <img src="assets/img/portfolio/AnalyseUX-1.png" alt="Analyse UX Wwoof Canada"
             class="w-full h-full object-cover overflow-hidden">
-
         </div>
 
       </div>
@@ -166,7 +165,6 @@
         <div class="col-span-12 md:col-span-4 fade">
           <h3 class="text-2xl md:text-3xl font-semibold leading-snug">
             Optimiser la mise en relation hôtes & volontaires
-
           </h3>
         </div>
         <div class="col-span-12 md:col-span-4 fade">
@@ -202,13 +200,12 @@
       </div>
     </section>
 
-    <section class="bg-slate-200 p-12" data-fade-group>
-      <div class="mx-auto grid grid-cols-12 gap-32 py-12">
-        <div class="col-span-12 flex items-center justify-center fade">
+    <section class="bg-slate-200 p-6 md:p-12 overflow-hidden" data-fade-group>
+      <div class="max-w-7xl mx-auto py-6 md:py-12">
+        <div class="w-full flex items-center justify-center fade">
           <img src="assets/img/portfolio/Wwoof-UX-UI-1-scaled.png" alt="Wwoof Canada - prototype"
-            class="w-full h-full object-cover overflow-hidden">
+            class="w-full max-w-full h-auto object-contain rounded-lg">
         </div>
-      </div>
       </div>
     </section>
 
@@ -285,26 +282,32 @@
 
       </div>
     </section>
-    <section class="bg-slate-200 p-12" data-fade-group>
-      <div class="container mx-auto grid grid-cols-12 gap-32 py-12">
+    <section class="bg-slate-200 p-6 md:p-12 overflow-hidden" data-fade-group>
+      <div class="mx-auto grid grid-cols-12 gap-6 md:gap-8 lg:gap-12 py-6 md:py-12">
+
+        <!-- Image 1 -->
         <div class="col-span-12 md:col-span-3 flex items-center justify-center fade">
           <img src="assets/img/portfolio/wwoof-home-1.png" alt="Wwoof Canada - prototype"
-            class="w-full h-full object-cover overflow-hidden">
-        </div>
-        <div class="col-span-12 md:col-span-3 flex items-center justify-center fade">
-          <img src="assets/img/portfolio/wwoof-List.png" alt="Wwoof Canada - prototype"
-            class="w-full h-full object-cover">
-        </div>
-        <div class="col-span-12 md:col-span-3 flex items-center justify-center fade">
-          <img src="assets/img/portfolio/wwoof-Map-1.png" alt="Wwoof Canada - prototype"
-            class="w-full h-full object-cover">
-        </div>
-        <div class="col-span-12 md:col-span-3 flex items-center justify-center fade">
-          <img src="assets/img/portfolio/wwoof-Details.png" alt="Wwoof Canada - prototype"
-            class="w-full h-full object-cover">
+            class="w-full max-w-[280px] md:max-w-none h-auto object-contain">
         </div>
 
-      </div>
+        <!-- Image 2 -->
+        <div class="col-span-12 md:col-span-3 flex items-center justify-center fade">
+          <img src="assets/img/portfolio/wwoof-List.png" alt="Wwoof Canada - prototype"
+            class="w-full max-w-[280px] md:max-w-none h-auto object-contain">
+        </div>
+
+        <!-- Image 3 -->
+        <div class="col-span-12 md:col-span-3 flex items-center justify-center fade">
+          <img src="assets/img/portfolio/wwoof-Map-1.png" alt="Wwoof Canada - prototype"
+            class="w-full max-w-[280px] md:max-w-none h-auto object-contain">
+        </div>
+
+        <!-- Image 4 -->
+        <div class="col-span-12 md:col-span-3 flex items-center justify-center fade">
+          <img src="assets/img/portfolio/wwoof-Details.png" alt="Wwoof Canada - prototype"
+            class="w-full max-w-[280px] md:max-w-none h-auto object-contain">
+        </div>
 
       </div>
     </section>
