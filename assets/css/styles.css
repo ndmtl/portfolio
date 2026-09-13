@@ -95,7 +95,7 @@
      height: 200px;
  }
 
- .btn__contact #rotatingText {
+ .btn__contact #rotating {
      position: absolute;
      top: 0;
      left: 0;
@@ -103,12 +103,12 @@
      height: 200px;
  }
 
- .btn__contact #rotatingText {
+ .btn__contact #rotating {
      animation: spin 8s linear infinite;
      transform-origin: center;
  }
 
- .btn__contact #rotatingText:hover {
+ .btn__contact #rotating:hover {
      animation: spin 2s linear infinite;
      transform-origin: center;
  }
