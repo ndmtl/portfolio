@@ -6,29 +6,26 @@
 
 ### https://ndmtl.github.io/portfolio/
 
-### Animations JS & GSAP
-
+| ### Animations JS & GSAP                                                                                   |
 | :--------------------------------------------------------------------------------------------------------- |
 | Déplacement des titres (_marquee_) — [GSAP ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/) |
-| Apparition progressive des éléments au _scroll_ (fade in) - https://codepen.io/Meuss/pen/eYJZbJN|
-| Galerie à défilement horizontal (présentation des prototypes) - https://codepen.io/GreenSock/pen/dydpJzY|
-| Filtrage dynamique par classes (Wc3school) |
+| Apparition progressive des éléments au _scroll_ (fade in) - https://codepen.io/Meuss/pen/eYJZbJN           |
+| Galerie à défilement horizontal (présentation des prototypes) - https://codepen.io/GreenSock/pen/dydpJzY   |
+| Filtrage dynamique par classes (Wc3school)                                                                 |
 
 <br>
 
-### Animations CSS
-
-| :---------------------------------------------------------------------------------------------------------------- |
-| Défilement fluide (_smooth scroll_) — [W3Schools](https://www.w3schools.com/howto/howto_css_smooth_scroll.asp#section2) |
+| ### Animations CSS                                                                                                                        |
+| :---------------------------------------------------------------------------------------------------------------------------------------- |
+| Défilement fluide (_smooth scroll_) — [W3Schools](https://www.w3schools.com/howto/howto_css_smooth_scroll.asp#section2)                   |
 | Effets sur les images (transition, rotation) — [W3Schools](https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition_transform) |
-| Rotation animée sur le texte — [W3Schools](https://www.w3schools.com/cssref/tryit.php?filename=trycss_anim_transform) |
+| Rotation animée sur le texte — [W3Schools](https://www.w3schools.com/cssref/tryit.php?filename=trycss_anim_transform)                     |
 
 <br>
 
-### Composants Tailwind CSS
-
-| :---------------------------------------------------------------------------------------------------------------- |
-| Bloc de statistiques - https://pagedone.io/blocks/marketing/stats |
+| ### Composants Tailwind CSS                                                     |
+| :------------------------------------------------------------------------------ |
+| Bloc de statistiques - https://pagedone.io/blocks/marketing/stats               |
 | Carrousel d'images — [Flowbite](https://flowbite.com/docs/components/carousel/) |
 
 ### Et Claude.ai
