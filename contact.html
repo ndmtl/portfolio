@@ -138,7 +138,7 @@
               <label for="fullName" class="block mb-1 text-base font-medium">Nom et prénom*</label>
               <input type="text" name="fullName" id="fullName" aria-describedby="fullName-error" required
                 class="w-full h-[36px] bg-transparent border-b-2 border-black">
-              <div id="fullName-error" class="message__error" aria-live="polite"></div>
+              <div id="fullName-error" class="message--error" aria-live="polite"></div>
             </div>
 
             <!-- Champ Email -->
@@ -146,7 +146,7 @@
               <label for="email" class="block mb-1 text-base font-medium">Courriel (nom@domaine.com)*</label>
               <input type="email" name="email" id="email" aria-describedby="email-error" required
                 class="w-full h-[36px] bg-transparent border-b-2 border-black">
-              <div id="email-error" class="message__error" aria-live="polite"></div>
+              <div id="email-error" class="message--error" aria-live="polite"></div>
             </div>
 
             <!-- Champ Téléphone -->
@@ -154,7 +154,7 @@
               <label for="phone" class="block mb-1 text-base font-medium">Téléphone (12345678)</label>
               <input type="tel" name="phone" id="phone" aria-describedby="phone-error"
                 class="w-full h-[36px] bg-transparent border-b-2 border-black">
-              <div id="phone-error" class="message__error" aria-live="polite"></div>
+              <div id="phone-error" class="message--error" aria-live="polite"></div>
             </div>
 
             <!--Entreprise facultatif-->
@@ -162,7 +162,7 @@
               <label for="company" class="block mb-1 text-base font-medium">Organisation/compagnie</label>
               <input type="text" name="company" id="company"
                 class="w-full h-[36px] bg-transparent border-b-2 border-black">
-              <!-- <div id="email-error" class="message__error" aria-live="polite"></div> -->
+              <!-- <div id="email-error" class="message--error" aria-live="polite"></div> -->
             </div>
 
             <!-- Sujet -->
@@ -176,7 +176,7 @@
                 <option value="Prototypage UI">Refonte</option>
                 <option value="Graphisme">Graphisme</option>
               </select>
-              <div id="subject-error" class="message__error" aria-live="polite"></div>
+              <div id="subject-error" class="message--error" aria-live="polite"></div>
             </div>
 
             <!-- Budget -->
@@ -190,7 +190,7 @@
                 <option value="10000-15000">10000-15000</option>
                 <option value="10000+">10000+</option>
               </select>
-              <div id="budget-error" class="message__error" aria-live="polite"></div>
+              <div id="budget-error" class="message--error" aria-live="polite"></div>
             </div>
 
             <!--Échéance-->
@@ -212,7 +212,7 @@
                 <input type="radio" id="deadline-flexible" name="deadline" value="flexible">
                 <label for="deadline-flexible">Flexible</label>
               </div>
-              <div id="deadline-error" class="message__error" aria-live="polite"></div>
+              <div id="deadline-error" class="message--error" aria-live="polite"></div>
             </fieldset>
 
             <!-- Champ Message -->
@@ -220,7 +220,7 @@
               <label for="message" class="block mb-1 text-base font-medium">Décrivez votre projet*</label>
               <textarea rows="4" name="message" id="message" aria-describedby="message-error" required
                 class="w-full bg-transparent border-b-2 border-black resize-none"></textarea>
-              <div id="message-error" class="message__error" aria-live="polite"></div>
+              <div id="message-error" class="message--error" aria-live="polite"></div>
             </div>
 
             <p id="confirmation" role="status"></p>

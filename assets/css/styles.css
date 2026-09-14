@@ -67,7 +67,7 @@
      border-bottom: 2px solid rgb(6, 122, 19);
  }
 
- .message__error {
+ .message--error {
      color: red;
      font-size: 0.85rem;
  }

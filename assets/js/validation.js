@@ -121,7 +121,7 @@ function validateForm() {
 //
 function setError(element, message) {
     const inputControl = element.closest('.input__control');
-    const errorDisplay = inputControl.querySelector('.message__error');
+    const errorDisplay = inputControl.querySelector('.message--error');
 
     if (!errorDisplay.id) {
         errorDisplay.id = (element.id || 'erreur') + '-message';
@@ -136,7 +136,7 @@ function setError(element, message) {
 
 function setSuccess(element) {
     const inputControl = element.closest('.input__control');
-    const errorDisplay = inputControl.querySelector('.message__error');
+    const errorDisplay = inputControl.querySelector('.message--error');
 
     errorDisplay.innerText = '';
     inputControl.classList.add('input__control--success');

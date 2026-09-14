@@ -7,21 +7,18 @@ menuToggle.addEventListener('click', function () {
     const isOpen = !navMenu.classList.contains('hidden');
 
     if (isOpen) {
-        // Fermeture du menu
+
         navMenu.classList.add('opacity-0');
         setTimeout(() => {
             navMenu.classList.add('hidden');
-        }, 300); // Attend la fin du transition duration-300
+        }, 300);
     } else {
-        // Ouverture du menu
         navMenu.classList.remove('hidden');
-        // Petit délai pour déclencher la transition d'opacité après le retrait de 'hidden'
         setTimeout(() => {
             navMenu.classList.remove('opacity-0');
         }, 10);
     }
 
-    // Bascule du texte du bouton
     menuText.classList.toggle('hidden');
     menuTextClose.classList.toggle('hidden');
 });
