@@ -45,15 +45,15 @@
   </style>
 </head>
 
-<body class="text-ink w-full font-sans text-lg">
-  <!--Lien d'évitement (visible au focus)-->
+<body id="top" class="text-ink w-full font-sans text-lg">
+  <!--Lien accessibilité-->
   <a href="#content"
     class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:p-4 focus:bg-white focus:text-ink">
     Aller au contenu principal
   </a>
 
   <!--Header-->
-  <header class="relative w-full top">
+  <header class="relative w-full">
     <nav class="absolute z-50 w-full p-6" aria-label="Navigation principale">
       <div class="absolute z-50 text-2xl  hover:text-accent">
         <a href="index.html">Nathalie Depierre</a>
@@ -246,8 +246,8 @@
         </ul>
       </nav>
 
+      <!--Réseaux sociaux-->
       <div class="w-full col-span-12 lg:col-span-3 p-6 lg:p-12 py-4">
-        <!--Réseaux sociaux-->
         <ul class="flex flex-col gap-1 font-mono uppercase" aria-label="Réseaux sociaux">
           <li>
             <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
@@ -287,6 +287,7 @@
           </li>
         </ul>
       </div>
+      <!--Réseaux sociaux-->
 
       <!--BTN Contact-->
       <div class="w-full col-span-12 lg:col-span-3 py-4">
@@ -311,7 +312,7 @@
 
       <div
         class="m-0 py-4 lg:p-5 col-span-12 bg-accent text-white lg:text-ink lg:bg-transparent lg:col-span-3 flex justify-center lg:justify-end">
-        <a href="#hero" class="hover:underline">Retour en haut de page</a>
+        <a href="#top" class="hover:text-accent">Retour en haut de page</a>
       </div>
     </div>
   </footer>

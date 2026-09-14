@@ -39,16 +39,16 @@
 <!--Head-->
 <!--Body-->
 
-<body class="text-ink w-full text-lg font-sans">
+<body id="top" class="text-ink w-full text-lg font-sans">
   <!--Header-->
-  <header class="relative w-full top">
+  <header class="relative w-full">
     <!--Accessibilité-->
     <a href="#content" class="sr-only">Aller au contenu principal</a>
     <!--Accessibilité-->
     <nav class="absolute z-50 w-full p-6">
-      <h1 class="absolute z-50 text-2xl hover:text-accent">
+      <div class="absolute z-50 text-2xl hover:text-accent">
         <a href="index.html">Nathalie Depierre</a>
-      </h1>
+      </div>
 
       <button id="menuToggle" class="absolute top-6 right-6 z-50 lg:hidden bg-accent p-2 text-white cursor-pointer"
         aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
@@ -142,19 +142,19 @@
         <h2 class="sr-only">Les maquettes</h2>
         <div class="col-span-12 md:col-span-4 bg-[#0E0641] min-h-[550px] flex items-center justify-center fade">
 
-          <img src="assets/img/portfolio/landwiz_1.png" alt="Landwiz"
+          <img src="assets/img/portfolio/landwiz_1.png" alt="Interface d'offres de services"
             class="w-full h-full object-cover overflow-hidden">
 
         </div>
         <div class="col-span-12 md:col-span-4 bg-[#0E0641] min-h-[550px] flex items-center justify-center fade ">
 
-          <img src="assets/img/portfolio/landwiz_2.png" alt="Landwiz"
+          <img src="assets/img/portfolio/landwiz_2.png" alt="Interface d'offres de services"
             class="w-full h-full object-cover overflow-hidden">
 
         </div>
         <div class="col-span-12 md:col-span-4 bg-[#0E0641] min-h-[550p] flex items-center justify-center fade">
 
-          <img src="assets/img/portfolio/landwiz_3.png" alt="Landwiz"
+          <img src="assets/img/portfolio/landwiz_3.png" alt="Interface d'offres de services"
             class="w-full h-full object-cover overflow-hidden">
 
         </div>
@@ -197,23 +197,18 @@
     <section>
       <div class="grid grid-cols-12 py-16 px-6 md:px-10 text-base" data-fade-group>
         <h2 class="sr-only">Les couleurs</h2>
-        <div
-          class="col-span-12 md:col-span-3 gap-0 bg-[#0E0641] h-56 flex flex-col justify-center pl-6  text-white fade">
+        <div class="col-span-12 md:col-span-3 bg-[#0E0641] h-56 flex flex-col justify-center pl-6 text-white fade">
           <span>#0E0641</span>
         </div>
-        <div
-          class="col-span-12 md:col-span-3 gap-0 bg-[#4E48CA] h-56 flex flex-col justify-center pl-6  text-white fade">
+        <div class="col-span-12 md:col-span-3 bg-[#4E48CA] h-56 flex flex-col justify-center pl-6 text-white fade">
           <span>#4E48CA</span>
         </div>
-        <div
-          class="col-span-12 md:col-span-3 gap-0 bg-[#7CEEDF] h-56 flex flex-col justify-center pl-6  text-white fade">
+        <div class="col-span-12 md:col-span-3 bg-[#7CEEDF] h-56 flex flex-col justify-center pl-6 text-ink fade">
           <span>#7CEEDF</span>
         </div>
-        <div
-          class="col-span-12 md:col-span-3 gap-0 bg-[#F5F7F7] h-56 flex flex-col justify-center pl-6  text-gray-300 fade">
+        <div class="col-span-12 md:col-span-3 bg-[#F5F7F7] h-56 flex flex-col justify-center pl-6 text-ink fade">
           <span>#F5F7F7</span>
         </div>
-
       </div>
     </section>
 
@@ -223,19 +218,19 @@
         <h2 class="sr-only">Les maquettes</h2>
         <div class="col-span-12 md:col-span-4 bg-[#0E0641] min-h-[550px] flex items-center justify-center fade">
 
-          <img src="assets/img/portfolio/landwiz_1.png" alt="Landwiz"
+          <img src="assets/img/portfolio/landwiz_1.png" alt="Interface d'offres de services"
             class="w-full h-full object-cover overflow-hidden">
 
         </div>
         <div class="col-span-12 md:col-span-4 bg-[#0E0641] min-h-[550px] flex items-center justify-center fade ">
 
-          <img src="assets/img/portfolio/landwiz_2.png" alt="Landwiz"
+          <img src="assets/img/portfolio/landwiz_2.png" alt="Interface d'offres de services"
             class="w-full h-full object-cover overflow-hidden">
 
         </div>
         <div class="col-span-12 md:col-span-4 bg-[#0E0641] min-h-[550p] flex items-center justify-center fade">
 
-          <img src="assets/img/portfolio/landwiz_3.png" alt="Landwiz"
+          <img src="assets/img/portfolio/landwiz_3.png" alt="Interface d'offres de services"
             class="w-full h-full object-cover overflow-hidden">
 
         </div>
@@ -245,7 +240,7 @@
     <!-- NEXT ITEM -->
     <section class="grid grid-cols-12 text-center py-16">
       <div class="col-span-12">
-        <h3 class="text-2xl font-semibold mb-2">Prochain cas d'étude</h3>
+        <h2 class="text-2xl font-semibold mb-2">Prochain cas d'étude</h2>
         <a href="application-wwoof-canada.html" class="text-neutral-500 hover:text-accent">Wwoof Canada →</a>
       </div>
     </section>
@@ -264,47 +259,54 @@
         </ul>
       </div>
 
+      <!--Réseaux sociaux-->
       <div class="w-full col-span-12 lg:col-span-3 p-6 lg:p-12 py-4">
-        <!--Liens SN-->
-        <div class="flex flex-col gap-1 font-mono uppercase">
-          <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
-            class="group inline-flex items-center gap-1 hover:text-accent">
-            LinkedIn
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor"
-              class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-            </svg>
-          </a>
-
-          <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank" rel="noopener noreferrer"
-            class="group inline-flex items-center gap-1 hover:text-accent">
-            Instagram
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor"
-              class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-            </svg>
-          </a>
-
-          <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
-            class="group inline-flex items-center gap-1 hover:text-accent">
-            GitHub
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor"
-              class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-            </svg>
-          </a>
-        </div>
+        <ul class="flex flex-col gap-1 font-mono uppercase" aria-label="Réseaux sociaux">
+          <li>
+            <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1 hover:text-accent">
+              LinkedIn
+              <span class="sr-only">(s'ouvre dans une nouvelle fenêtre)</span>
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank" rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1 hover:text-accent">
+              Instagram
+              <span class="sr-only">(s'ouvre dans une nouvelle fenêtre)</span>
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1 hover:text-accent">
+              GitHub
+              <span class="sr-only">(s'ouvre dans une nouvelle fenêtre)</span>
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
+          </li>
+        </ul>
       </div>
-      <!--Liens SN-->
+      <!--Réseaux sociaux-->
       <!--BTN Contact-->
       <div class="w-full col-span-12 lg:col-span-3 py-4">
         <div class="absolute top-20 right-15 z-10 btn__contact">
           <a href="contact.html" id="rotating">
             <img src="assets/img/illustrations_contact.png"
-              class="pl-2 flex justify-center items-center w-[200px] mx-auto" alt="Bouton contact">
+              class="pl-2 flex justify-center items-center w-[200px] mx-auto" alt="Page de contact">
           </a>
         </div>
 
@@ -326,7 +328,7 @@
 
       <div
         class="m-0 py-4 lg:p-5 col-span-12 bg-accent text-white lg:text-ink lg:bg-transparent lg:col-span-3 flex justify-center lg:justify-end">
-        <span><a href="#top">retour en haut</a></span>
+        <a href="#top" class="hover:text-accent">Retour en haut de page</a>
       </div>
 
     </div>

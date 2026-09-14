@@ -1,4 +1,3 @@
-
 //--------//
 //  Formulaire de contact
 const contactForm = document.getElementById('contactForm');
@@ -123,17 +122,27 @@ function validateForm() {
 function setError(element, message) {
     const inputControl = element.closest('.input__control');
     const errorDisplay = inputControl.querySelector('.message__error');
+
+    if (!errorDisplay.id) {
+        errorDisplay.id = (element.id || 'erreur') + '-message';
+    }
+
     errorDisplay.innerText = message;
     inputControl.classList.add('input__control--error');
     inputControl.classList.remove('input__control--success');
+
+    element.setAttribute('aria-describedby', errorDisplay.id);
 }
 
 function setSuccess(element) {
     const inputControl = element.closest('.input__control');
     const errorDisplay = inputControl.querySelector('.message__error');
+
     errorDisplay.innerText = '';
     inputControl.classList.add('input__control--success');
     inputControl.classList.remove('input__control--error');
+
+    element.removeAttribute('aria-describedby');
 }
 
 function isValidEmail(email) {
@@ -145,5 +154,3 @@ function isValidPhone(phone) {
     const cleaned = phone.replace(/\D/g, '');
     return cleaned.length === 10;
 }
-
-

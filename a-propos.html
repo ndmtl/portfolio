@@ -41,16 +41,16 @@
 <!--Head-->
 <!--Body-->
 
-<body class="text-ink w-full text-lg font-sans">
+<body id="top" class="text-ink w-full text-lg font-sans">
   <!--Header-->
-  <header class="relative w-full top">
+  <header class="relative w-full">
     <!--Accessibilité-->
     <a href="#content" class="sr-only">Aller au contenu principal</a>
     <!--Accessibilité-->
     <nav class="absolute z-50 w-full p-6">
-      <h1 class="absolute z-50 text-2xl hover:text-accent">
+      <div class="absolute z-50 text-2xl hover:text-accent">
         <a href="index.html">Nathalie Depierre</a>
-      </h1>
+      </div>
 
       <button id="menuToggle" class="absolute top-6 right-6 z-50 lg:hidden bg-accent p-2 text-white cursor-pointer"
         aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navMenu">
@@ -119,8 +119,9 @@
             <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
               class="group inline-flex items-center gap-1 hover:text-accent">
               LinkedIn
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                stroke="currentColor" aria-hidden="true"
+              <span class="sr-only">(s'ouvre dans une nouvelle fenêtre)</span>
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                 class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
               </svg>
@@ -129,8 +130,9 @@
             <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank" rel="noopener noreferrer"
               class="group inline-flex items-center gap-1 hover:text-accent">
               Instagram
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                stroke="currentColor" aria-hidden="true"
+              <span class="sr-only">(s'ouvre dans une nouvelle fenêtre)</span>
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                 class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
               </svg>
@@ -139,8 +141,9 @@
             <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
               class="group inline-flex items-center gap-1 hover:text-accent">
               GitHub
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                stroke="currentColor" aria-hidden="true"
+              <span class="sr-only">(s'ouvre dans une nouvelle fenêtre)</span>
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
                 class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
               </svg>
@@ -185,7 +188,8 @@
 
         <!-- Ligne 1 : Encart 1 -->
         <div class="lg:col-span-3 lg:col-start-4 text-xl fade min-w-0">
-          <img src="assets/img/illustrations_research.png" class="p-3 max-w-[200px]" alt="Exploration UX">
+          <img src="assets/img/illustrations_research.png" class="p-3 max-w-[200px]" alt="Exploration UX"
+            aria-hidden="true">
           <h3 class="py-3 font-mono uppercase">— Exploration UX</h3>
           <p class="break-words">Compréhension des objectifs, des utilisateurs et des contraintes grâce à la recherche,
             l'analyse et la
@@ -195,7 +199,8 @@
 
         <!-- Ligne 1 : Encart 2 -->
         <div class="lg:col-span-3 lg:col-start-7 text-xl fade min-w-0">
-          <img src="assets/img/illustrations_iteration.png" class="py-3 max-w-[200px]" alt="UX/UI Design">
+          <img src="assets/img/illustrations_iteration.png" class="py-3 max-w-[200px]" alt="UX/UI Design"
+            aria-hidden="true">
           <h3 class="py-3 font-mono uppercase">— Prototypage</h3>
           <p class="break-words">Conception et optimisation des interfaces en portant attention aux détails, à
             l'ergonomie et à la
@@ -205,7 +210,8 @@
 
         <!-- Ligne 2 : Encart 3 -->
         <div class="lg:col-span-3 lg:col-start-4 text-xl fade min-w-0">
-          <img src="assets/img/illustrations_creation.png" class="py-3 max-w-[200px]" alt="Prototypage">
+          <img src="assets/img/illustrations_creation.png" class="py-3 max-w-[200px]" alt="Prototypage"
+            aria-hidden="true">
           <h3 class="py-3 font-mono uppercase">— Création</h3>
           <p class="break-words">Transformation des idées en expériences concrètes : prototypes interactifs, maquettes
             haute fidélité et
@@ -215,7 +221,7 @@
 
         <!-- Ligne 2 : Encart 4 -->
         <div class="lg:col-span-3 lg:col-start-7 text-xl fade min-w-0">
-          <img src="assets/img/illustrations_code.png" class="py-3 max-w-[200px]" alt="Intégration">
+          <img src="assets/img/illustrations_code.png" class="py-3 max-w-[200px]" alt="Intégration" aria-hidden="true">
           <h3 class="py-3 font-mono uppercase">— integration web</h3>
           <p class="break-words">Intégration HTML/CSS et utilisation de librairies JavaScript, React.
             Livraison experte en no-code/low-code via Sitecore et WordPress, pour des solutions performantes, propres
@@ -238,7 +244,8 @@
         <div class="grid grid-cols-12 gap-6 items-center">
 
           <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-            <a href="https://aurory.io/" target="_blank">
+            <a href="https://aurory.io/" target="_blank" rel="noopener noreferrer"
+              aria-label="Aurory (s'ouvre dans une nouvelle fenêtre)">
               <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
                 <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Aurory.png" alt="Aurory"
                   class="max-h-full max-w-full object-contain">
@@ -247,7 +254,8 @@
           </div>
 
           <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-            <a href="https://www.tink.ca/" target="_blank">
+            <a href="https://www.tink.ca/" target="_blank" rel="noopener noreferrer"
+              aria-label="Tink (s'ouvre dans une nouvelle fenêtre)">
               <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
                 <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Tink.png" alt="Tink"
                   class="max-h-full max-w-full object-contain">
@@ -256,7 +264,8 @@
           </div>
 
           <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-            <a href="https://no-brainer.ca/" target="_blank">
+            <a href="https://no-brainer.ca/" target="_blank" rel="noopener noreferrer"
+              aria-label="No Brainer (s'ouvre dans une nouvelle fenêtre)">
               <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
                 <img src="assets/img/LogosClientsOpt/LogosClientsGrey_NoBrainer.png" alt="NoBrainer"
                   class="max-h-full max-w-full object-contain">
@@ -265,7 +274,8 @@
           </div>
 
           <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-            <a href="https://ugroupmedia.com/fr/" target="_blank">
+            <a href="https://ugroupmedia.com/fr/" target="_blank" rel="noopener noreferrer"
+              aria-label="Ugroupmedia (s'ouvre dans une nouvelle fenêtre)">
               <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
                 <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Ugroumedia.png" alt="Ugroumedia"
                   class="max-h-full max-w-full object-contain">
@@ -274,7 +284,8 @@
           </div>
 
           <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-            <a href="https://fondationrivieres.org/" target="_blank">
+            <a href="https://fondationrivieres.org/" target="_blank" rel="noopener noreferrer"
+              aria-label="Fondation Rivières (s'ouvre dans une nouvelle fenêtre)">
               <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
                 <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Fondation-rivieres.png" alt="Fondation Rivières"
                   class="max-h-full max-w-full object-contain">
@@ -283,7 +294,8 @@
           </div>
 
           <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-            <a href="https://uqo.ca/" target="_blank">
+            <a href="https://uqo.ca/" target="_blank" rel="noopener noreferrer"
+              aria-label="UQO (s'ouvre dans une nouvelle fenêtre)">
               <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
                 <img src="assets/img/LogosClientsOpt/LogosClientsGrey_UQO.png" alt="UQO"
                   class="max-h-full max-w-full object-contain">
@@ -292,7 +304,8 @@
           </div>
 
           <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-            <a href="https://ceci.org/" target="_blank">
+            <a href="https://ceci.org/" target="_blank" rel="noopener noreferrer"
+              aria-label="CECI (s'ouvre dans une nouvelle fenêtre)">
               <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
                 <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Ceci.png" alt="CECI"
                   class="max-h-full max-w-full object-contain">
@@ -301,7 +314,8 @@
           </div>
 
           <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-            <a href="https://esg.uqam.ca/" target="_blank">
+            <a href="https://esg.uqam.ca/" target="_blank" rel="noopener noreferrer"
+              aria-label="ESG (s'ouvre dans une nouvelle fenêtre)">
               <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
                 <img src="assets/img/LogosClientsOpt/LogosClientsGrey_ESG-UQAM.png" alt="ESG UQAM"
                   class="max-h-full max-w-full object-contain">
@@ -310,14 +324,19 @@
           </div>
 
           <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-            <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
-              <img src="assets/img/LogosClientsOpt/LogosClientsGrey_EEQ.png" alt="EEQ"
-                class="max-h-full max-w-full object-contain">
-            </div>
+            <a href="https://www.eeq.ca/" target="_blank" rel="noopener noreferrer"
+              aria-label="EEQ (s'ouvre dans une nouvelle fenêtre)">
+              <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
+                <img src="assets/img/LogosClientsOpt/LogosClientsGrey_EEQ.png" alt="EEQ"
+                  class="max-h-full max-w-full object-contain">
+              </div>
+            </a>
           </div>
 
+
           <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-            <a href="www.eeq.ca" target="_blank">
+            <a href="https://cpaquebec.ca/" target="_blank" rel="noopener noreferrer"
+              aria-label="CPA (s'ouvre dans une nouvelle fenêtre)">
               <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
                 <img src="assets/img/LogosClientsOpt/LogosClientsGrey_CPA.png" alt="CPA"
                   class="max-h-full max-w-full object-contain">
@@ -326,7 +345,8 @@
           </div>
 
           <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-            <a href="https://www.pertinencemedia.com/fr/" target="_blank">
+            <a href="https://www.pertinencemedia.com/fr/" target="_blank" rel="noopener noreferrer"
+              aria-label="Pertinence Media (s'ouvre dans une nouvelle fenêtre)">
               <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
                 <img src="assets/img/LogosClientsOpt/LogosClientsGrey_PertinenceMedia.png" alt="Pertinence Media"
                   class="max-h-full max-w-full object-contain">
@@ -335,7 +355,8 @@
           </div>
 
           <div class="col-span-6 sm:col-span-6 lg:col-span-3 flex justify-center">
-            <a href="https://ruisss.umontreal.ca/" target="_blank">
+            <a href="https://ruisss.umontreal.ca/" target="_blank" rel="noopener noreferrer"
+              aria-label="RUISSS (s'ouvre dans une nouvelle fenêtre)">
               <div class="w-full max-w-[280px] h-24 p-3 flex items-center justify-center fade">
                 <img src="assets/img/LogosClientsOpt/LogosClientsGrey_Ruisss.png" alt="RUISSS"
                   class="max-h-full max-w-full object-contain">
@@ -347,7 +368,7 @@
       </div>
     </section>
     <!--Carousel temoignages-->
-    <section id="temoignages" class="h-screen md:h-[60vh] bg-accent flex flex-col justify-center items-center">
+    <section id="temoignages" class="h-screen md:min-h-[60vh] bg-accent flex flex-col justify-center items-center">
       <div class="mb-12 text-white">
         <h2 class="text-2xl lg:text-4xl font-bold tracking-wide text-center">
           Ce qu'ils en disent
@@ -405,7 +426,7 @@
 
         <!-- Slider controls -->
         <button type="button"
-          class="hidden absolute top-0 l-0 z-30 lg:flex items-center justify-center h-full px-12 cursor-pointer group focus:outline-none"
+          class="hidden absolute top-0 left-0 z-30 lg:flex items-center justify-center h-full px-12 cursor-pointer group focus:outline-none"
           data-carousel-prev>
           <span
             class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
@@ -446,48 +467,54 @@
           <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
         </ul>
       </div>
-
+      <!--Réseaux sociaux-->
       <div class="w-full col-span-12 lg:col-span-3 p-6 lg:p-12 py-4">
-        <!--Liens SN-->
-        <div class="flex flex-col gap-1 font-mono uppercase">
-          <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
-            class="group inline-flex items-center gap-1 hover:text-accent">
-            LinkedIn
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor"
-              class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-            </svg>
-          </a>
-
-          <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank" rel="noopener noreferrer"
-            class="group inline-flex items-center gap-1 hover:text-accent">
-            Instagram
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor"
-              class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-            </svg>
-          </a>
-
-          <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
-            class="group inline-flex items-center gap-1 hover:text-accent">
-            GitHub
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-              stroke="currentColor"
-              class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-            </svg>
-          </a>
-        </div>
+        <ul class="flex flex-col gap-1 font-mono uppercase" aria-label="Réseaux sociaux">
+          <li>
+            <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1 hover:text-accent">
+              LinkedIn
+              <span class="sr-only">(s'ouvre dans une nouvelle fenêtre)</span>
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/nathaliedepierremtl/" target="_blank" rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1 hover:text-accent">
+              Instagram
+              <span class="sr-only">(s'ouvre dans une nouvelle fenêtre)</span>
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ndmtl" target="_blank" rel="noopener noreferrer"
+              class="group inline-flex items-center gap-1 hover:text-accent">
+              GitHub
+              <span class="sr-only">(s'ouvre dans une nouvelle fenêtre)</span>
+              <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
+          </li>
+        </ul>
       </div>
-      <!--Liens SN-->
+      <!--Réseaux sociaux-->
       <!--BTN Contact-->
       <div class="w-full col-span-12 lg:col-span-3 py-4">
         <div class="absolute top-20 right-15 z-10 btn__contact">
           <a href="contact.html" id="rotating">
             <img src="assets/img/illustrations_contact.png"
-              class="pl-2 flex justify-center items-center w-[200px] mx-auto" alt="Bouton contact">
+              class="pl-2 flex justify-center items-center w-[200px] mx-auto" alt="Page de contact">
           </a>
         </div>
 
@@ -509,7 +536,7 @@
 
       <div
         class="m-0 py-4 lg:p-5 col-span-12 bg-accent text-white lg:text-ink lg:bg-transparent lg:col-span-3 flex justify-center lg:justify-end">
-        <span><a href="#top">retour en haut</a></span>
+        <a href="#top" class="hover:text-accent">Retour en haut de page</a>
       </div>
 
     </div>

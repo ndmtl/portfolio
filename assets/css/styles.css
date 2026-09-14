@@ -72,6 +72,11 @@
      font-size: 0.85rem;
  }
 
+ input:focus {
+     outline: 3px solid blue;
+
+ }
+
  .confirmation__attributs {
      text-align: center;
      margin: 2rem 0;
