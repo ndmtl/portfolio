@@ -20,7 +20,7 @@
 
 ### Animations CSS
 
-| Animations CSS                                                                                                                            |
+| CSS                                                                                                                                       |
 | :---------------------------------------------------------------------------------------------------------------------------------------- |
 | Défilement fluide (_smooth scroll_) — [W3Schools](https://www.w3schools.com/howto/howto_css_smooth_scroll.asp#section2)                   |
 | Effets sur les images (transition, rotation) — [W3Schools](https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition_transform) |
@@ -30,13 +30,7 @@
 
 ### Composants Tailwind CSS
 
-| Composants Tailwind                                                                                                              |
-| :------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| Bloc de statistiques (_Stats Section_) — [Tailwind UI](https://tailwindcss.com/plus/ui-blocks/marketing/sections/stats-sections) |
-| Carrousel d'images — [Flowbite](https://flowbite.com/docs/components/carousel/)                                                  |                                                                                                                           |
-| :-------------------------------------------------------------------------------                                                 | :----------------------------------------------------------------------------------------------------                     | :-------------------------------------------------------------------------------------- |
-| Déplacement des titres (marquee) https://gsap.com/docs/v3/Plugins/ScrollTrigger/                                                 | Déplacement "smooth" au "scroll" https://www.w3schools.com/howto/howto_css_smooth_scroll.asp#section2                     | Composant STAT https://tailwindcss.com/plus/ui-blocks/marketing/sections/stats-sections |
-| Apparition au scroll (fade in et position sur le viewport)                                                                       | Animations sur photo (transition, rotation) https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition_transform | Composant Carousel GFlowbite https://flowbite.com/docs/components/carousel/             |
-| Apparition des éléments au scroll (fade In)                                                                                      | Animation rotation sur texte https://www.w3schools.com/cssref/tryit.php?filename=trycss_anim_transform                    |
-| Galerie avec scroll horizontal (présentation des prototypes)                                                                     |                                                                                                                           |
-| Création d'un filtre par classes (W3)                                                                                            |                                                                                                                           |
+| Tailwind                                                                                                          |
+| :---------------------------------------------------------------------------------------------------------------- |
+| Bloc de statistiques (_Stats Section_) — [Tailwind UI](https://tailwindcss.com/plus/ui-blocks/marketing/sections/ |
+| Carrousel d'images — [Flowbite](https://flowbite.com/docs/components/carousel/)                                   |
