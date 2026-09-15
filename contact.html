@@ -1,11 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <!--Head-->
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nathalie Depierre, designer multimedia - intégration, Montréal ou à distance.</title>
+  <title>
+    Nathalie Depierre, designer multimedia - intégration, Montréal ou à
+    distance.
+  </title>
   <meta name="description"
     content="Designer multidisciplinaire, ux/ui design et intégratrice. Architecture, expérience utilisateur, prototypage, design visuel, Montréal ou à distance.">
   <!--Favicon-->
@@ -27,14 +30,14 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
     @theme {
-   --color-ink: #0a0a0a;
-     --color-paper: #deded7;
-     --color-accent: blue;
+        --color-ink: #0a0a0a;
+        --color-paper: #deded7;
+        --color-accent: blue;
 
-      --font-mono: "Inter Tight", sans-serif;
-      --font-sans: 'Neue Haas Display', sans-serif;
-  }
-  </style>
+        --font-mono: "Inter Tight", sans-serif;
+        --font-sans: "Neue Haas Display", sans-serif;
+      }
+    </style>
   <!--Tailwind-->
 </head>
 <!--Head-->
@@ -78,9 +81,7 @@
   <main id="content">
     <!-- Contact-->
     <section id="contact" class="w-full px-6 py-16" data-fade-group>
-
       <div class="w-full grid grid-cols-12 lg:gap-12">
-
         <!-- Colonne gauche -->
         <div class="col-span-12 lg:col-span-5 pt-18 fade">
           <h1 class="text-6xl sm:text-7xl lg:text-9xl font-light leading-[0.85] tracking-tight pb-12">
@@ -89,9 +90,8 @@
             <span class="font-normal">projet</span>
           </h1>
 
-          <!-- Colonne gauche  -->
+          <!-- Réseaux sociaux -->
           <div class="hidden lg:pl-24 lg:pt-12 lg:flex lg:flex-col gap-3 text-base font-mono uppercase">
-
             <a href="https://www.linkedin.com/in/nathalie-depierre/" target="_blank" rel="noopener noreferrer"
               class="group inline-flex items-center gap-1 hover:text-accent">
               LinkedIn
@@ -124,15 +124,14 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
               </svg>
             </a>
-
           </div>
+          <!-- Réseaux sociaux -->
         </div>
         <!-- Colonne gauche  -->
+
         <!-- Colonne formulaire -->
         <div class="col-span-12 lg:col-span-7 fade">
-
           <form id="contactForm" action="#" method="get" novalidate class="p-0 lg:p-24">
-
             <!-- Champ Nom -->
             <div class="input__control mb-6 flex flex-col">
               <label for="fullName" class="block mb-1 text-base font-medium">Nom et prénom*</label>
@@ -162,7 +161,6 @@
               <label for="company" class="block mb-1 text-base font-medium">Organisation/compagnie</label>
               <input type="text" name="company" id="company"
                 class="w-full h-[36px] bg-transparent border-b-2 border-black">
-              <!-- <div id="email-error" class="message--error" aria-live="polite"></div> -->
             </div>
 
             <!-- Sujet -->
@@ -222,7 +220,7 @@
                 class="w-full bg-transparent border-b-2 border-black resize-none"></textarea>
               <div id="message-error" class="message--error" aria-live="polite"></div>
             </div>
-
+            <!-- Confirmation  -->
             <p id="confirmation" role="status"></p>
 
             <button type="submit"
@@ -236,22 +234,32 @@
             </button>
           </form>
         </div>
-
+        <!-- Colonne formulaire -->
       </div>
-
     </section>
+    <!-- Contact-->
   </main>
+  <!--Main-->
+
   <!--Footer-->
   <footer id="footer" class="m-0 p-0 pt-16 relative" data-fade-group>
+    <!-- Section du haut -->
     <div class="grid grid-cols-12 gap-6 md:gap-12">
-      <div class="w-full col-span-12 lg:col-span-3 lg:col-start-4 p-6 lg:p-12 py-4">
+      <nav class="w-full col-span-12 lg:col-span-3 lg:col-start-4 p-6 lg:p-12 py-4"
+        aria-label="Navigation de pied de page">
         <ul class="flex flex-col gap-1">
           <li><a href="index.html" class="hover:text-accent">Index</a></li>
-          <li><a href="projets.html" class="hover:text-accent">Projets</a></li>
-          <li><a href="a-propos.html" class="hover:text-accent">À propos</a></li>
-          <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
+          <li>
+            <a href="projets.html" class="hover:text-accent">Projets</a>
+          </li>
+          <li>
+            <a href="a-propos.html" class="hover:text-accent">À propos</a>
+          </li>
+          <li>
+            <a href="contact.html" class="hover:text-accent">Contact</a>
+          </li>
         </ul>
-      </div>
+      </nav>
 
       <!--Réseaux sociaux-->
       <div class="w-full col-span-12 lg:col-span-3 p-6 lg:p-12 py-4">
@@ -295,23 +303,22 @@
         </ul>
       </div>
       <!--Réseaux sociaux-->
+
       <!--BTN Contact-->
       <div class="w-full col-span-12 lg:col-span-3 py-4">
         <div class="absolute top-20 right-15 z-10 btn__contact">
           <a href="index.html" id="rotating">
             <img src="assets/img/illustrations_merci.png"
-              class="pl-2 flex justify-center items-center w-[200px] mx-auto" alt="Bouton retour accueil">
+              class="pl-2 flex justify-center items-center w-[200px] mx-auto" alt="Retour accueil">
           </a>
         </div>
-
       </div>
-      <!--BTN Contact-->
     </div>
-
+    <!--BTN Contact-->
+    <!-- Section du haut -->
 
     <!-- Section du bas -->
     <div class="m-0 p-0 grid grid-cols-12 gap-4 lg:gap-12 items-end mt-12">
-
       <div class="col-span-2 lg:col-span-3 lg:p-0 m-0">
         <span class="text-xs lg:text-[66px] font-bold tracking-tight">©<span id="year"></span></span>
       </div>
@@ -324,8 +331,8 @@
         class="m-0 py-4 lg:p-5 col-span-12 bg-accent text-white lg:text-ink lg:bg-transparent lg:col-span-3 flex justify-center lg:justify-end">
         <a href="#top" class="hover:text-accent">Retour en haut de page</a>
       </div>
-
     </div>
+    <!-- Section du bas -->
   </footer>
   <!--Footer-->
 </body>

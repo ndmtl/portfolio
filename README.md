@@ -23,9 +23,10 @@
 
 <br>
 
-| ### Composants Tailwind CSS                                                     |
-| :------------------------------------------------------------------------------ |
-| Bloc de statistiques - https://pagedone.io/blocks/marketing/stats               |
-| Carrousel d'images — [Flowbite](https://flowbite.com/docs/components/carousel/) |
+| ### Composants Tailwind CSS                                                      |
+| :------------------------------------------------------------------------------- |
+| Bloc de statistiques - https://pagedone.io/blocks/marketing/stats                |
+| Carrousel d'images — [Flowbite](https://flowbite.com/docs/components/carousel/)  |
+| Barre de navigation — J'avais pris un composant mais finalement j'ai tout changé |
 
-### Et Claude.ai
+### Claude.ai

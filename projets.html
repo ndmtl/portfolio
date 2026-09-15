@@ -1,11 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
+
 <!--Head-->
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nathalie Depierre, designer multimedia - intégration, Montréal ou à distance.</title>
+  <title>
+    Nathalie Depierre, designer multimedia - intégration, Montréal ou à
+    distance.
+  </title>
   <meta name="description"
     content="Designer multidisciplinaire, ux/ui design et intégratrice. Architecture, expérience utilisateur, prototypage, design visuel, Montréal ou à distance.">
   <!--Favicon-->
@@ -26,25 +30,26 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
     @theme {
-   --color-ink: #0a0a0a;
-     --color-paper: #deded7;
-     --color-accent: blue;
+        --color-ink: #0a0a0a;
+        --color-paper: #deded7;
+        --color-accent: blue;
 
-      --font-mono: "Inter Tight", sans-serif;
-      --font-sans: 'Neue Haas Display', sans-serif;
-    }
-    @layer components {
-      .title__work{
-        @apply my-4 uppercase text-xl flex justify-between;
+        --font-mono: "Inter Tight", sans-serif;
+        --font-sans: "Neue Haas Display", sans-serif;
       }
-    .title__work--tags {
-      @apply bg-ink text-white text-xs w-fit px-2 py-1 inline-block;
-    }
-  }
-  </style>
+      @layer components {
+        .title__work {
+          @apply my-4 uppercase text-xl flex justify-between;
+        }
+        .title__work--tags {
+          @apply bg-ink text-white text-xs w-fit px-2 py-1 inline-block;
+        }
+      }
+    </style>
   <!--Tailwind-->
 </head>
 <!--Head-->
+
 <!--Body-->
 
 <body id="top" class="text-ink w-full font-sans">
@@ -57,7 +62,7 @@
   <!--Header-->
   <header class="relative w-full">
     <nav class="absolute z-50 w-full p-6" aria-label="Navigation principale">
-      <div class="absolute z-50 text-2xl  hover:text-accent">
+      <div class="absolute z-50 text-2xl hover:text-accent">
         <a href="index.html">Nathalie Depierre</a>
       </div>
 
@@ -69,7 +74,7 @@
 
       <div id="navMenu"
         class="hidden opacity-0 transition-opacity duration-300 ease-in-out fixed inset-0 w-full h-screen bg-white z-40 p-6 pt-24 flex flex-col justify-center space-y-6 lg:static lg:h-auto lg:p-0 lg:pt-0 lg:opacity-100 lg:grid lg:w-full grid-cols-12 content-center">
-        <div class="lg:col-span-2 lg:col-start-5 lg:text-right text-4xl sm:text-5xl lg:text-2xl  hover:text-accent">
+        <div class="lg:col-span-2 lg:col-start-5 lg:text-right text-4xl sm:text-5xl lg:text-2xl hover:text-accent">
           <a href="index.html" aria-current="page">Index</a>
         </div>
         <div class="lg:col-span-2 lg:text-right text-4xl sm:text-5xl lg:text-2xl text-accent hover:text-accent">
@@ -85,6 +90,7 @@
     </nav>
   </header>
   <!--Header-->
+
   <!--Main-->
   <main id="content">
     <!--projets-->
@@ -99,25 +105,30 @@
         <!--Filtre-->
         <div class="col-span-3 lg:col-span-2 pt-6 grid-rows-2 lg:col-start-5 md:grid-rows-1 lg:text-right">
           <button class="text-2xl hover:text-accent text-gray-500 cursor-pointer" onClick="filterCategory('all')">
-            tous<sup>(5)</sup></button>
+            tous<sup>(5)</sup>
+          </button>
         </div>
         <div class="col-span-3 lg:col-span-2 pt-6 grid-rows-2 lg:grid-rows-1 lg:text-right">
           <button class="text-2xl hover:text-accent text-gray-500 cursor-pointer" onClick="filterCategory('ux')">
-            ux<sup>(4)</sup></button>
+            ux<sup>(4)</sup>
+          </button>
         </div>
-        <div class="col-span-3 lg:col-span-2  pt-6 grid-rows-2 lg:grid-rows-1 lg:text-right">
+        <div class="col-span-3 lg:col-span-2 pt-6 grid-rows-2 lg:grid-rows-1 lg:text-right">
           <button class="text-2xl hover:text-accent text-gray-500 cursor-pointer" onClick="filterCategory('ui')">
-            ui<sup>(5)</sup></button>
+            ui<sup>(5)</sup>
+          </button>
         </div>
         <div class="col-span-3 lg:col-span-2 pt-6 grid-rows-2 lg:grid-rows-1 lg:text-right">
           <button class="text-2xl hover:text-accent text-gray-500 cursor-pointer"
             onClick="filterCategory('integration')">
-            Intégration<sup>(2)</sup></button>
+            Intégration<sup>(2)</sup>
+          </button>
         </div>
       </div>
       <!--Filtre-->
     </section>
     <!--Projets-->
+
     <!--Galerie-->
     <section id="portfolio2" class="w-full h-min-100vh lg:pb-24" data-fade-group>
       <h2 class="sr-only">Portfolio</h2>
@@ -187,12 +198,11 @@
           </figcaption>
         </figure>
 
-
         <figure class="relative col-span-12 lg:col-span-4 md:col-span-6 project__card ux ui integration fade">
           <div class="relative w-full h-100 overflow-hidden">
             <img src="assets/img/portfolio/-cfeducation-1.jpg" alt="Centre d'Éducation Petite Enfance"
               class="w-full h-full object-cover card__image card__image--animated">
-            <div class="absolute left-10 bottom-10 z-50 bg-red-500 text-white text-base w-fit px-2 py-1 inline-block">
+            <div class="absolute left-10 bottom-10 z-50 bg-red-700 text-white text-base w-fit px-2 py-1 inline-block">
               À venir
             </div>
           </div>
@@ -207,6 +217,9 @@
         </figure>
       </div>
     </section>
+    <!--Galerie-->
+
+    <!--Statistiques-->
     <section>
       <div class="py-24 sm:py-32">
         <h2 class="sr-only">Statistiques personnelles</h2>
@@ -214,36 +227,49 @@
           <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
             <div class="mx-auto flex max-w-xs flex-col gap-y-4">
               <dt class="text-base/7 text-ink">Expérience</dt>
-              <dd class="order-first text-8xl font-semibold tracking-tight text-accent sm:text-5xl">20+</dd>
+              <dd class="order-first text-8xl font-semibold tracking-tight text-accent sm:text-5xl">
+                20+
+              </dd>
             </div>
             <div class="mx-auto flex max-w-xs flex-col gap-y-4">
               <dt class="text-base/7 text-ink">Secteur d'activités</dt>
-              <dd class="order-first text-8xl font-semibold tracking-tight text-accent sm:text-5xl">8</dd>
+              <dd class="order-first text-8xl font-semibold tracking-tight text-accent sm:text-5xl">
+                8
+              </dd>
             </div>
             <div class="mx-auto flex max-w-xs flex-col gap-y-4">
               <dt class="text-base/7 text-ink">Projets</dt>
-              <dd class="order-first text-8xl font-semibold tracking-tight text-accent sm:text-5xl">100+</dd>
+              <dd class="order-first text-8xl font-semibold tracking-tight text-accent sm:text-5xl">
+                100+
+              </dd>
             </div>
           </dl>
         </div>
       </div>
     </section>
+    <!--Statistiques-->
   </main>
-
+  <!--Main-->
 
   <!--Footer-->
   <footer id="footer" class="m-0 p-0 pt-16 relative" data-fade-group>
-
+    <!-- Section du haut -->
     <div class="grid grid-cols-12 gap-6 md:gap-12">
-
-      <div class="w-full col-span-12 lg:col-span-3 lg:col-start-4 p-6 lg:p-12 py-4">
+      <nav class="w-full col-span-12 lg:col-span-3 lg:col-start-4 p-6 lg:p-12 py-4"
+        aria-label="Navigation de pied de page">
         <ul class="flex flex-col gap-1">
           <li><a href="index.html" class="hover:text-accent">Index</a></li>
-          <li><a href="projets.html" class="hover:text-accent">Projets</a></li>
-          <li><a href="a-propos.html" class="hover:text-accent">À propos</a></li>
-          <li><a href="contact.html" class="hover:text-accent">Contact</a></li>
+          <li>
+            <a href="projets.html" class="hover:text-accent">Projets</a>
+          </li>
+          <li>
+            <a href="a-propos.html" class="hover:text-accent">À propos</a>
+          </li>
+          <li>
+            <a href="contact.html" class="hover:text-accent">Contact</a>
+          </li>
         </ul>
-      </div>
+      </nav>
 
       <!--Réseaux sociaux-->
       <div class="w-full col-span-12 lg:col-span-3 p-6 lg:p-12 py-4">
@@ -287,23 +313,22 @@
         </ul>
       </div>
       <!--Réseaux sociaux-->
+
       <!--BTN Contact-->
       <div class="w-full col-span-12 lg:col-span-3 py-4">
         <div class="absolute top-20 right-15 z-10 btn__contact">
           <a href="contact.html" id="rotating">
             <img src="assets/img/illustrations_contact.png"
-              class="pl-2 flex justify-center items-center w-[200px] mx-auto" alt="Page de contact">
+              class="pl-2 flex justify-center items-center w-[200px] mx-auto" alt="Me contacter">
           </a>
         </div>
-
       </div>
-      <!--BTN Contact-->
     </div>
-
+    <!--BTN Contact-->
+    <!-- Section du haut -->
 
     <!-- Section du bas -->
     <div class="m-0 p-0 grid grid-cols-12 gap-4 lg:gap-12 items-end mt-12">
-
       <div class="col-span-2 lg:col-span-3 lg:p-0 m-0">
         <span class="text-xs lg:text-[66px] font-bold tracking-tight">©<span id="year"></span></span>
       </div>
@@ -316,11 +341,10 @@
         class="m-0 py-4 lg:p-5 col-span-12 bg-accent text-white lg:text-ink lg:bg-transparent lg:col-span-3 flex justify-center lg:justify-end">
         <a href="#top" class="hover:text-accent">Retour en haut de page</a>
       </div>
-
     </div>
+    <!-- Section du bas -->
   </footer>
   <!--Footer-->
-
 </body>
 
 </html>
